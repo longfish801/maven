@@ -1,0 +1,91 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "gonfig",
+    "version": "0.2.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.3",
+      "buildId": "glvxrw6gmfgobpzdifo2fv26iq"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "gonfig-0.2.00.jar",
+          "url": "gonfig-0.2.00.jar",
+          "size": 17021,
+          "sha512": "a4115b877299890150e2a4c0d1fa45bc5435f20c700c9ab412adfa0e11404a99fdaabd94a4602696f0f79cb7134be10e745d4ed7033a7550707ff3bed043a03f",
+          "sha256": "06a3ec355affe5a6e13f451af48e47bb7385e4388d72319450a7806b23dffed7",
+          "sha1": "48a02422fe32daa57423a1426be4cbe21c730168",
+          "md5": "2e41a7f7270a7873061c100067409e44"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.6"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.8.1"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gonfig-0.2.00.jar",
+          "url": "gonfig-0.2.00.jar",
+          "size": 17021,
+          "sha512": "a4115b877299890150e2a4c0d1fa45bc5435f20c700c9ab412adfa0e11404a99fdaabd94a4602696f0f79cb7134be10e745d4ed7033a7550707ff3bed043a03f",
+          "sha256": "06a3ec355affe5a6e13f451af48e47bb7385e4388d72319450a7806b23dffed7",
+          "sha1": "48a02422fe32daa57423a1426be4cbe21c730168",
+          "md5": "2e41a7f7270a7873061c100067409e44"
+        }
+      ]
+    }
+  ]
+}
