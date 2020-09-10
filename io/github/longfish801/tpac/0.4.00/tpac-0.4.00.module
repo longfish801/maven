@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.3",
-      "buildId": "gzfjmn4ooja7tnr6qmxgo6jdia"
+      "buildId": "upwmqhjvyrcmvgl5ad7xzwiqee"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "tpac-0.4.00.jar",
           "url": "tpac-0.4.00.jar",
-          "size": 165530,
-          "sha512": "1c9c79dc28ba84a638ec51c673379331ea8a77fa21d34230424ec8820b444f1547f5d502e4aecbaeea3177b36c0af8df08ee242f08c97de7216f99b222849cda",
-          "sha256": "b7e651a08ce057eb7288fc6b041392d2e547a1539c6c1e63ca0afdc50d128011",
-          "sha1": "305290649cde705b30fdad0d1b1225d2935ddee2",
-          "md5": "ec7b9403a1658bcaaf57dcea42535750"
+          "size": 172034,
+          "sha512": "f2731d96d0af98be3ef8044fc32429b1a47f3a38ed3bed874501953c54ed6218b3f25934d935ca6048e7cdd1489c136cdb44b88d0c5788f9d0c36bdf72d4af22",
+          "sha256": "903ab05d0365ef146851b67d7399211ef343a559a23067c6eb56e226147af564",
+          "sha1": "286197bf886ca60717be1c3ca5f0c792eeeae4d7",
+          "md5": "da96c6d08fed557f9fbde9f6676baa62"
         }
       ]
     },
@@ -79,11 +79,11 @@
         {
           "name": "tpac-0.4.00.jar",
           "url": "tpac-0.4.00.jar",
-          "size": 165530,
-          "sha512": "1c9c79dc28ba84a638ec51c673379331ea8a77fa21d34230424ec8820b444f1547f5d502e4aecbaeea3177b36c0af8df08ee242f08c97de7216f99b222849cda",
-          "sha256": "b7e651a08ce057eb7288fc6b041392d2e547a1539c6c1e63ca0afdc50d128011",
-          "sha1": "305290649cde705b30fdad0d1b1225d2935ddee2",
-          "md5": "ec7b9403a1658bcaaf57dcea42535750"
+          "size": 172034,
+          "sha512": "f2731d96d0af98be3ef8044fc32429b1a47f3a38ed3bed874501953c54ed6218b3f25934d935ca6048e7cdd1489c136cdb44b88d0c5788f9d0c36bdf72d4af22",
+          "sha256": "903ab05d0365ef146851b67d7399211ef343a559a23067c6eb56e226147af564",
+          "sha1": "286197bf886ca60717be1c3ca5f0c792eeeae4d7",
+          "md5": "da96c6d08fed557f9fbde9f6676baa62"
         }
       ]
     }
