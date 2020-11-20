@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.3",
-      "buildId": "k5nvimuxcrafzd25bxsnfbcbwy"
+      "buildId": "adk32v234redjn5wrakni4un6m"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "gonfig-0.2.00.jar",
           "url": "gonfig-0.2.00.jar",
-          "size": 16371,
-          "sha512": "025e74d71a52d3d6d4dd9627fe5e62de16328bf1ef54bab68bc21e7bb16338f7cd820e92b1814cbea8465ce2cca44264fae7b7cdff1f505e620f2a4ef47ec86e",
-          "sha256": "bd3175f02667a9ec7b42d2649da780ba62f63237dec00ac4060a451cc71f78da",
-          "sha1": "072898a5ec1fc921fa5336ac5bec9489e4bb0f3e",
-          "md5": "2c37b7d73faaa50be61ab17bf58db157"
+          "size": 16738,
+          "sha512": "0a326d3bb99f14a2a9ab13e9f2f103dc563e108931c740b7890d90f70c1f9bf32e90afc1fa53dc79a0a3a8bfeb6b5b690070c9aa76290be342909dcdf74656d7",
+          "sha256": "c2df01bfffc11d13e80361f4b0d2f8bb9a2a76de647c5a723071f4f51682e2ab",
+          "sha1": "99957ec7ff37b82f0f4cdec4877f5349ddafbae6",
+          "md5": "9fb44c05cddb6302bb10f3dd1c741feb"
         }
       ]
     },
@@ -79,11 +79,11 @@
         {
           "name": "gonfig-0.2.00.jar",
           "url": "gonfig-0.2.00.jar",
-          "size": 16371,
-          "sha512": "025e74d71a52d3d6d4dd9627fe5e62de16328bf1ef54bab68bc21e7bb16338f7cd820e92b1814cbea8465ce2cca44264fae7b7cdff1f505e620f2a4ef47ec86e",
-          "sha256": "bd3175f02667a9ec7b42d2649da780ba62f63237dec00ac4060a451cc71f78da",
-          "sha1": "072898a5ec1fc921fa5336ac5bec9489e4bb0f3e",
-          "md5": "2c37b7d73faaa50be61ab17bf58db157"
+          "size": 16738,
+          "sha512": "0a326d3bb99f14a2a9ab13e9f2f103dc563e108931c740b7890d90f70c1f9bf32e90afc1fa53dc79a0a3a8bfeb6b5b690070c9aa76290be342909dcdf74656d7",
+          "sha256": "c2df01bfffc11d13e80361f4b0d2f8bb9a2a76de647c5a723071f4f51682e2ab",
+          "sha1": "99957ec7ff37b82f0f4cdec4877f5349ddafbae6",
+          "md5": "9fb44c05cddb6302bb10f3dd1c741feb"
         }
       ]
     }
