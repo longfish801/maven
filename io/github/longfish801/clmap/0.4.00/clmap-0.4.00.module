@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "x42zvvjvwracpcc43lfn23b4aq"
+      "buildId": "vkgpfsywsrayjmhuyhr2e73bm4"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "clmap-0.4.00.jar",
           "url": "clmap-0.4.00.jar",
-          "size": 73563,
-          "sha512": "00f7f613ed73c480a38405992983ad54dddbdf53bbc4acefa4bc4f3b083118b39b34ee449bdb85d29c0e8bf4b2def4b18da6358f796a3afc8b734ec5523c027f",
-          "sha256": "7931c1bd5b646f2abafa60c9becf2e3b661bcac75d38419c53b31bd974c5f97a",
-          "sha1": "5ec968b749940416f0dc3516a923d44d6e31aeb6",
-          "md5": "9e0606280f6ebad47d6638616ed7765c"
+          "size": 74639,
+          "sha512": "d99c414396c5477ac2276c2fac26c31d1ec8bc50b7ea22cc88f658ba2519dcf776a744c4a11c44a36daafaa1eedad0be42605718df56191e9639fbc06c7aab16",
+          "sha256": "42794742686b936c7bd06664268ffca1ec69bc19f09de7215dddc014a4f7ece0",
+          "sha1": "d0d0753a7596f3600560f292a81657e4ae4871f6",
+          "md5": "02eeba8025b5fcec962abecbfba84c61"
         }
       ]
     },
@@ -86,11 +86,11 @@
         {
           "name": "clmap-0.4.00.jar",
           "url": "clmap-0.4.00.jar",
-          "size": 73563,
-          "sha512": "00f7f613ed73c480a38405992983ad54dddbdf53bbc4acefa4bc4f3b083118b39b34ee449bdb85d29c0e8bf4b2def4b18da6358f796a3afc8b734ec5523c027f",
-          "sha256": "7931c1bd5b646f2abafa60c9becf2e3b661bcac75d38419c53b31bd974c5f97a",
-          "sha1": "5ec968b749940416f0dc3516a923d44d6e31aeb6",
-          "md5": "9e0606280f6ebad47d6638616ed7765c"
+          "size": 74639,
+          "sha512": "d99c414396c5477ac2276c2fac26c31d1ec8bc50b7ea22cc88f658ba2519dcf776a744c4a11c44a36daafaa1eedad0be42605718df56191e9639fbc06c7aab16",
+          "sha256": "42794742686b936c7bd06664268ffca1ec69bc19f09de7215dddc014a4f7ece0",
+          "sha1": "d0d0753a7596f3600560f292a81657e4ae4871f6",
+          "md5": "02eeba8025b5fcec962abecbfba84c61"
         }
       ]
     }
