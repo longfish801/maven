@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "yfpqusp2gbhpvgkqawkvcnymmy"
+      "buildId": "d4kkwb4eiza3poovlfm3zbbwha"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "tpac-0.4.00.jar",
           "url": "tpac-0.4.00.jar",
-          "size": 172918,
-          "sha512": "06ed660da69f6dfb4823dc8bb8242c477f008e40260cba267d40cfdcd8dd53456f15a24b2034712a17b8a5abff7dc86689a02111c9e97d249810ace41f31326c",
-          "sha256": "45846856669bf1d6cfef34d139a9615c5c723e109ccde3f2dc6babbe2d842b85",
-          "sha1": "14f2c58c4793d029f666254d56f8929e777a8fc5",
-          "md5": "7726200293a56dd1d6bc2d60f21f003a"
+          "size": 174673,
+          "sha512": "64f5a5c638fd61acac78ca086d687a8b192a54dbd51735cf9289eb3c4a843dae8616132304773d52b1eddedb16ac905b50bf229412a132309415034edecba2c0",
+          "sha256": "09e09a4ed987561e50fbb5fb6f0591ea950d51691bdeeb844fe15524e09b7163",
+          "sha1": "a53d05109116903e08f2578f91bf9b15fad002b3",
+          "md5": "8d7e003aa85ceb1a668cda18e88a1aba"
         }
       ]
     },
@@ -79,11 +79,11 @@
         {
           "name": "tpac-0.4.00.jar",
           "url": "tpac-0.4.00.jar",
-          "size": 172918,
-          "sha512": "06ed660da69f6dfb4823dc8bb8242c477f008e40260cba267d40cfdcd8dd53456f15a24b2034712a17b8a5abff7dc86689a02111c9e97d249810ace41f31326c",
-          "sha256": "45846856669bf1d6cfef34d139a9615c5c723e109ccde3f2dc6babbe2d842b85",
-          "sha1": "14f2c58c4793d029f666254d56f8929e777a8fc5",
-          "md5": "7726200293a56dd1d6bc2d60f21f003a"
+          "size": 174673,
+          "sha512": "64f5a5c638fd61acac78ca086d687a8b192a54dbd51735cf9289eb3c4a843dae8616132304773d52b1eddedb16ac905b50bf229412a132309415034edecba2c0",
+          "sha256": "09e09a4ed987561e50fbb5fb6f0591ea950d51691bdeeb844fe15524e09b7163",
+          "sha1": "a53d05109116903e08f2578f91bf9b15fad002b3",
+          "md5": "8d7e003aa85ceb1a668cda18e88a1aba"
         }
       ]
     }
