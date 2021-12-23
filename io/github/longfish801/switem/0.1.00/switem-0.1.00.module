@@ -1,0 +1,105 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "switem",
+    "version": "0.1.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7",
+      "buildId": "vuoreqghjnbeblqmwuivxdbzsu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "switem-0.1.00.jar",
+          "url": "switem-0.1.00.jar",
+          "size": 105424,
+          "sha512": "b4769708491ba6378943bb3606b1a3ca3d92eb7b8d6f4e5ce5edcf20b13360ca32460ab57195353104e16a3b549d3367100d279ff318825e29b920eef7f2a271",
+          "sha256": "8bc271886a58ad1800043e9aeb5daf247d903a1b36fcdd0a317b73a178d9e828",
+          "sha1": "f84b34f561fe26ccb83dab6758e3855d2ba1f530",
+          "md5": "7ad19edf9268a9ff1a300139232189d0"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "clmap",
+          "version": {
+            "requires": "0.4.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "0.2.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "tpac",
+          "version": {
+            "requires": "0.4.00"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.8.1"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "switem-0.1.00.jar",
+          "url": "switem-0.1.00.jar",
+          "size": 105424,
+          "sha512": "b4769708491ba6378943bb3606b1a3ca3d92eb7b8d6f4e5ce5edcf20b13360ca32460ab57195353104e16a3b549d3367100d279ff318825e29b920eef7f2a271",
+          "sha256": "8bc271886a58ad1800043e9aeb5daf247d903a1b36fcdd0a317b73a178d9e828",
+          "sha1": "f84b34f561fe26ccb83dab6758e3855d2ba1f530",
+          "md5": "7ad19edf9268a9ff1a300139232189d0"
+        }
+      ]
+    }
+  ]
+}
