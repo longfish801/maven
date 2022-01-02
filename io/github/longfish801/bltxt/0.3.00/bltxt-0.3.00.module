@@ -1,0 +1,84 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "bltxt",
+    "version": "0.3.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7",
+      "buildId": "ajw7ktnefnci7mqc7774cotkry"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "bltxt-0.3.00.jar",
+          "url": "bltxt-0.3.00.jar",
+          "size": 107356,
+          "sha512": "2dd2ddfc558cf3cde1405ee355b140452ac60869875772e49f45d0aea6041fdff1f725858831478c41682a3cc11439327f1e192d966ab53dd988235775b6d699",
+          "sha256": "0cc0892a4faee5115126d9ab14a8e02bd6d8dc14b76746b476db302b9c6d71bf",
+          "sha1": "d6306f7647885bfd07f9b194ef0b0472f603bef9",
+          "md5": "4a5b7352b6f000eb8de315472d5ca07f"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "0.2.00"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bltxt-0.3.00.jar",
+          "url": "bltxt-0.3.00.jar",
+          "size": 107356,
+          "sha512": "2dd2ddfc558cf3cde1405ee355b140452ac60869875772e49f45d0aea6041fdff1f725858831478c41682a3cc11439327f1e192d966ab53dd988235775b6d699",
+          "sha256": "0cc0892a4faee5115126d9ab14a8e02bd6d8dc14b76746b476db302b9c6d71bf",
+          "sha1": "d6306f7647885bfd07f9b194ef0b0472f603bef9",
+          "md5": "4a5b7352b6f000eb8de315472d5ca07f"
+        }
+      ]
+    }
+  ]
+}
