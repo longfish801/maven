@@ -1,0 +1,31 @@
+/*
+ * build.gradle
+ *
+ * Copyright (C) io.github.longfish801 All Rights Reserved.
+ */
+
+plugins {
+	id 'com.github.monosoul.markdown.page.generator' version '2.1.0'
+}
+
+defaultTasks 'publishDoc'
+
+generateHtml {
+	inputDirectory = file('src/markdown')
+	headerHtmlFile = file('src/markdown/template/header.html')
+	footerHtmlFile = file('src/markdown/template/footer.html')
+	pegdownExtensions = 'TOC,ANCHORLINKS,EXTANCHORLINKS,HARDWRAPS,FENCED_CODE_BLOCKS,DEFINITIONS,TABLES'
+}
+
+task publishDoc(dependsOn: [generateHtml]){
+	doLast {
+		copy {
+			from 'build/html/index.html'
+			into "./"
+		}
+	}
+}
+
+task clean(type: Delete){
+	delete 'build'
+}

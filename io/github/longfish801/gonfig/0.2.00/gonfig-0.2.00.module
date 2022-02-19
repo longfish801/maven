@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "4djeqc3xavfwjkz5623hrps6gq"
+      "buildId": "23n3c7xw75cephikxpzlwug4ga"
     }
   },
   "variants": [
@@ -29,10 +29,10 @@
           "name": "gonfig-0.2.00.jar",
           "url": "gonfig-0.2.00.jar",
           "size": 16929,
-          "sha512": "385cb694353de6629c6570bf5a16e1d696165e1f7cc7020741fa10018eae39ceb7c4e759bf752a2989f21884ab4e40bbf2853e4766fe2a4712e9c4448d69f700",
-          "sha256": "9c45e242be8afcc6f00b6673aaf90f6fe339dc108e783fb281d6952a5c07ae05",
-          "sha1": "80b8622bd34c69ee22cabd234159aa6121468d1a",
-          "md5": "a947235fce17394cdfa2d2f2e53129cd"
+          "sha512": "47c84c7c69f9aeafc636fe3db038e0faaf7004d8020fcf6659e47b483c3716c517fac5b137ed0301c240e5c04e097bf6ec94cb4d3c3bd851597cf624bebf18e6",
+          "sha256": "a2a6c0ef9a83cbcab5de356097960362d39a10449999d807fec32dd980fdd680",
+          "sha1": "3f052dbc33c19621ca60571b54ce6c72bc125b21",
+          "md5": "ef03b56aa6cb40dcfa588f0766ebaff2"
         }
       ]
     },
@@ -80,10 +80,10 @@
           "name": "gonfig-0.2.00.jar",
           "url": "gonfig-0.2.00.jar",
           "size": 16929,
-          "sha512": "385cb694353de6629c6570bf5a16e1d696165e1f7cc7020741fa10018eae39ceb7c4e759bf752a2989f21884ab4e40bbf2853e4766fe2a4712e9c4448d69f700",
-          "sha256": "9c45e242be8afcc6f00b6673aaf90f6fe339dc108e783fb281d6952a5c07ae05",
-          "sha1": "80b8622bd34c69ee22cabd234159aa6121468d1a",
-          "md5": "a947235fce17394cdfa2d2f2e53129cd"
+          "sha512": "47c84c7c69f9aeafc636fe3db038e0faaf7004d8020fcf6659e47b483c3716c517fac5b137ed0301c240e5c04e097bf6ec94cb4d3c3bd851597cf624bebf18e6",
+          "sha256": "a2a6c0ef9a83cbcab5de356097960362d39a10449999d807fec32dd980fdd680",
+          "sha1": "3f052dbc33c19621ca60571b54ce6c72bc125b21",
+          "md5": "ef03b56aa6cb40dcfa588f0766ebaff2"
         }
       ]
     }

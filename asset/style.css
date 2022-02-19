@@ -1,0 +1,32 @@
+@import url("bootstrap-5.0.2/bootstrap.min.css");
+@import url("bootstrapIcons-1.8.1/bootstrap-icons.css");
+
+body {
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+	letter-spacing: 0.1rem;
+	line-height: 1.8rem;
+	text-align: justify;
+	word-wrap: break-word;
+}
+h1 {
+	padding: 2rem 0;
+}
+h2, h3, h4 {
+	padding: 1rem 0;
+}
+blockquote {
+	padding: 1rem;
+	background-color: #ffffcc;
+}
+pre {
+	padding: 0.5rem;
+	line-height: 1.3rem;
+	background-color: oldlace;
+}
+th, td {
+	border: solid 1px black;
+	padding: 0rem 0.5rem;
+}
+th {
+	text-align: center;
+}
