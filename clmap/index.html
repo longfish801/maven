@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/maven/asset/style.css">
+<title> clmap</title>
+</head>
+<body class="container">
+
+<div class="row justify-content-center">
+<main class="col-lg-8">
+<h1><a href="#clmap" id="clmap"></a>clmap</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#特徴">特徴</a></li>
+<li><a href="#サンプルコード">サンプルコード</a></li>
+<li><a href="#ドキュメント">ドキュメント</a></li>
+<li><a href="#githubリポジトリ">GitHubリポジトリ</a></li>
+<li><a href="#mavenリポジトリ">Mavenリポジトリ</a></li>
+<li><a href="#改版履歴">改版履歴</a></li>
+</ul>
+<h2><a href="#概要" id="概要"></a>概要</h2>
+<p>　クロージャを管理します。<br />
+　インタフェースが同じクロージャをまとめて定義できます。</p>
+<p>　個人が学習のために開発したものです。<br />
+　故障対応や問合せ回答などのサポートはしていません。</p>
+<h2><a href="#特徴" id="特徴"></a>特徴</h2>
+<ul>
+<li>複数のクロージャを clmap記法で定義します。<br />
+clmap記法は <a href="/tpac/">tpacライブラリ</a>を利用したDSLです。</li>
+<li>共通する引数や import文などをまとめて定義できます。<br />
+共通する前処理、後処理をまとめることで依存性注入ができます。</li>
+</ul>
+<p>　このライブラリの名称はクロージャ（Closure）＋マップ（Map）に由来しています。</p>
+<h2><a href="#サンプルコード" id="サンプルコード"></a>サンプルコード</h2>
+<p>　以下に clmap文書のサンプルを示します（src/test/resources/sample.tpac）。</p>
+<pre><code>#! clmap
+#&gt; map:const
+#&gt;&gt; args
+	String time
+	String name
+#&gt;&gt; closure
+	greet = clmap.solvePath('config:messages').config().greeting[time]
+	title = clmap.solvePath('data:title').dflt[titleMap[name]]
+	return &quot;${greet}, ${title}${name}.&quot;
+#&gt;&gt; data:title
+Mr.
+Mrs.
+Ms.
+#&gt;&gt; config:messages
+greeting {
+	morning = 'Good morning'
+	noon = 'Hello'
+	night = 'Good night'
+}
+#&gt; map
+#&gt;&gt; args
+	String name
+#&gt;&gt; prefix
+	String message
+#&gt;&gt; suffix
+#-noon
+	message = message.toUpperCase()
+#&gt;&gt; closure:morning
+	message = clmap.cl('/_/const#_').call('morning', name)
+#&gt;&gt; closure:noon
+	message = clmap.cl('/_/const#_').call('noon', name)
+#&gt;&gt; closure:night
+	message = clmap.cl('/_/const#_').call('night', name)
+#&gt;&gt; return
+	message
+</code></pre>
+<p>　上記の clmap文書を読みこんでクロージャを実行し、期待する戻り値を得られるか assertで確認するスクリプトです（src/test/groovy/Sample.groovy）。</p>
+<pre><code>import io.github.longfish801.clmap.ClmapServer
+
+def clmap
+try {
+	clmap = new ClmapServer().soak(new File('src/test/resources/sample.tpac'))
+} catch (exc){
+	exc.printStackTrace()
+}
+
+clmap.cl('/_/const').properties.titleMap = [
+	'Kennedy': 0,
+	'Thatcher': 1,
+	'Windsor': 2
+]
+
+assert 'Good morning, Mr.Kennedy.' == clmap.cl('/_/_#morning').call('Kennedy')
+assert 'HELLO, MRS.THATCHER.' == clmap.cl('/_/_#noon').call('Thatcher')
+assert 'Good night, Ms.Windsor.' == clmap.cl('/_/_#night').call('Windsor')
+</code></pre>
+<p>　このサンプルコードは build.gradle内の execSamplesタスクで実行しています。</p>
+<h2><a href="#ドキュメント" id="ドキュメント"></a>ドキュメント</h2>
+<ul>
+<li><a href="groovydoc/">Groovydoc</a></li>
+<li><a href="notation.html">clmap記法</a></li>
+</ul>
+<h2><a href="#githubリポジトリ" id="githubリポジトリ"></a>GitHubリポジトリ</h2>
+<ul>
+<li><a href="https://github.com/longfish801/clmap">clmap</a></li>
+</ul>
+<h2><a href="#mavenリポジトリ" id="mavenリポジトリ"></a>Mavenリポジトリ</h2>
+<p>　本ライブラリの JARファイルを <a href="https://github.com/longfish801/maven">GitHub上の Mavenリポジトリ</a>で公開しています。<br />
+　build.gradleの記述例を以下に示します。</p>
+<pre><code>repositories {
+	mavenCentral()
+	maven { url 'https://longfish801.github.io/maven/' }
+}
+
+dependencies {
+	implementation group: 'io.github.longfish801', name: 'clmap', version: '0.3.00'
+}
+</code></pre>
+<h2><a href="#改版履歴" id="改版履歴"></a>改版履歴</h2>
+<dl>
+<dt>0.3.01</dt>
+<dd>config, dataハンドルを追加しました。</dd>
+<dt>0.3.02</dt>
+<dd>args, dec, prefix, suffix, configハンドルのマップにキー指定を可能にしました。</dd>
+<dt>0.3.03</dt>
+<dd>args, dec, prefix, suffix, configハンドルのマップのキー指定はclosureハンドルの名前と一致時のみにしました。</dd>
+<dd>returnハンドルを追加しました。</dd>
+<dt>0.3.04</dt>
+<dd>ドキュメントはmavenリポジトリに出力するよう修正しました。</dd>
+</dl>
+</main>
+
+</div><!-- end of row -->
+
+<footer class="row justify-content-center p-3">
+<nav class="col-lg-8 text-end">
+<button type="button" class="btn btn-primary" onclick="backPage();">戻る</button>
+</nav>
+</footer><!-- end of row -->
+
+<script src="/maven/asset/script.js" charset="uft-8"></script>
+</body>
+</html>
