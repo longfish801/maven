@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/maven/asset/style.css">
+<title> タグDSL</title>
+</head>
+<body class="container">
+
+<div class="row justify-content-center">
+<main class="col-lg-8">
+<h1><a href="#タグdsl" id="タグdsl"></a>タグDSL</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#タグdslのリソース">タグDSLのリソース</a></li>
+<li><a href="#操作ハンドルの作成">操作ハンドルの作成</a></li>
+</ul>
+<h2><a href="#概要" id="概要"></a>概要</h2>
+<p>　parse操作ハンドル、format操作ハンドルはタグDSLと呼んでいる仕組みで実現しています。<br />
+　タグDSLの詳細について以下に記します。</p>
+<h2><a href="#タグdslのリソース" id="タグdslのリソース"></a>タグDSLのリソース</h2>
+<p>　タグDSLの実体はclmap文書に記述されたクロージャの集合です。<br />
+　clmapの詳細は<a href="/clmap/">clmap</a>を参照してください。<br />
+　タグDSLのclmap文書はリソース（クラスパス上のファイル）として実装しています。<br />
+　リソースパスは「tagdsl」配下です。</p>
+<p>　clmap文書は複数あります。<br />
+　SwitemServerクラスによるswitem文書の解析時にclmap文書を読みこみます。<br />
+　初めに読みこむinterface.tpacに関数名や引数、戻り値を定義しています。<br />
+　Javaのインタフェースに相当します。<br />
+　switem.tpacには出力に用いるクロージャを定義しています。<br />
+　それ以外は操作ハンドルを実装するためのファイルです。<br />
+　たとえばformat操作ハンドルのひとつであるcallハンドルは、format-call.tpacで実装しています。</p>
+<h2><a href="#操作ハンドルの作成" id="操作ハンドルの作成"></a>操作ハンドルの作成</h2>
+<p>　操作ハンドルを新しく作成するには以下の作業が必要です。</p>
+<ul>
+<li>interface.tpacなどを参考に操作ハンドルを実装するclmap文書を作成します。</li>
+<li>clmap文書のリソースパスをSwitemServerクラスのメンバ変数List tagdslPathsに追加します。</li>
+</ul>
+</main>
+
+</div><!-- end of row -->
+
+<footer class="row justify-content-center p-3">
+<nav class="col-lg-8 text-end">
+<button type="button" class="btn btn-primary" onclick="backPage();">戻る</button>
+</nav>
+</footer><!-- end of row -->
+
+<script src="/maven/asset/script.js" charset="uft-8"></script>
+</body>
+</html>

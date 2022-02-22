@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "vuoreqghjnbeblqmwuivxdbzsu"
+      "buildId": "yptss6ht4jfaphxy66yic5glhi"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "switem-0.1.00.jar",
           "url": "switem-0.1.00.jar",
-          "size": 105424,
-          "sha512": "b4769708491ba6378943bb3606b1a3ca3d92eb7b8d6f4e5ce5edcf20b13360ca32460ab57195353104e16a3b549d3367100d279ff318825e29b920eef7f2a271",
-          "sha256": "8bc271886a58ad1800043e9aeb5daf247d903a1b36fcdd0a317b73a178d9e828",
-          "sha1": "f84b34f561fe26ccb83dab6758e3855d2ba1f530",
-          "md5": "7ad19edf9268a9ff1a300139232189d0"
+          "size": 105425,
+          "sha512": "96db54c5598b522dbda8e98e76db76d37da0891ae58778b844b3f6e34459c6c5f40864158ca1ea5d72a2a8ac6ca7866d31038512c5cb42fbe2e7982dcb5e9609",
+          "sha256": "9dfb95045cd6e94c9dfc6ae0b058bb31b4e23f7028b178c974028bcc890f93fd",
+          "sha1": "e4ef6371f4084498926128006dd3d2c3da3bb48a",
+          "md5": "aef05bdeab62563c1f171c88c6911305"
         }
       ]
     },
@@ -93,11 +93,11 @@
         {
           "name": "switem-0.1.00.jar",
           "url": "switem-0.1.00.jar",
-          "size": 105424,
-          "sha512": "b4769708491ba6378943bb3606b1a3ca3d92eb7b8d6f4e5ce5edcf20b13360ca32460ab57195353104e16a3b549d3367100d279ff318825e29b920eef7f2a271",
-          "sha256": "8bc271886a58ad1800043e9aeb5daf247d903a1b36fcdd0a317b73a178d9e828",
-          "sha1": "f84b34f561fe26ccb83dab6758e3855d2ba1f530",
-          "md5": "7ad19edf9268a9ff1a300139232189d0"
+          "size": 105425,
+          "sha512": "96db54c5598b522dbda8e98e76db76d37da0891ae58778b844b3f6e34459c6c5f40864158ca1ea5d72a2a8ac6ca7866d31038512c5cb42fbe2e7982dcb5e9609",
+          "sha256": "9dfb95045cd6e94c9dfc6ae0b058bb31b4e23f7028b178c974028bcc890f93fd",
+          "sha1": "e4ef6371f4084498926128006dd3d2c3da3bb48a",
+          "md5": "aef05bdeab62563c1f171c88c6911305"
         }
       ]
     }
