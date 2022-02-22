@@ -291,7 +291,7 @@ if (location.href.indexOf('is-external=true') == -1) {
                             <li class="blockList">
                                 <h4><a href='../../../../../io/github/longfish801/tpac/tea/TeaServer.html'>TeaServer</a> <strong>leftShift</strong>(<a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html'>TeaDec</a> dec)</h4>
                                 <p> tpac文書の宣言を追加します。
-	 <DL><DT><B>Parameters:</B></DT><DD><code>dec</code> -  宣言</DD></DL><DL><DT><B>Returns:</B></DT><DD>自インスタンス</DD></DL><DL><DT><B>Throws:</B></DT><DD>TpacHandlingException 識別キーが重複する宣言は追加できません</DD></DL></p>
+	 <DL><DT><B>Parameters:</B></DT><DD><code>dec</code> -  宣言</DD></DL><DL><DT><B>Returns:</B></DT><DD>自インスタンス</DD></DL></p>
                             </li>
                         </ul>
                     
@@ -336,7 +336,8 @@ if (location.href.indexOf('is-external=true') == -1) {
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4><a href='../../../../../io/github/longfish801/tpac/tea/TeaServer.html'>TeaServer</a> <strong>soak</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='def'>def</a> source)</h4>
-                                <p> 対象を解析して tpac文書を生成し保持します。
+                                <p> 対象を解析して tpac文書を生成し保持します。<br/>
+ 同じ識別キーの宣言が複数あるときはマージします。
 	 <DL><DT><B>Parameters:</B></DT><DD><code>source</code> -  解析対象（File、URL、String、BufferedReaderのいずれか）</DD></DL><DL><DT><B>Returns:</B></DT><DD>自インスタンス</DD></DL></p>
                             </li>
                         </ul>
