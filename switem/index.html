@@ -28,7 +28,7 @@
 <h2><a href="#特徴" id="特徴"></a>特徴</h2>
 <ul>
 <li>テキストを加工するスクリプトを switem記法で記述します。<br />
-switem記法は <a href="/tpac/">tpac</a>を利用したDSLです。</li>
+switem記法は <a href="/maven/tpac/">tpac</a>を利用したDSLです。</li>
 <li>テキストの書式を差し替えることを目的としています。<br />
 構造を大きく変えることは困難です。<br />
 たとえば行の集約、並べ替えには対応していません。</li>
@@ -66,8 +66,7 @@ World	Groovy
 	hndl.end = '&lt;/li&gt;'
 	hndl.bullet = (hndl.level == 1)? '' : '  '
 	hndl.more = (hndl.level == 1)? '' : '  '
-	hndl.gap = ''
-	hndl.lowers.values().findAll { it.tag == 'chunk' }.each { it.gap = '' }
+	hndl.nogap = true
 }
 #&gt;&gt; call:p
 #-include doc
@@ -119,6 +118,7 @@ println 'Hello, Groovy!'
 </code></pre>
 <p>　switem文書で上記のテキストを解析した結果であるtpac文書です（src/test/resources/parsed.tpac）。</p>
 <pre><code>#! doc
+#-gap _
 #&gt;
 
 #&gt; chunk:1
@@ -181,7 +181,6 @@ Value
 #&gt;
 
 #!
-
 </code></pre>
 <p>　switem文書で上記のtpac文書を整形した結果です（src/test/resources/formatted.html）。</p>
 <pre><code>&lt;p&gt;This is sample text.&lt;br/&gt;
@@ -194,15 +193,15 @@ println 'Hello, Groovy!'
 
 &lt;ul&gt;
 &lt;li&gt;List
-  &lt;ul&gt;
+&lt;ul&gt;
   &lt;li&gt;Elem1&lt;br/&gt;
   Elem2&lt;/li&gt;
-  &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Map
-  &lt;ul&gt;
+&lt;ul&gt;
   &lt;li&gt;Key&lt;/li&gt;
   &lt;li&gt;Value&lt;/li&gt;
-  &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
 <p>　このサンプルコードは build.gradle内の execSamplesタスクで実行しています。</p>
@@ -232,6 +231,8 @@ dependencies {
 <dl>
 <dt>0.0.01</dt>
 <dd>ドキュメントはmavenリポジトリに出力するよう修正しました。</dd>
+<dt>0.0.02</dt>
+<dd>出力処理にnogapキーを追加し、top, btmキーのList指定に対応しました。</dd>
 </dl>
 </main>
 
