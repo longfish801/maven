@@ -173,46 +173,52 @@ if (location.href.indexOf('is-external=true') == -1) {
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/util/List.html' title='List'>List</a>&lt;<a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html' title='TeaDec'>TeaDec</a>&gt;</code></td>
-                            <td class="colLast"><code><strong><a href="#findAll(java.lang.String)">findAll</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> regex)</code><br>識別キーが正規表現と一致する宣言のリストを取得します。</td>
+                            <td class="colLast"><code><strong><a href="#findAll(java.lang.String)">findAll</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> regex)</code><br>未加工の識別キーが正規表現と一致する宣言のリストを取得します。</td>
                         </tr>
                         
                         <tr class="rowColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/util/List.html' title='List'>List</a>&lt;<a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html' title='TeaDec'>TeaDec</a>&gt;</code></td>
+                            <td class="colLast"><code><strong><a href="#findAll(groovy.lang.Closure)">findAll</a></strong>(<a href='https://docs.groovy-lang.org/latest/html/api/groovy/lang/Closure.html' title='Closure'>Closure</a> clos)</code><br>クロージャによって対象と判定した宣言のリストを取得します。</td>
+                        </tr>
+                        
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='def'>def</a></code></td>
                             <td class="colLast"><code><strong><a href="#getAt(java.lang.String)">getAt</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key)</code><br>tpac文書の宣言を参照します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaServer.html'>TeaServer</a></code></td>
                             <td class="colLast"><code><strong><a href="#leftShift(io.github.longfish801.tpac.tea.TeaDec)">leftShift</a></strong>(<a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html'>TeaDec</a> dec)</code><br>tpac文書の宣言を追加します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaMaker.html'>TeaMaker</a></code></td>
                             <td class="colLast"><code><strong><a href="#newMaker(java.lang.String)">newMaker</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> tag)</code><br>宣言のタグに対応する生成器を返します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaParty.html'>TeaParty</a></code></td>
                             <td class="colLast"><code><strong><a href="#newParty()">newParty</a></strong>()</code><br>tpac文書の解析に用いる解析器を返します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html'>TeaDec</a></code></td>
                             <td class="colLast"><code><strong><a href="#propertyMissing(java.lang.String)">propertyMissing</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key)</code><br>tpac文書の宣言を参照します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaServer.html'>TeaServer</a></code></td>
                             <td class="colLast"><code><strong><a href="#soak(def)">soak</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='def'>def</a> source)</code><br>対象を解析して tpac文書を生成し保持します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaHandle.html'>TeaHandle</a></code></td>
                             <td class="colLast"><code><strong><a href="#solvePath(java.lang.String)">solvePath</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> path)</code><br>tpac文書からパスに対応するハンドルを参照します。</td>
@@ -272,8 +278,19 @@ if (location.href.indexOf('is-external=true') == -1) {
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/util/List.html' title='List'>List</a>&lt;<a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html' title='TeaDec'>TeaDec</a>&gt; <strong>findAll</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> regex)</h4>
-                                <p> 識別キーが正規表現と一致する宣言のリストを取得します。
-	 <DL><DT><B>Parameters:</B></DT><DD><code>regex</code> -  正規表現</DD></DL><DL><DT><B>Returns:</B></DT><DD>識別キーが正規表現と一致する宣言のリスト（みつからない場合は空リスト）</DD></DL></p>
+                                <p> 未加工の識別キーが正規表現と一致する宣言のリストを取得します。
+	 <DL><DT><B>Parameters:</B></DT><DD><code>regex</code> -  正規表現</DD></DL><DL><DT><B>Returns:</B></DT><DD>未加工の識別キーが正規表現と一致する宣言のリスト（みつからない場合は空リスト）</DD></DL></p>
+                            </li>
+                        </ul>
+                    
+                        <a name="findAll(groovy.lang.Closure)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/util/List.html' title='List'>List</a>&lt;<a href='../../../../../io/github/longfish801/tpac/tea/TeaDec.html' title='TeaDec'>TeaDec</a>&gt; <strong>findAll</strong>(<a href='https://docs.groovy-lang.org/latest/html/api/groovy/lang/Closure.html' title='Closure'>Closure</a> clos)</h4>
+                                <p> クロージャによって対象と判定した宣言のリストを取得します。<br/>
+ クロージャには引数として未加工の識別キーを渡します。<br/>
+ 戻り値に含めるか否か判定を返してください。<br/>
+	 <DL><DT><B>Parameters:</B></DT><DD><code>clos</code> -  未加工の識別キーから対象か否か判定を返すクロージャ</DD></DL><DL><DT><B>Returns:</B></DT><DD>クロージャが対象と判定した宣言のリスト（みつからない場合は空リスト）</DD></DL></p>
                             </li>
                         </ul>
                     

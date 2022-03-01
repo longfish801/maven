@@ -55,7 +55,7 @@ attachment2 &lt;&lt; scriptHandle
 
 def attachment3 = new TpacDec(tag: 'attachment', name: '3')
 def resultHandle = new TpacHandle(tag: 'result')
-resultHandle._ = [ 'Hello, World!', 'Hello, tpac!' ]
+resultHandle.dflt = [ 'Hello, World!', 'Hello, tpac!' ]
 attachment3 &lt;&lt; resultHandle
 
 def mail2 = new Mail('2')
@@ -114,12 +114,12 @@ class Mail implements TeaHandle {
 	@Override
 	void validate(){
 		if (getAt('from') == null) throw new TpacSemanticException('Key &quot;from&quot; must be specified')
-		if (getAt('_') == null) throw new TpacSemanticException('Message must be specified')
+		if (getAt('dflt') == null) throw new TpacSemanticException('Message must be specified')
 	}
 	
 	void appendMessage(String line){
-		if (this.dflt == null) this._ = []
-		this._ &lt;&lt; line
+		if (this.dflt == null) this.dflt = []
+		this.dflt &lt;&lt; line
 	}
 	
 	void reply(Mail mail){
