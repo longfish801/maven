@@ -332,8 +332,9 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                                 <h4><a href='https://docs.groovy-lang.org/latest/html/api/groovy/lang/Closure.html' title='Closure'>Closure</a> <strong>createClosure</strong>()</h4>
                                 <p> クロージャを生成します。<br/>
  クロージャのソースコードを未作成であれば、作成してメンバ変数 codeに格納します。<br/>
- クロージャ生成時、<a href='../../../../io/github/longfish801/clmap/ClmapMap.html' title='ClmapMap'>ClmapMap</a>クラスのメンバ変数 propertiesを
+ クロージャ生成時、<a href='../../../../io/github/longfish801/clmap/Clmap.html' title='Clmap'>Clmap</a>, <a href='../../../../io/github/longfish801/clmap/ClmapMap.html' title='ClmapMap'>ClmapMap</a>クラスのメンバ変数 propertiesを
  大域変数として利用できるよう設定（delegateに設定）します。<br/>
+ 同じ大域変数名がある場合はより下位の <a href='../../../../io/github/longfish801/clmap/ClmapMap.html' title='ClmapMap'>ClmapMap</a>クラスでの値で上書きされます。<br/>
  コンパイル時に Throwableをキャッチしたならば WARNログを出力します。
 	 <DL><DT><B>Returns:</B></DT><DD>クロージャ</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#createCode()'>createCode()</a></DD></DL></p>
                             </li>
@@ -344,7 +345,7 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>createCode</strong>()</h4>
                                 <p> クロージャのソースコードを生成します。
-	 <DL><DT><B>Returns:</B></DT><DD>クロージャのソースコード</DD></DL></p>
+	 <DL><DT><B>Returns:</B></DT><DD>クロージャのソースコード</DD></DL><DL><DT><B>Throws:</B></DT><DD>TpacSemanticException returnハンドルにテキストが指定されていません。</DD><DD>TpacSemanticException returnハンドルの指定が不正です。</DD></DL></p>
                             </li>
                         </ul>
                     

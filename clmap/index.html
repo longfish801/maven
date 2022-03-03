@@ -57,19 +57,17 @@ greeting {
 #&gt; map
 #&gt;&gt; args
 	String name
-#&gt;&gt; prefix
+#&gt;&gt; return
 	String message
 #&gt;&gt; suffix
 #-noon
 	message = message.toUpperCase()
 #&gt;&gt; closure:morning
-	message = clmap.cl('/_/const#_').call('morning', name)
+	message = clmap.cl('/dflt/const#dflt').call('morning', name)
 #&gt;&gt; closure:noon
-	message = clmap.cl('/_/const#_').call('noon', name)
+	message = clmap.cl('/dflt/const#dflt').call('noon', name)
 #&gt;&gt; closure:night
-	message = clmap.cl('/_/const#_').call('night', name)
-#&gt;&gt; return
-	message
+	message = clmap.cl('/dflt/const#dflt').call('night', name)
 </code></pre>
 <p>　上記の clmap文書を読みこんでクロージャを実行し、期待する戻り値を得られるか assertで確認するスクリプトです（src/test/groovy/Sample.groovy）。</p>
 <pre><code>import io.github.longfish801.clmap.ClmapServer
@@ -81,15 +79,15 @@ try {
 	exc.printStackTrace()
 }
 
-clmap.cl('/_/const').properties.titleMap = [
+clmap.cl('/dflt/const').properties.titleMap = [
 	'Kennedy': 0,
 	'Thatcher': 1,
 	'Windsor': 2
 ]
 
-assert 'Good morning, Mr.Kennedy.' == clmap.cl('/_/_#morning').call('Kennedy')
-assert 'HELLO, MRS.THATCHER.' == clmap.cl('/_/_#noon').call('Thatcher')
-assert 'Good night, Ms.Windsor.' == clmap.cl('/_/_#night').call('Windsor')
+assert 'Good morning, Mr.Kennedy.' == clmap.cl('/dflt/dflt#morning').call('Kennedy')
+assert 'HELLO, MRS.THATCHER.' == clmap.cl('/dflt/dflt#noon').call('Thatcher')
+assert 'Good night, Ms.Windsor.' == clmap.cl('/dflt/dflt#night').call('Windsor')
 </code></pre>
 <p>　このサンプルコードは build.gradle内の execSamplesタスクで実行しています。</p>
 <h2><a href="#ドキュメント" id="ドキュメント"></a>ドキュメント</h2>
@@ -124,6 +122,10 @@ dependencies {
 <dd>returnハンドルを追加しました。</dd>
 <dt>0.3.04</dt>
 <dd>ドキュメントはmavenリポジトリに出力するよう修正しました。</dd>
+<dt>0.3.05</dt>
+<dd>宣言に大域変数を設定できるよう対応しました。</dd>
+<dt>0.3.06</dt>
+<dd>returnハンドルに変数の型も記述するよう変更しました。</dd>
 </dl>
 </main>
 

@@ -56,9 +56,10 @@
 <h2><a href="#returnハンドル" id="returnハンドル"></a>returnハンドル</h2>
 <p>　returnハンドルには戻り値を記述します。<br />
 　同じmapハンドルに属す closureハンドルに定義されたクロージャすべてに共通する戻り値を定義します。<br />
+　戻り値は、変数の型と変数名を半角スペースで連結して記述してください。<br />
 　省略できます。closureハンドルに直接return文を記述しても構いません。<br />
 　可能な子要素はありません。<br />
-　デフォルトキーにテキストで指定します。各行は半角カンマ(,)で連結します。これは将来的な拡張に備えたものであり、Groovyの文法上は return文に複数の値を指定することはできません。<br />
+　デフォルトキーにテキストで指定します。Groovyのクロージャは戻り値をひとつしか返さないため、二行目以降は無視します。<br />
 　デフォルトキー以外のキーを指定できません。</p>
 <h2><a href="#decハンドル" id="decハンドル"></a>decハンドル</h2>
 <p>　decハンドルには、クロージャの開始前の内容を記述します。<br />
@@ -95,15 +96,19 @@
 <p>　tpac文書ではハンドルを参照するとき、タグと名前を連結した文字列をパスに使います。<br />
 　clmap記法ではタグを省略したパスを使えます。便宜上、これをクロージャパスと呼びます。<br />
 　clmap宣言および mapハンドルの名前は半角スラッシュ(/)を、末尾の closureハンドルは半角シャープ(#)を区切り文字としてください。<br />
-　ひとつ上位を参照するときは半角ドット二つ(..)を使用してください。名前を省略したハンドルを指すには半角アンダーバー(_)を使用してください。<br />
+　ひとつ上位を参照するときは半角ドット二つ(..)を使用してください。名前を省略したハンドルを指すには文字列&quot;dflt&quot;を使用してください。<br />
 　n個のマップが階層を構成し、その下位にある closureハンドルを参照したい場合、絶対クロージャパスのフォーマットは以下となります。</p>
 <pre><code>/${clmap宣言の名前}/${mapハンドルの名前1}/ ... /${mapハンドルの名前n}#${closureハンドルの名前}
 </code></pre>
 <h2><a href="#大域変数" id="大域変数"></a>大域変数</h2>
-<p>　同じmapハンドルに所属するclosureハンドルによるクロージャは共通の大域変数を使用できます。<br />
-　クロージャを初めて実行する前に、mapハンドルのメンバ変数であるpropertiesマップに格納したキーが大域変数名、値がその変数値となります。<br />
-　大域変数はmapハンドルごとに独立しています。親のmapハンドルの大域変数が子のmapハンドルの大域変数としても使えるということはありません。<br />
-　デフォルトの大域変数として &quot;clmap&quot;が格納されます。値はmapハンドルに相当するClmapMapインスタンスです。</p>
+<p>　宣言（Clmapクラス）とmapハンドル（ClmapMapクラス）には大域変数を設定できます。<br />
+　メンバ変数であるpropertiesマップに格納したキーが大域変数名、値がその変数値となります。</p>
+<ul>
+<li>宣言に設定した大域変数は、その配下にあるすべてのクロージャで使用できます。</li>
+<li>mapハンドルに設定した大域変数は、その mapハンドル配下のクロージャで使用できます。<br />
+デフォルトの大域変数として &quot;clmap&quot;が格納されます。値はmapハンドルに相当するClmapMapインスタンスです。<br />
+大域変数名が同じならば、より下位のmapハンドルで設定されたものが優先されます。</li>
+</ul>
 <h2><a href="#生成されるコード" id="生成されるコード"></a>生成されるコード</h2>
 <p>　clmap文書のサンプルを以下に示します。</p>
 <pre><code>#! clmap:sample
@@ -118,11 +123,11 @@
 #&gt;&gt; args
 	String yourName
 #&gt;&gt; return
-	result
+	String result
 #&gt;&gt; dec
 	String cmnString = 'This is'
 #&gt;&gt; prefix
-	String result = ''
+	result = ''
 #&gt;&gt; suffix
 	result += '!'
 #&gt;&gt; closure:key1
@@ -135,8 +140,9 @@
 String cmnString = 'This is'
 
 { String yourName -&gt;
+	String result
 	println 'BGN HERE'
-	String result = ''
+	result = ''
 	result = StringUtils.trim(&quot;   ${cmnString} ${yourName}.   &quot;)
 	println 'END HERE'
 	result += '!'
