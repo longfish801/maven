@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "c6jk46beivezpkq3wzb7ekxtga"
+      "buildId": "sgits6fhvrc7bbdbik2ay7kemy"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "clmap-0.4.00.jar",
           "url": "clmap-0.4.00.jar",
-          "size": 75743,
-          "sha512": "dbbe86ed66c972ea81f1d589dbaf6beed314a6e5104e1984578026175075882a5d1aa51e95c1408e3168a8879aa7833dec9aff50da5203b8c8e257d9084c16d8",
-          "sha256": "411d0e50c7732bb7168defa68f850ecf49f0f7a71d92bf07d6023a50c034c57a",
-          "sha1": "434b614c595abec006225b069565d3f74005661f",
-          "md5": "a7baa7197808afe1dba6b03a71952f18"
+          "size": 75924,
+          "sha512": "515e1c91f53107bc1763a2d66fb92b37efc0379b3500a3aa42a024d19ce49f76ef155c9d8150b77c96524c179d4dad32c4a074cb67531e43434ca764774eb6e7",
+          "sha256": "64afaf899c4ad59199c97b9c6006c41ecb92447f38f18174edd671034867b098",
+          "sha1": "43a0573ef5040d8bb281cfca5accae08efb37113",
+          "md5": "2944a69a0d3717fa7e68bb70cf33f13e"
         }
       ]
     },
@@ -86,11 +86,11 @@
         {
           "name": "clmap-0.4.00.jar",
           "url": "clmap-0.4.00.jar",
-          "size": 75743,
-          "sha512": "dbbe86ed66c972ea81f1d589dbaf6beed314a6e5104e1984578026175075882a5d1aa51e95c1408e3168a8879aa7833dec9aff50da5203b8c8e257d9084c16d8",
-          "sha256": "411d0e50c7732bb7168defa68f850ecf49f0f7a71d92bf07d6023a50c034c57a",
-          "sha1": "434b614c595abec006225b069565d3f74005661f",
-          "md5": "a7baa7197808afe1dba6b03a71952f18"
+          "size": 75924,
+          "sha512": "515e1c91f53107bc1763a2d66fb92b37efc0379b3500a3aa42a024d19ce49f76ef155c9d8150b77c96524c179d4dad32c4a074cb67531e43434ca764774eb6e7",
+          "sha256": "64afaf899c4ad59199c97b9c6006c41ecb92447f38f18174edd671034867b098",
+          "sha1": "43a0573ef5040d8bb281cfca5accae08efb37113",
+          "md5": "2944a69a0d3717fa7e68bb70cf33f13e"
         }
       ]
     }

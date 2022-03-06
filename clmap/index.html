@@ -41,8 +41,8 @@ clmap記法は <a href="/tpac/">tpacライブラリ</a>を利用したDSLです�
 	String time
 	String name
 #&gt;&gt; closure
-	greet = clmap.solvePath('config:messages').config().greeting[time]
-	title = clmap.solvePath('data:title').dflt[titleMap[name]]
+	greet = clmap.solve('config:messages').config().greeting[time]
+	title = clmap.solve('data:title').dflt[titleMap[name]]
 	return &quot;${greet}, ${title}${name}.&quot;
 #&gt;&gt; data:title
 Mr.
@@ -126,6 +126,8 @@ dependencies {
 <dd>宣言に大域変数を設定できるよう対応しました。</dd>
 <dt>0.3.06</dt>
 <dd>returnハンドルに変数の型も記述するよう変更しました。</dd>
+<dt>0.3.07</dt>
+<dd>tpac 0.3.13に対応しました。</dd>
 </dl>
 </main>
 
