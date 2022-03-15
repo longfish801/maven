@@ -42,7 +42,8 @@ try {
 	BLtxt bltxt = new BLtxt(new File('src/test/resources/target.txt'))
 	assert bltxt.toXml() == new File('src/test/resources/result.xml').getText('UTF-8')
 } catch (exc){
-	exc.printStackTrace()
+	println &quot;Failed to convert: ${exc.message}&quot;
+	throw exc
 }
 </code></pre>
 <p>　以下は変換対象のテキストです（src/test/resources/target.txt）。</p>
@@ -119,6 +120,8 @@ dependencies {
 <dl>
 <dt>0.2.01</dt>
 <dd>ドキュメントはmavenリポジトリに出力するよう修正しました。</dd>
+<dt>0.2.02</dt>
+<dd>BLtxtクラスのgrepNodesメソッドについて引数に対応する値がないときの戻り値を変更しました。</dd>
 </dl>
 </main>
 

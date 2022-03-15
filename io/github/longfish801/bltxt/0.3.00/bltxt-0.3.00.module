@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.7",
-      "buildId": "wrsueg75zndqfj4nk2ar63chiu"
+      "buildId": "wv6jq7rd5rgwtbtd3avvya6o7i"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "bltxt-0.3.00.jar",
           "url": "bltxt-0.3.00.jar",
-          "size": 107360,
-          "sha512": "f71b7fa16f0a171b9f2c2488e5d08b22aecd84aa21c5fcedb3bc62a19e636171088bf09af2f10f2577fcce7ac547d3a95b9132ff3e466c741f40b48cb3c2c380",
-          "sha256": "0e0f4b3b41337d77a135ce373f5785b723c31a1eb57572872e2170c3b4a82cdf",
-          "sha1": "dc3bbd08a75adc4550ae654e47f21111dec8b907",
-          "md5": "6e90351021fa45c35c5190835ebb59e6"
+          "size": 107409,
+          "sha512": "bb2d9c2174a97e715eddd05b63353584eb6a4aa94c21f0d6ab9659d9ce3b9ea56bd7bbdcb09cf83a4647018cd0ce7774e4c9d18461233b075bc2c733feb7a228",
+          "sha256": "8e840e01d905ef5b742f6215324be6a765a3a7d335765e5c55604ff6930c8bda",
+          "sha1": "a5e9a32d07c4f0a74263f23163a0744479e9e25a",
+          "md5": "bbd7ceb82d4da4a01abe4442b9e9573b"
         }
       ]
     },
@@ -72,11 +72,11 @@
         {
           "name": "bltxt-0.3.00.jar",
           "url": "bltxt-0.3.00.jar",
-          "size": 107360,
-          "sha512": "f71b7fa16f0a171b9f2c2488e5d08b22aecd84aa21c5fcedb3bc62a19e636171088bf09af2f10f2577fcce7ac547d3a95b9132ff3e466c741f40b48cb3c2c380",
-          "sha256": "0e0f4b3b41337d77a135ce373f5785b723c31a1eb57572872e2170c3b4a82cdf",
-          "sha1": "dc3bbd08a75adc4550ae654e47f21111dec8b907",
-          "md5": "6e90351021fa45c35c5190835ebb59e6"
+          "size": 107409,
+          "sha512": "bb2d9c2174a97e715eddd05b63353584eb6a4aa94c21f0d6ab9659d9ce3b9ea56bd7bbdcb09cf83a4647018cd0ce7774e4c9d18461233b075bc2c733feb7a228",
+          "sha256": "8e840e01d905ef5b742f6215324be6a765a3a7d335765e5c55604ff6930c8bda",
+          "sha1": "a5e9a32d07c4f0a74263f23163a0744479e9e25a",
+          "md5": "bbd7ceb82d4da4a01abe4442b9e9573b"
         }
       ]
     }
