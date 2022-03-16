@@ -97,7 +97,8 @@ try {
 	assert html == switem.run(text).normalize()
 	assert tpac == switem.parsedWriter.toString().normalize()
 } catch (exc){
-	exc.printStackTrace()
+	println &quot;Failed to run: ${exc.message}&quot;
+	throw exc
 }
 </code></pre>
 <p>　switem文書による変換の対象となるテキストです（src/test/resources/target.md）。</p>
