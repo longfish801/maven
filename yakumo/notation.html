@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/maven/asset/style.css">
+<title> yakumo記法</title>
+</head>
+<body class="container">
+
+<div class="row justify-content-center">
+<main class="col-lg-8">
+<h1><a href="#yakumo記法" id="yakumo記法"></a>yakumo記法</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#改行と段落">改行と段落</a></li>
+<li><a href="#html文法上の特殊文字の扱い">HTML文法上の特殊文字の扱い</a></li>
+<li><a href="#タイトルサブタイトル公開日著者名">タイトル、サブタイトル、公開日、著者名</a></li>
+<li><a href="#ブロック要素">ブロック要素</a>
+<ul>
+<li><a href="#見出し">見出し</a></li>
+<li><a href="#箇条書き">箇条書き</a></li>
+<li><a href="#コラム">コラム</a></li>
+<li><a href="#注意">注意</a></li>
+<li><a href="#引用引用元">引用、引用元</a></li>
+<li><a href="#コード">コード</a></li>
+<li><a href="#画像">画像</a></li>
+<li><a href="#註註記">註、註記</a></li>
+<li><a href="#マスキング">マスキング</a></li>
+</ul>
+</li>
+<li><a href="#インライン要素">インライン要素</a>
+<ul>
+<li><a href="#リンク">リンク</a></li>
+<li><a href="#重要">重要</a></li>
+<li><a href="#補足">補足</a></li>
+<li><a href="#訂正">訂正</a></li>
+<li><a href="#縦中横">縦中横</a></li>
+<li><a href="#傍点">傍点</a></li>
+<li><a href="#ルビ">ルビ</a></li>
+</ul>
+</li>
+</ul>
+<h2><a href="#概要" id="概要"></a>概要</h2>
+<p>　yakumoにはサンプルとして以下の変換資材を用意しています。</p>
+<dl>
+<dt>fyakumo</dt>
+<dd>yakumo記法に従うテキストをbltxt記法に変換します。</dd>
+<dt>thtml</dt>
+<dd>bltxt文書をHTML5に変換します。</dd>
+</dl>
+<p>　以下、どのようにyakumo記法をbltxt記法に、そしてbltxt記法をHTMLへ変換するか説明します。</p>
+<h2><a href="#改行と段落" id="改行と段落"></a>改行と段落</h2>
+<p>　連続する行をひとつの段落とみなします。<br />
+　空行が段落区切りとなります。<br />
+　空行が複数あってもひとつの空行と同じ扱いになります。</p>
+<p>　以下のテキストがあったとします。</p>
+<pre><code>　おいしいカレーを作るには隠し味が大切です。
+　隠し味にもいろいろなものがあります。
+
+
+　一般家庭で良く使われる隠し味を試してみましょう。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　改行は brタグを挿入します。段落は pタグで囲みます。</p>
+<pre><code>&lt;p&gt;　おいしいカレーを作るには隠し味が大切です。&lt;br/&gt;
+　隠し味にもいろいろなものがあります。&lt;/p&gt;
+
+&lt;p&gt;　一般家庭で良く使われる隠し味を試してみましょう。&lt;/p&gt;
+</code></pre>
+<p>　以下の行範囲タグの変換時はbrタグのみ挿入します。</p>
+<ul>
+<li>見出し、小見出し</li>
+<li>箇条書き</li>
+</ul>
+<p>　以下の行範囲タグの変換時はbrタグ、pタグを付与しません。</p>
+<ul>
+<li>整形済</li>
+<li>コード</li>
+</ul>
+<h2><a href="#html文法上の特殊文字の扱い" id="html文法上の特殊文字の扱い"></a>HTML文法上の特殊文字の扱い</h2>
+<p>　HTML文法上の特殊文字はそのまま使うことができます。</p>
+<pre><code>　もし、あのとき&quot;あれ&quot;があったなら。
+　極上の&lt;カレー&gt;になっていたかもしれない。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　HTML文法上の特殊文字は実体参照に置き換えます。</p>
+<pre><code>&lt;p&gt;　もし、あのとき&amp;quot;あれ&amp;quot;があったなら。&lt;br/&gt;
+　極上の&amp;lt;カレー&amp;gt;になっていたかもしれない。&lt;/p&gt;
+</code></pre>
+<h2><a href="#タイトルサブタイトル公開日著者名" id="タイトルサブタイトル公開日著者名"></a>タイトル、サブタイトル、公開日、著者名</h2>
+<p>　タイトル、サブタイトル、公開日、著者名は、含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃タイトル】円周率について
+【＃サブタイトル】著名な語呂合わせ
+【＃公開日】2022.02.03
+【＃著者名】山田太郎
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　タイトルはheaderタグ内のtitleタグにも記述します。<br />
+　タイトルの指定がないときはデフォルトで「（無題）」とします。</p>
+<pre><code>&lt;header class=&quot;row px-3 py-5&quot;&gt;
+&lt;div class=&quot;col-lg-8&quot;&gt;
+&lt;h1&gt;円周率について&lt;/h1&gt;
+&lt;div id=&quot;subtitle&quot;&gt;著名な語呂合わせ&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-lg-4 text-end&quot;&gt;
+&lt;div id=&quot;pubdate&quot;&gt;公開日 2022.02.03&lt;/div&gt;
+&lt;div id=&quot;author&quot;&gt;山田太郎&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;&lt;!-- endo of row --&gt;
+</code></pre>
+<h2><a href="#ブロック要素" id="ブロック要素"></a>ブロック要素</h2>
+<h3><a href="#見出し" id="見出し"></a>見出し</h3>
+<p>　yakumo記法の糖衣構文で見出しを表現できます。<br />
+　行頭に「■」「□」「▼」があれば、見出しとみなします。</p>
+<pre><code>■おいしいカレーの作り方
+□材料の準備
+▼牛の飼い方
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【＝見出し】おいしいカレーの作り方
+【＝見出し：2】材料の準備
+【＝見出し：3】牛の飼い方
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　タイトルを h1とする関係上、レベル1が h2、レベル2が h3……となります。<br />
+　目次からページ内リンクで移動できるよう、aタグを挿入します。<br />
+　name属性は、bltxt文書を XML化したときの snum属性を利用します。</p>
+<pre><code>&lt;h2&gt;&lt;a name=&quot;1&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;a name=&quot;2&quot;&gt;材料の準備&lt;/a&gt;&lt;/h3&gt;
+&lt;h4&gt;&lt;a name=&quot;3&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/h4&gt;
+</code></pre>
+<p>　併せて目次を生成します。</p>
+<pre><code>&lt;nav class=&quot;col-lg-4&quot;&gt;
+&lt;ul class=&quot;nav flex-column&quot;&gt;
+&lt;li class=&quot;nav-item toc_h2&quot;&gt;&lt;a href=&quot;#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc_h3&quot;&gt;&lt;a href=&quot;#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc_h4&quot;&gt;&lt;a href=&quot;#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<h3><a href="#箇条書き" id="箇条書き"></a>箇条書き</h3>
+<p>　yakumo記法の糖衣構文で箇条書きを表現できます。<br />
+　一文字目に中黒（・）があれば、箇条書きとみなします。<br />
+　半角空白でインデントすることで、複数行を記述できます。<br />
+　項目の間に空行があっても無視します。<br />
+　箇条書きを終了するには、空行の後に中黒始まりではない行を記述してください。</p>
+<pre><code>・じゃがいも
+・ニンジンを、
+  二本。
+
+・玉ねぎ
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－箇条書き】
+【－項目】
+じゃがいも
+【項目－】
+【－項目】
+ニンジンを、
+二本。
+【項目－】
+【－項目】
+玉ねぎ
+【項目－】
+【箇条書き－】
+</code></pre>
+<p>　入れ子にすることもできます。</p>
+<pre><code>・じゃがいも
+・ニンジン
+・玉ねぎ
+  ・刻むときは注意。
+    涙がでます。
+・カレー粉
+  ・ジャワカレー
+  ・バーモンドカレー
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－箇条書き】
+【－項目】
+じゃがいも
+【項目－】
+【－項目】
+ニンジン
+【項目－】
+【－項目】
+玉ねぎ
+【－箇条書き】
+【－項目】
+刻むときは注意。
+涙がでます。
+【項目－】
+【箇条書き－】
+【項目－】
+【－項目】
+カレー粉
+【－箇条書き】
+【－項目】
+ジャワカレー
+【項目－】
+【－項目】
+バーモンドカレー
+【項目－】
+【箇条書き－】
+【項目－】
+【箇条書き－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;じゃがいも&lt;/li&gt;
+&lt;li&gt;ニンジン&lt;/li&gt;
+&lt;li&gt;玉ねぎ
+	&lt;ul&gt;
+	&lt;li&gt;刻むときは注意。&lt;br/&gt;
+	涙がでます。&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;カレー粉
+	&lt;ul&gt;
+	&lt;li&gt;ジャワカレー&lt;/li&gt;
+	&lt;li&gt;バーモンドカレー&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3><a href="#コラム" id="コラム"></a>コラム</h3>
+<p>　行範囲タグでコラムを表現できます。</p>
+<pre><code>【－コラム】
+　日本人の四割は血液型がＯ型です。
+【コラム－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　asideタグ（class属性値は&quot;column&quot;）を生成します。</p>
+<pre><code>&lt;aside class=&quot;panel panel-primary&quot;&gt;
+&lt;p&gt;　日本人の四割は血液型がＯ型です。&lt;/p&gt;
+&lt;/aside&gt;
+</code></pre>
+<p>　第一属性に小見出しを指定することもできます。</p>
+<pre><code>【－コラム：８月３１日はなんの日？】
+　８月３１日は野菜の日です。
+　野菜を食べましょう。
+【コラム－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;aside class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;
+&lt;header class=&quot;alert-heading&quot;&gt;&lt;i class=&quot;bi bi-info-circle-fill&quot;&gt;&lt;/i&gt; ８月３１日はなんの日？&lt;/header&gt;
+&lt;p&gt;　８月３１日は野菜の日です。&lt;br/&gt;
+　野菜を食べましょう。&lt;/p&gt;
+&lt;/aside&gt;
+</code></pre>
+<h3><a href="#注意" id="注意"></a>注意</h3>
+<p>　行範囲タグで注意喚起のためのコラムを表現できます。<br />
+　第一属性に小見出しを指定することもできます。</p>
+<pre><code>【－注意：中火とは】
+　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。
+【注意－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　asideタグ（class属性値は&quot;attention&quot;）を生成します。</p>
+<pre><code>&lt;aside class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;
+&lt;header class=&quot;alert-heading&quot;&gt;&lt;i class=&quot;bi bi-exclamation-triangle-fill&quot;&gt;&lt;/i&gt; 中火とは&lt;/header&gt;
+&lt;p&gt;　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。&lt;/p&gt;
+&lt;/aside&gt;
+</code></pre>
+<h3><a href="#引用引用元" id="引用引用元"></a>引用、引用元</h3>
+<p>　yakumo記法の糖衣構文で引用を表現できます。<br />
+　必要であれば引用元を行タグで記述します。</p>
+<pre><code>=====
+　山路を登りながら、こう考えた。
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。
+【＝引用元】夏目漱石『草枕』
+=====
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－引用】
+　山路を登りながら、こう考えた。
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。
+【＝引用元】夏目漱石『草枕』
+【引用－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;blockquote&gt;
+&lt;p&gt;　山路を登りながら、こう考えた。&lt;br/&gt;
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。&lt;/p&gt;
+&lt;footer&gt;&lt;cite&gt;夏目漱石『草枕』&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+</code></pre>
+<h3><a href="#コード" id="コード"></a>コード</h3>
+<p>　yakumo記法の糖衣構文でコードを表現できます。<br />
+　５つの半角ハイフンを区切り行として、コードを記述できます。</p>
+<pre><code>-----
+println &quot;Hello, World!&quot;;
+println &quot;This is sample code of how to hello to all of the world, which is executed &quot; + Date().format(&quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&quot;);
+-----
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－コード】
+println &quot;Hello, World!&quot;;
+println &quot;This is sample code of how to hello to all of the world, which is executed &quot; + Date().format(&quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&quot;);
+【コード－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　preタグを生成します。</p>
+<pre><code>&lt;pre&gt;
+println &amp;quot;Hello, World!&amp;quot;;
+println &amp;quot;This is sample code of how to hello to all of the world, which is executed &amp;quot; + Date().format(&amp;quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&amp;quot;);
+&lt;/pre&gt;
+</code></pre>
+<h3><a href="#画像" id="画像"></a>画像</h3>
+<p>　行タグで画像を表現できます。<br />
+　属性に画像の説明、画像ファイルへのパスを指定してください。</p>
+<pre><code>【＝画像：猫ちゃん：cutecat.png】
+</code></pre>
+<p>　画像にキャプションを付与することもできます。</p>
+<pre><code>【＝画像：猫ちゃん：cutecat.png】猫ちゃん、可愛い～
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;figure class=&quot;text-center&quot;&gt;
+&lt;img src=&quot;cutecat.png&quot; class=&quot;img-fluid&quot; alt=&quot;猫ちゃん&quot;&gt;
+&lt;figcaption&gt;猫ちゃん、可愛い～&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+<h3><a href="#註註記" id="註註記"></a>註、註記</h3>
+<p>　註は文中タグで、注記は含意範囲タグで記述します。<br />
+　一番目の属性に、紐付けのため共通する文字列を指定してください。</p>
+<pre><code>　XML【註：XML】をHTML【註：HTML】に変換します。
+
+【＊註記：XML】
+　eXtensible Markup Languageの略です。
+【註記＊】
+【＊註記：HTML】
+　Hyper Text Markup Languageの略です。
+【註記＊】
+</code></pre>
+<p>　HTML変換時に通番をふります。</p>
+<pre><code>&lt;p&gt;　XML&lt;sup&gt;&lt;a id=&quot;f1&quot; href=&quot;#t1&quot;&gt;*1&lt;/a&gt;&lt;/sup&gt;をHTML&lt;sup&gt;&lt;a id=&quot;f2&quot; href=&quot;#t2&quot;&gt;*2&lt;/a&gt;&lt;/sup&gt;に変換します。&lt;/p&gt;
+
+&lt;dl class=&quot;note&quot;&gt;
+&lt;dt&gt;&lt;a name=&quot;t1&quot; href=&quot;#f1&quot;&gt;[*1]&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;　eXtensible Markup Languageの略です。&lt;/dd&gt;
+&lt;dt&gt;&lt;a name=&quot;t2&quot; href=&quot;#f2&quot;&gt;[*2]&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;　Hyper Text Markup Languageの略です。&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h3><a href="#マスキング" id="マスキング"></a>マスキング</h3>
+<p>　yakumo記法の糖衣構文で、switemスクリプトによる整形の対象外としたい文章を表現できます。</p>
+<pre><code>【－マスキング】
+・帰りに綿棒を買ってくること。
+【マスキング－】
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。<br />
+　本来なら箇条書きとして整形されるはずですが、マスキングしているため処理の対象外となっています。<br />
+　行範囲タグは削除されることにご注意ください。</p>
+<pre><code>・帰りに綿棒を買ってくること。
+</code></pre>
+<h2><a href="#インライン要素" id="インライン要素"></a>インライン要素</h2>
+<h3><a href="#リンク" id="リンク"></a>リンク</h3>
+<p>　yakumo記法の糖衣構文でリンクを表現できます。<br />
+　一番目の属性にリンクとして表示する文字列を、二番目の属性にリンク先アドレスを指定してください。<br />
+　一番目の属性のみ指定した場合は、表示する文字列とリンク先アドレスを同じ値とみなします。</p>
+<pre><code>　詳しくは【リンク：ネット検索：https://www.google.com/】してください。
+　【リンク：https://www.google.com/】でネット検索できます。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　詳しくは【｜リンク：https://www.google.com/】ネット検索【リンク｜】してください。
+　【｜リンク：https://www.google.com/】https://www.google.com/【リンク｜】でネット検索できます。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　詳しくは&lt;a href=&quot;https://www.google.com/&quot;&gt;ネット検索&lt;/a&gt;してください。&lt;br/&gt;
+　&lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;でネット検索できます。&lt;/p&gt;
+</code></pre>
+<p>　また、URLのみが記述された行も変換します。</p>
+<pre><code>https://www.google.com/
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【｜リンク：https://www.google.com/】https://www.google.com/【リンク｜】
+</code></pre>
+<h3><a href="#重要" id="重要"></a>重要</h3>
+<p>　yakumo記法の糖衣構文で重要な記述を表現できます。<br />
+　重要な箇所を属性に指定します。</p>
+<pre><code>　間違えて【重要：自爆スイッチ】を押さないでください。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　間違えて【｜重要】自爆スイッチ【重要｜】を押さないでください。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　間違えて&lt;strong&gt;自爆スイッチ&lt;/strong&gt;を押さないでください。&lt;/p&gt;
+</code></pre>
+<h3><a href="#補足" id="補足"></a>補足</h3>
+<p>　yakumo記法の糖衣構文で補足を表現できます。<br />
+　補足する箇所を属性に指定します。</p>
+<pre><code>　もちろん本当【補足：かもしれない】ですよ。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　もちろん本当【｜補足】かもしれない【補足｜】ですよ。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　もちろん本当&lt;small&gt;かもしれない&lt;/small&gt;ですよ。&lt;/p&gt;
+</code></pre>
+<h3><a href="#訂正" id="訂正"></a>訂正</h3>
+<p>　yakumo記法の糖衣構文で訂正を表現できます。<br />
+　訂正する対象を属性に指定します。</p>
+<pre><code>　富士山の標高は【訂正：３７７７メートル】３７７６メートルです。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　富士山の標高は【｜訂正】３７７７メートル【訂正｜】３７７６メートルです。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　sタグを生成します。</p>
+<pre><code>&lt;p&gt;　富士山の標高は&lt;s&gt;３７７７メートル&lt;/s&gt;３７７６メートルです。&lt;/p&gt;
+</code></pre>
+<h3><a href="#縦中横" id="縦中横"></a>縦中横</h3>
+<p>　yakumo記法の糖衣構文で縦中横を表現できます。<br />
+　縦中横にする対象を属性に指定します。</p>
+<pre><code>　シェイクスピア全集の第【縦中横：10】巻に記述されています。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　シェイクスピア全集の第【｜縦中横】10【縦中横｜】巻に記述されています。
+</code></pre>
+<p>　HTML5は縦書きや縦中横には対応していないため、HTMLタグへの変換はしません。</p>
+<pre><code>&lt;p&gt;　シェイクスピア全集の第10巻に記述されています。&lt;/p&gt;
+</code></pre>
+<h3><a href="#傍点" id="傍点"></a>傍点</h3>
+<p>　yakumo記法の糖衣構文で傍点を表現できます。<br />
+　傍点を打つ対象を属性に指定します。</p>
+<pre><code>　まだ【傍点：午前三時】じゃないか。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　まだ【｜傍点】午前三時【傍点｜】じゃないか。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　傍点のためのHTMLタグは無いため、spanタグを利用しています。</p>
+<pre><code>&lt;p&gt;　まだ&lt;span class=&quot;dot&quot;&gt;午前三時&lt;/span&gt;じゃないか。&lt;/p&gt;
+</code></pre>
+<h3><a href="#ルビ" id="ルビ"></a>ルビ</h3>
+<p>　yakumo記法の糖衣構文でルビを表現できます。<br />
+　一番目の属性にルビをふる対象を、二番目の属性にルビを指定します。</p>
+<pre><code>　【ルビ：出納：すいとう】係は言った。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　【｜ルビ：すいとう】出納【ルビ｜】係は言った。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　&lt;ruby&gt;出納&lt;rp&gt;［&lt;/rp&gt;&lt;rt&gt;すいとう&lt;/rt&gt;&lt;rp&gt;］&lt;/rp&gt;&lt;/ruby&gt;係は言った。&lt;/p&gt;
+</code></pre>
+</main>
+
+</div><!-- end of row -->
+
+<footer class="row justify-content-center p-3">
+<nav class="col-lg-8 text-end">
+<button type="button" class="btn btn-primary" onclick="backPage();">戻る</button>
+</nav>
+</footer><!-- end of row -->
+
+<script src="/maven/asset/script.js" charset="uft-8"></script>
+</body>
+</html>

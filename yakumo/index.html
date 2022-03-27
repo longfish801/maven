@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/maven/asset/style.css">
+<title> yakumo</title>
+</head>
+<body class="container">
+
+<div class="row justify-content-center">
+<main class="col-lg-8">
+<h1><a href="#yakumo" id="yakumo"></a>yakumo</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#特徴">特徴</a></li>
+<li><a href="#サンプルコード">サンプルコード</a></li>
+<li><a href="#ドキュメント">ドキュメント</a></li>
+<li><a href="#githubリポジトリ">GitHubリポジトリ</a></li>
+<li><a href="#mavenリポジトリ">Mavenリポジトリ</a></li>
+</ul>
+<h2><a href="#概要" id="概要"></a>概要</h2>
+<p>　特定の形式で表現されたテキストを他の形式へ変換します。<br />
+　変換元となるテキストは独自の形式で構いません。</p>
+<p>　個人が学習のために開発したものです。<br />
+　故障対応や問合せ回答などのサポートはしていません。</p>
+<h2><a href="#特徴" id="特徴"></a>特徴</h2>
+<ul>
+<li>独自の形式のテキストを、いったん階層構造のある文書に変換します。<br />
+そこからHTMLなど目的の形式に変換して出力します。<br />
+変換のためのスクリプトはGroovy DSLを利用します。</li>
+<li>テキストをHTMLに変換するためのサンプル資材が準備されています。</li>
+</ul>
+<p>　このライブラリの名称はマークアップに約物を利用することに由来しています。</p>
+<h2><a href="#サンプルコード" id="サンプルコード"></a>サンプルコード</h2>
+<p>　以下はyakumo記法で記述されたテキストをHTMLへ変換するサンプルスクリプトです（src/test/groovy/Sample.groovy）。</p>
+<pre><code>import io.github.longfish801.yakumo.Yakumo
+
+try {
+	def writer = new StringWriter()
+	def yakumo = new Yakumo()
+	yakumo.load { material 'fyakumo', 'thtml' }
+	yakumo.script {
+		targets {
+			target 'target', new File('src/test/resources/target.txt'), 'fyakumo'
+		}
+		results {
+			result 'target', writer, 'thtml'
+		}
+	}
+	assert writer.toString().normalize() == new File('src/test/resources/result.html').text
+	assert yakumo.script.results.target.fprint.warns.size() == 0
+} catch (exc){
+	println &quot;Failed to convert: message=${exc.message}&quot;
+	throw exc
+}
+</code></pre>
+<p>　変換対象は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/target.txt">target.txt</a> です。<br />
+　変換結果は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/result.html">result.html</a> です。</p>
+<p>　このサンプルコードは build.gradle内の execSamplesタスクで実行しています。</p>
+<h2><a href="#ドキュメント" id="ドキュメント"></a>ドキュメント</h2>
+<ul>
+<li><a href="groovydoc/">Groovydoc</a></li>
+<li><a href="howto.html">使い方</a></li>
+<li><a href="notation.html">yakumo記法</a></li>
+</ul>
+<h2><a href="#githubリポジトリ" id="githubリポジトリ"></a>GitHubリポジトリ</h2>
+<ul>
+<li><a href="https://github.com/longfish801/yakumo">yakumo</a></li>
+</ul>
+<h2><a href="#mavenリポジトリ" id="mavenリポジトリ"></a>Mavenリポジトリ</h2>
+<p>　本ライブラリの JARファイルを <a href="https://github.com/longfish801/maven">GitHub上の Mavenリポジトリ</a>で公開しています。<br />
+　build.gradleの記述例を以下に示します。</p>
+<pre><code>repositories {
+	mavenCentral()
+	maven { url 'https://longfish801.github.io/maven/' }
+}
+
+dependencies {
+	implementation group: 'io.github.longfish801', name: 'yakumo', version: '0.3.00'
+}
+</code></pre>
+</main>
+
+</div><!-- end of row -->
+
+<footer class="row justify-content-center p-3">
+<nav class="col-lg-8 text-end">
+<button type="button" class="btn btn-primary" onclick="backPage();">戻る</button>
+</nav>
+</footer><!-- end of row -->
+
+<script src="/maven/asset/script.js" charset="uft-8"></script>
+</body>
+</html>
