@@ -21,7 +21,7 @@ task publishDoc(dependsOn: [generateHtml]){
 	doLast {
 		copy {
 			from 'build/html/index.html'
-			into "./"
+			into "./docs/"
 		}
 	}
 }
