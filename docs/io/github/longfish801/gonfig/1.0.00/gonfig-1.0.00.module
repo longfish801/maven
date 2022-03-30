@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "gonfig",
+    "version": "1.0.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "gonfig-1.0.00.jar",
+          "url": "gonfig-1.0.00.jar",
+          "size": 16927,
+          "sha512": "3ed05778dfecc6c46f4b2ebefe5b3a7c41d31af302e21b6838a7aa2117c5d869cd47eb94cbd2c1eb4eeacf2c6430dc393bf469b637f365d81eb083cd042e5c50",
+          "sha256": "ec391ac19bd221b226d046df5dcfba1ba7c66a6f4598d83366416b76de06527c",
+          "sha1": "773d58262307fd580217005940e90aa887284346",
+          "md5": "7d60746296bf4f87859833bedf6070cf"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.6"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.8.1"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gonfig-1.0.00.jar",
+          "url": "gonfig-1.0.00.jar",
+          "size": 16927,
+          "sha512": "3ed05778dfecc6c46f4b2ebefe5b3a7c41d31af302e21b6838a7aa2117c5d869cd47eb94cbd2c1eb4eeacf2c6430dc393bf469b637f365d81eb083cd042e5c50",
+          "sha256": "ec391ac19bd221b226d046df5dcfba1ba7c66a6f4598d83366416b76de06527c",
+          "sha1": "773d58262307fd580217005940e90aa887284346",
+          "md5": "7d60746296bf4f87859833bedf6070cf"
+        }
+      ]
+    }
+  ]
+}
