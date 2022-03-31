@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "tpac",
+    "version": "1.0.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "tpac-1.0.00.jar",
+          "url": "tpac-1.0.00.jar",
+          "size": 176088,
+          "sha512": "2ff1b1a8f5504821a05ef975828a9b770fdcdf8bd60802f0d7017c05259975b5178c62e6b1443fc3cc3fe1049d690eaf45a357ea8a603076d495cd21bdeea73b",
+          "sha256": "620eb86e052b74a272078f91f59a8940337e612cd490fc53db82d3151b075b87",
+          "sha1": "8fd39a39b361abd2d367abc1adcc39ab3f4e125e",
+          "md5": "81975cd1bb841294b38c98ad54b692fc"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.6"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tpac-1.0.00.jar",
+          "url": "tpac-1.0.00.jar",
+          "size": 176088,
+          "sha512": "2ff1b1a8f5504821a05ef975828a9b770fdcdf8bd60802f0d7017c05259975b5178c62e6b1443fc3cc3fe1049d690eaf45a357ea8a603076d495cd21bdeea73b",
+          "sha256": "620eb86e052b74a272078f91f59a8940337e612cd490fc53db82d3151b075b87",
+          "sha1": "8fd39a39b361abd2d367abc1adcc39ab3f4e125e",
+          "md5": "81975cd1bb841294b38c98ad54b692fc"
+        }
+      ]
+    }
+  ]
+}
