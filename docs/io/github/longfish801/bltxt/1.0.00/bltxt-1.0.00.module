@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "bltxt",
+    "version": "1.0.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "bltxt-1.0.00.jar",
+          "url": "bltxt-1.0.00.jar",
+          "size": 107377,
+          "sha512": "55fcac4fad78ed2d47cfcda109c305117498b197cd60f99694f61dde9bb60554a0e5ebe35bbd9a52cc54c5122f4c6781f0f3ba6d8b81d3ea7e81b5fd3c2a3331",
+          "sha256": "034b90959756f09b2bfd382f96a74f269f7f20f93e9127844395e3c6725f4df7",
+          "sha1": "515e98f49e013f9b6d58a77403f10f105d008f4d",
+          "md5": "154dd31bc5a0dbbd67e919176668cd40"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bltxt-1.0.00.jar",
+          "url": "bltxt-1.0.00.jar",
+          "size": 107377,
+          "sha512": "55fcac4fad78ed2d47cfcda109c305117498b197cd60f99694f61dde9bb60554a0e5ebe35bbd9a52cc54c5122f4c6781f0f3ba6d8b81d3ea7e81b5fd3c2a3331",
+          "sha256": "034b90959756f09b2bfd382f96a74f269f7f20f93e9127844395e3c6725f4df7",
+          "sha1": "515e98f49e013f9b6d58a77403f10f105d008f4d",
+          "md5": "154dd31bc5a0dbbd67e919176668cd40"
+        }
+      ]
+    }
+  ]
+}
