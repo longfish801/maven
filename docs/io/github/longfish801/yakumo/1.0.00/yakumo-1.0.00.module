@@ -1,0 +1,139 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "yakumo",
+    "version": "1.0.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "yakumo-1.0.00.jar",
+          "url": "yakumo-1.0.00.jar",
+          "size": 79386,
+          "sha512": "2731b6ed9275451719d611ea7e0e44637afe3281d4f4e5a4b3fbcd2d642cb40b5bfed325c3826de66fbe81e4cbac35ed2f103db9bfa1646f262b42120a5690be",
+          "sha256": "44d766ecb6383074751d3859134430b5a81509fb34d54ce436f66b2598646e3e",
+          "sha1": "86e167e3cbdfb4ebffaf8f50972d2f1343f2a982",
+          "md5": "fd4e88563d4124422145dc1b2f5344b7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "bltxt",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "clmap",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "switem",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "tpac",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.8.1"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.9"
+          }
+        },
+        {
+          "group": "org.codehaus.gpars",
+          "module": "gpars",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yakumo-1.0.00.jar",
+          "url": "yakumo-1.0.00.jar",
+          "size": 79386,
+          "sha512": "2731b6ed9275451719d611ea7e0e44637afe3281d4f4e5a4b3fbcd2d642cb40b5bfed325c3826de66fbe81e4cbac35ed2f103db9bfa1646f262b42120a5690be",
+          "sha256": "44d766ecb6383074751d3859134430b5a81509fb34d54ce436f66b2598646e3e",
+          "sha1": "86e167e3cbdfb4ebffaf8f50972d2f1343f2a982",
+          "md5": "fd4e88563d4124422145dc1b2f5344b7"
+        }
+      ]
+    }
+  ]
+}
