@@ -1,0 +1,97 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "clmap",
+    "version": "1.0.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "clmap-1.0.00.jar",
+          "url": "clmap-1.0.00.jar",
+          "size": 76091,
+          "sha512": "a6b888a6f1c49220ae3b47bbaf5a4bd08f5e158eb7d24ea6a41a0dab429e178b572f60fd028537fe4153676f26c5d465b2eadaf5dd849cf8e655979240cde8ee",
+          "sha256": "c1cdb90b3713a111a5e85946c24a3632a577e7c770357a88124989770008c783",
+          "sha1": "7d22fac28af400d2e6f2e2b30b7014927c05f62b",
+          "md5": "c1c9df13fedd86ebe6c121035958d3c7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "tpac",
+          "version": {
+            "requires": "1.0.00"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.8.1"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "2.5.10"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.25"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "clmap-1.0.00.jar",
+          "url": "clmap-1.0.00.jar",
+          "size": 76091,
+          "sha512": "a6b888a6f1c49220ae3b47bbaf5a4bd08f5e158eb7d24ea6a41a0dab429e178b572f60fd028537fe4153676f26c5d465b2eadaf5dd849cf8e655979240cde8ee",
+          "sha256": "c1cdb90b3713a111a5e85946c24a3632a577e7c770357a88124989770008c783",
+          "sha1": "7d22fac28af400d2e6f2e2b30b7014927c05f62b",
+          "md5": "c1c9df13fedd86ebe6c121035958d3c7"
+        }
+      ]
+    }
+  ]
+}
