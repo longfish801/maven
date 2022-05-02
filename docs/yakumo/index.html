@@ -18,6 +18,7 @@
 <li><a href="#ドキュメント">ドキュメント</a></li>
 <li><a href="#githubリポジトリ">GitHubリポジトリ</a></li>
 <li><a href="#mavenリポジトリ">Mavenリポジトリ</a></li>
+<li><a href="#改版履歴">改版履歴</a></li>
 </ul>
 <h2><a href="#概要" id="概要"></a>概要</h2>
 <p>　テキストの形式を変換します。<br />
@@ -37,23 +38,30 @@
 <pre><code>import io.github.longfish801.yakumo.Yakumo
 
 try {
-	def writer = new StringWriter()
 	def yakumo = new Yakumo()
-	yakumo.load { material 'fyakumo', 'thtml' }
-	yakumo.script {
-		targets {
-			target 'target', new File('src/test/resources/target.txt'), 'fyakumo'
-		}
-		results {
-			result 'target', writer, 'thtml'
-		}
-	}
-	assert writer.toString().normalize() == new File('src/test/resources/result.html').text
+	String converted = yakumo.run(new File('src/test/resources/convert.groovy'), null)
+	assert converted.normalize() == new File('src/test/resources/result.html').text
 	assert yakumo.script.results.target.fprint.warns.size() == 0
 } catch (exc){
 	println &quot;Failed to convert: message=${exc.message}&quot;
 	throw exc
 }
+</code></pre>
+<p>　上記で実行している変換スクリプトは以下です（src/test/resources/convert.groovy）。</p>
+<pre><code>load {
+	material 'fyakumo', 'thtml'
+}
+
+def writer = new StringWriter()
+script {
+	targets {
+		target 'target', new File('src/test/resources/target.txt'), 'fyakumo'
+	}
+	results {
+		result 'target', writer, 'thtml'
+	}
+}
+return writer.toString()
 </code></pre>
 <p>　変換対象は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/target.txt">target.txt</a> です。<br />
 　変換結果は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/result.html">result.html</a> です。</p>
@@ -80,6 +88,14 @@ dependencies {
 	implementation group: 'io.github.longfish801', name: 'yakumo', version: '0.3.00'
 }
 </code></pre>
+<h2><a href="#改版履歴" id="改版履歴"></a>改版履歴</h2>
+<dl>
+<dt>1.1.00</dt>
+<dd>gradle 7.4の記法に対応しました。</dd>
+<dd>クロージャによる変換時に補足情報を渡せるよう対応しました。</dd>
+<dd>outDirに指定されたディレクトリの存在チェックはcopyメソッド実行時に移しました。</dd>
+<dd>資材スクリプト、変換スクリプトの委任クラスをyakumoにしました。</dd>
+</dl>
 </main>
 
 </div><!-- end of row -->
