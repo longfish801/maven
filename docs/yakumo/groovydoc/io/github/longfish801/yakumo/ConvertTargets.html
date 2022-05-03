@@ -160,6 +160,11 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         </tr>
                         
                         <tr class="altColor">
+                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></strong></code>&nbsp;</td>
+                            <td class="colLast"><code><a href="#baseSwitemName">baseSwitemName</a></code><br>switem宣言の名前の基底値</td>
+                        </tr>
+                        
+                        <tr class="rowColor">
                             <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a></strong></code>&nbsp;</td>
                             <td class="colLast"><code><a href="#map">map</a></code><br>変換対象キーと変換対象とのマップ</td>
                         </tr>
@@ -214,32 +219,44 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code>void</code></td>
+                            <td class="colLast"><code><strong><a href="#baseSwitemName(java.lang.String)">baseSwitemName</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</code><br>switem宣言の名前の基底値を設定します。</td>
+                        </tr>
+                        
+                        <tr class="rowColor">
+                            <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../io/github/longfish801/yakumo/ConvertTargets.Target.html'>ConvertTargets.Target</a></code></td>
                             <td class="colLast"><code><strong><a href="#getAt(java.lang.String)">getAt</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key)</code><br>変換対象キーに対応する変換対象を参照します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a></code></td>
                             <td class="colLast"><code><strong><a href="#propertyMissing(java.lang.String)">propertyMissing</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key)</code><br>変換対象キーに対応する変換対象を参照します。</td>
                         </tr>
                         
+                        <tr class="rowColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code>void</code></td>
+                            <td class="colLast"><code><strong><a href="#switemName(java.lang.String, java.lang.String)">switemName</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</code><br>特定の変換対象キーに対応する変換対象についてswitem宣言の名前を設定します。</td>
+                        </tr>
+                        
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#target(java.lang.String, java.lang.String, java.lang.String)">target</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> str, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</code><br>変換対象を追加します。</td>
+                            <td class="colLast"><code><strong><a href="#target(java.lang.String, java.lang.String)">target</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> str)</code><br>変換対象を追加します。</td>
                         </tr>
                         
                         <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#target(java.lang.String, java.io.File, java.lang.String)">target</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/File.html' title='File'>File</a> file, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</code><br>変換対象を追加します。</td>
+                            <td class="colLast"><code><strong><a href="#target(java.lang.String, java.io.File)">target</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/File.html' title='File'>File</a> file)</code><br>変換対象を追加します。</td>
                         </tr>
                         
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#target(java.lang.String, java.io.Reader, java.lang.String)">target</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html' title='Reader'>Reader</a> reader, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</code><br>変換対象を格納します。</td>
+                            <td class="colLast"><code><strong><a href="#target(java.lang.String, java.io.Reader)">target</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html' title='Reader'>Reader</a> reader)</code><br>変換対象を格納します。</td>
                         </tr>
                         
                     </table>
@@ -285,6 +302,14 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                 </a>
                     <h3>Property Detail</h3>
                     
+                        <a name="baseSwitemName"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>baseSwitemName</strong></h4>
+                                <p>switem宣言の名前の基底値</p>
+                            </li>
+                        </ul>
+                    
                         <a name="map"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
@@ -328,6 +353,15 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                 </a>
                     <h3>Method Detail</h3>
                     
+                        <a name="baseSwitemName(java.lang.String)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4>void <strong>baseSwitemName</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</h4>
+                                <p> switem宣言の名前の基底値を設定します。<br/>
+ 設定しない場合は "fyakumo"です。 <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  switem宣言の名前の基底値</DD></DL></p>
+                            </li>
+                        </ul>
+                    
                         <a name="getAt(java.lang.String)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
@@ -344,27 +378,36 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                             </li>
                         </ul>
                     
-                        <a name="target(java.lang.String, java.lang.String, java.lang.String)"><!-- --></a>
+                        <a name="switemName(java.lang.String, java.lang.String)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
-                                <h4>void <strong>target</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> str, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</h4>
-                                <p> 変換対象を追加します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>str</code> -  入力子</DD><DD><code>switemName</code> -  switem宣言の名前</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#target(java.lang.String, java.io.Reader, java.lang.String)'>target(String, Reader, String)</a></DD></DL></p>
+                                <h4>void <strong>switemName</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</h4>
+                                <p> 特定の変換対象キーに対応する変換対象についてswitem宣言の名前を設定します。<br/>
+ 設定しない場合は基底値が用いられます。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException 指定された変換対象キーに相当する変換対象がありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>switemName</code> -  switem宣言の名前</DD></DL></p>
                             </li>
                         </ul>
                     
-                        <a name="target(java.lang.String, java.io.File, java.lang.String)"><!-- --></a>
+                        <a name="target(java.lang.String, java.lang.String)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
-                                <h4>void <strong>target</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/File.html' title='File'>File</a> file, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</h4>
-                                <p> 変換対象を追加します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>file</code> -  変換対象ファイル</DD><DD><code>switemName</code> -  switem宣言の名前</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#target(java.lang.String, java.io.Reader, java.lang.String)'>target(String, Reader, String)</a></DD></DL></p>
+                                <h4>void <strong>target</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> str)</h4>
+                                <p> 変換対象を追加します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>str</code> -  入力子</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#target(java.lang.String, java.io.Reader, java.lang.String)'>target(String, Reader, String)</a></DD></DL></p>
                             </li>
                         </ul>
                     
-                        <a name="target(java.lang.String, java.io.Reader, java.lang.String)"><!-- --></a>
+                        <a name="target(java.lang.String, java.io.File)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
-                                <h4>void <strong>target</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html' title='Reader'>Reader</a> reader, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</h4>
-                                <p> 変換対象を格納します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>reader</code> -  入力子</DD><DD><code>switemName</code> -  switem宣言の名前</DD></DL></p>
+                                <h4>void <strong>target</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/File.html' title='File'>File</a> file)</h4>
+                                <p> 変換対象を追加します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>file</code> -  変換対象ファイル</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#target(java.lang.String, java.io.Reader, java.lang.String)'>target(String, Reader, String)</a></DD></DL></p>
+                            </li>
+                        </ul>
+                    
+                        <a name="target(java.lang.String, java.io.Reader)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4>void <strong>target</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html' title='Reader'>Reader</a> reader)</h4>
+                                <p> 変換対象を格納します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  変換対象キー</DD><DD><code>reader</code> -  入力子</DD></DL></p>
                             </li>
                         </ul>
                     

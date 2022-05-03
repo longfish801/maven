@@ -55,10 +55,10 @@ try {
 def writer = new StringWriter()
 script {
 	targets {
-		target 'target', new File('src/test/resources/target.txt'), 'fyakumo'
+		target 'target', new File('src/test/resources/target.txt')
 	}
 	results {
-		result 'target', writer, 'thtml'
+		result 'target', writer
 	}
 }
 return writer.toString()
@@ -95,6 +95,7 @@ dependencies {
 <dd>クロージャによる変換時に補足情報を渡せるよう対応しました。</dd>
 <dd>outDirに指定されたディレクトリの存在チェックはcopyメソッド実行時に移しました。</dd>
 <dd>資材スクリプト、変換スクリプトの委任クラスをyakumoにしました。</dd>
+<dd>基底のswitem宣言の名前、clmap宣言の名前を設定するようにしました。</dd>
 </dl>
 </main>
 
