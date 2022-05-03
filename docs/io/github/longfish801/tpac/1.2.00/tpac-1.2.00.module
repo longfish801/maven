@@ -1,0 +1,99 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "tpac",
+    "version": "1.2.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tpac-1.2.00.jar",
+          "url": "tpac-1.2.00.jar",
+          "size": 174581,
+          "sha512": "686299ba6a471be76b6b7ed7714f08f490c73ea1f8354ce3d83c04d889bcc3a7dde79e0b1619ed6003c90e2b3b5b051d24dbb407f079207c37590c985b34ce56",
+          "sha256": "4c0630fba06016d4b428fdf0f4370227cf862cec8157d1650d0ef72a24ef2283",
+          "sha1": "141694359137e3303d689ae6102556645281ec68",
+          "md5": "d3349311914b8fab2ed2a186a6207f85"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.9"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "3.0.9"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.36"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tpac-1.2.00.jar",
+          "url": "tpac-1.2.00.jar",
+          "size": 174581,
+          "sha512": "686299ba6a471be76b6b7ed7714f08f490c73ea1f8354ce3d83c04d889bcc3a7dde79e0b1619ed6003c90e2b3b5b051d24dbb407f079207c37590c985b34ce56",
+          "sha256": "4c0630fba06016d4b428fdf0f4370227cf862cec8157d1650d0ef72a24ef2283",
+          "sha1": "141694359137e3303d689ae6102556645281ec68",
+          "md5": "d3349311914b8fab2ed2a186a6207f85"
+        }
+      ]
+    }
+  ]
+}
