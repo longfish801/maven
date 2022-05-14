@@ -36,11 +36,11 @@
         {
           "name": "tpac-1.2.00.jar",
           "url": "tpac-1.2.00.jar",
-          "size": 182805,
-          "sha512": "c1f921987e2735d600192c80139c6c1204c2114ff971ef4460ddd7668b283040bc64b1d40f7a65c1e1bc21126e93bd8c655fc74349dbe8be1b970f829164a234",
-          "sha256": "ca8405ce2f489532d815b1229b880246e2455b59b19fc9287294ec94727f0dde",
-          "sha1": "453e4fd425abc90ddbc921646ed6b477d56f6e8e",
-          "md5": "0bc929c1237ffabb3cd3ac17229f5979"
+          "size": 182806,
+          "sha512": "f776ad1899e284c3f94f25aea44bb70ba588611b4895198b5eab558739b262448dd5d319d86ba58bd6c4c4c405342787859f46374f863b675bc0d0cdaa28c679",
+          "sha256": "5f6cefe5477bc8f24bc545915ed9b5e5ffe89b5b885e7214945ce65032d8d76b",
+          "sha1": "5036729239bc669fdedbfb043b4205bb4a304d2a",
+          "md5": "97df63932f33147bbd02cdc6fce948ad"
         }
       ]
     },
@@ -87,11 +87,11 @@
         {
           "name": "tpac-1.2.00.jar",
           "url": "tpac-1.2.00.jar",
-          "size": 182805,
-          "sha512": "c1f921987e2735d600192c80139c6c1204c2114ff971ef4460ddd7668b283040bc64b1d40f7a65c1e1bc21126e93bd8c655fc74349dbe8be1b970f829164a234",
-          "sha256": "ca8405ce2f489532d815b1229b880246e2455b59b19fc9287294ec94727f0dde",
-          "sha1": "453e4fd425abc90ddbc921646ed6b477d56f6e8e",
-          "md5": "0bc929c1237ffabb3cd3ac17229f5979"
+          "size": 182806,
+          "sha512": "f776ad1899e284c3f94f25aea44bb70ba588611b4895198b5eab558739b262448dd5d319d86ba58bd6c4c4c405342787859f46374f863b675bc0d0cdaa28c679",
+          "sha256": "5f6cefe5477bc8f24bc545915ed9b5e5ffe89b5b885e7214945ce65032d8d76b",
+          "sha1": "5036729239bc669fdedbfb043b4205bb4a304d2a",
+          "md5": "97df63932f33147bbd02cdc6fce948ad"
         }
       ]
     }
