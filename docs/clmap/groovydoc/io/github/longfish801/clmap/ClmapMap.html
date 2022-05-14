@@ -143,18 +143,8 @@ implements io.github.longfish801.tpac.tea.TeaHandle</pre>
                         </tr>
                         
                         <tr class="altColor">
-                            <td class="colFirst"><code><strong>static&nbsp;<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html' title='ClassLoader'>ClassLoader</a></strong></code>&nbsp;</td>
-                            <td class="colLast"><code><a href="#loader">loader</a></code><br>ClassLoader</td>
-                        </tr>
-                        
-                        <tr class="rowColor">
                             <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a></strong></code>&nbsp;</td>
                             <td class="colLast"><code><a href="#properties">properties</a></code><br>各クロージャの大域変数として使用するプロパティ。</td>
-                        </tr>
-                        
-                        <tr class="altColor">
-                            <td class="colFirst"><code><strong><a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/GroovyShell.html' title='GroovyShell'>GroovyShell</a></strong></code>&nbsp;</td>
-                            <td class="colLast"><code><a href="#shell">shell</a></code><br>GroovyShell</td>
                         </tr>
                         
                     </table>
@@ -181,7 +171,7 @@ implements io.github.longfish801.tpac.tea.TeaHandle</pre>
                         <tr class="altColor">
                             <td class="colFirst">
                                 <code><a href="#ClmapMap()">ClmapMap</a>
-                                ()</code><br>コンストラクタ。</td>
+                                ()</code><br></td>
                         </tr>
                         
                     </table>
@@ -260,28 +250,12 @@ implements io.github.longfish801.tpac.tea.TeaHandle</pre>
                 </a>
                     <h3>Property Detail</h3>
                     
-                        <a name="loader"><!-- --></a>
-                        <ul class="blockListLast">
-                            <li class="blockList">
-                                <h4>static&nbsp;<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html' title='ClassLoader'>ClassLoader</a> <strong>loader</strong></h4>
-                                <p>ClassLoader</p>
-                            </li>
-                        </ul>
-                    
                         <a name="properties"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> <strong>properties</strong></h4>
                                 <p> 各クロージャの大域変数として使用するプロパティ。<br/>
  デフォルトでキー'clmap'に対し値として自インスタンスを保持します。</p>
-                            </li>
-                        </ul>
-                    
-                        <a name="shell"><!-- --></a>
-                        <ul class="blockListLast">
-                            <li class="blockList">
-                                <h4><a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/GroovyShell.html' title='GroovyShell'>GroovyShell</a> <strong>shell</strong></h4>
-                                <p>GroovyShell</p>
                             </li>
                         </ul>
                     
@@ -303,11 +277,7 @@ implements io.github.longfish801.tpac.tea.TeaHandle</pre>
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4><strong>ClmapMap</strong>()</h4>
-                                <p> コンストラクタ。<br/>
- メンバ変数 loaderが nullのときは
- ClmapMap.class.classLoaderで初期化します。<br/>
- メンバ変数 shellを初期化します。<br/>
- GroovyShellのコンストラクタには引数としてメンバ変数loaderを渡します。 <DL><DT><B>Returns:</B></DT><DD>自インスタンス</DD></DL></p>
+                                <p></p>
                             </li>
                         </ul>
                     
@@ -354,7 +324,7 @@ implements io.github.longfish801.tpac.tea.TeaHandle</pre>
                                 <h4>@<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Override.html' title='Override'>Override</a>
 <a href='../../../../io/github/longfish801/clmap/ClmapMap.html'>ClmapMap</a> <strong>cloneRecursive</strong>()</h4>
                                 <p> 再帰的に下位のハンドルも含めてクローンします。<br/>
- 大域変数のプロパティの各値はシャローコピーします。 <DL><DT><B>Returns:</B></DT><DD>クローン</DD></DL></p>
+ 大域変数のプロパティは各値をシャローコピーします。 <DL><DT><B>Returns:</B></DT><DD>クローン</DD></DL></p>
                             </li>
                         </ul>
                     
