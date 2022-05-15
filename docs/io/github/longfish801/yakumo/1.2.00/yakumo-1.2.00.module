@@ -35,7 +35,7 @@
           "group": "io.github.longfish801",
           "module": "clmap",
           "version": {
-            "requires": "1.1.00"
+            "requires": "1.2.00"
           }
         },
         {
@@ -49,7 +49,7 @@
           "group": "io.github.longfish801",
           "module": "switem",
           "version": {
-            "requires": "1.1.00"
+            "requires": "1.2.00"
           }
         }
       ],
@@ -57,11 +57,11 @@
         {
           "name": "yakumo-1.2.00.jar",
           "url": "yakumo-1.2.00.jar",
-          "size": 79498,
-          "sha512": "4648ab6f426cf876d24315fa0d595a258c20f4138a6aafdc7154dd9167651e4bf70341ba5b3da315ca02fb5d1ea57bb5e8ecc887e680dd0bad93dccefb0a70cc",
-          "sha256": "26f5a7cda5b19677687d5c889a9e7b3985dee53090b9aae29af583967a3a8966",
-          "sha1": "eeb48919534ddd402ab326fe8f52f82f2faf1340",
-          "md5": "e5713193fbdd9144a524eeccb80546c2"
+          "size": 79760,
+          "sha512": "d1ccf4b4fd6977b46c6867a783d78313d946d24c4091ed83201857f58ca9288c062ffa5af569324ce6eb3febab93cb42b10b820fee13c99e181a6411b26bc3d0",
+          "sha256": "d16d531ab820331e02e1f7f3c5e7272b0c2af8a6bf1853782029ca211e1689db",
+          "sha1": "5b4f5da5583265aa0156f4b92eff1cf4e0a73047",
+          "md5": "9e60aa1719b3c3402d80e54fba186e49"
         }
       ]
     },
@@ -128,7 +128,7 @@
           "group": "io.github.longfish801",
           "module": "clmap",
           "version": {
-            "requires": "1.1.00"
+            "requires": "1.2.00"
           }
         },
         {
@@ -142,7 +142,7 @@
           "group": "io.github.longfish801",
           "module": "switem",
           "version": {
-            "requires": "1.1.00"
+            "requires": "1.2.00"
           }
         }
       ],
@@ -150,11 +150,11 @@
         {
           "name": "yakumo-1.2.00.jar",
           "url": "yakumo-1.2.00.jar",
-          "size": 79498,
-          "sha512": "4648ab6f426cf876d24315fa0d595a258c20f4138a6aafdc7154dd9167651e4bf70341ba5b3da315ca02fb5d1ea57bb5e8ecc887e680dd0bad93dccefb0a70cc",
-          "sha256": "26f5a7cda5b19677687d5c889a9e7b3985dee53090b9aae29af583967a3a8966",
-          "sha1": "eeb48919534ddd402ab326fe8f52f82f2faf1340",
-          "md5": "e5713193fbdd9144a524eeccb80546c2"
+          "size": 79760,
+          "sha512": "d1ccf4b4fd6977b46c6867a783d78313d946d24c4091ed83201857f58ca9288c062ffa5af569324ce6eb3febab93cb42b10b820fee13c99e181a6411b26bc3d0",
+          "sha256": "d16d531ab820331e02e1f7f3c5e7272b0c2af8a6bf1853782029ca211e1689db",
+          "sha1": "5b4f5da5583265aa0156f4b92eff1cf4e0a73047",
+          "md5": "9e60aa1719b3c3402d80e54fba186e49"
         }
       ]
     }

@@ -208,13 +208,13 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#clmapProps(java.lang.String, java.util.Map)">clmapProps</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> binds)</code><br>クロージャマップの宣言に大域変数をバインドします。</td>
+                            <td class="colLast"><code><strong><a href="#clmapProp(java.lang.String, java.lang.String, java.lang.Object)">clmapProp</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> varName, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> varVal)</code><br>clmap宣言に大域変数をバインドします。</td>
                         </tr>
                         
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#clmapProps(java.lang.String, java.lang.String, java.util.Map)">clmapProps</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clpath, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> binds)</code><br>クロージャマップに大域変数をバインドします。</td>
+                            <td class="colLast"><code><strong><a href="#clmapProp(java.lang.String, java.lang.String, java.lang.String, java.lang.Object)">clmapProp</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clpathLater, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> varName, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> varVal)</code><br>clmap宣言あるいはクロージャマップに大域変数をバインドします。</td>
                         </tr>
                         
                         <tr class="rowColor">
@@ -351,19 +351,22 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                             </li>
                         </ul>
                     
-                        <a name="clmapProps(java.lang.String, java.util.Map)"><!-- --></a>
+                        <a name="clmapProp(java.lang.String, java.lang.String, java.lang.Object)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
-                                <h4>void <strong>clmapProps</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> binds)</h4>
-                                <p> クロージャマップの宣言に大域変数をバインドします。 <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  clmap宣言の名前</DD><DD><code>binds</code> -  バインド変数のマップ</DD></DL></p>
+                                <h4>void <strong>clmapProp</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> varName, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> varVal)</h4>
+                                <p> clmap宣言に大域変数をバインドします。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException 指定されたクロージャパスに相当するClmap/ClmapMapがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  clmap宣言の名前</DD><DD><code>varName</code> -  大域変数の変数名</DD><DD><code>varVal</code> -  大域変数の値</DD></DL></p>
                             </li>
                         </ul>
                     
-                        <a name="clmapProps(java.lang.String, java.lang.String, java.util.Map)"><!-- --></a>
+                        <a name="clmapProp(java.lang.String, java.lang.String, java.lang.String, java.lang.Object)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
-                                <h4>void <strong>clmapProps</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clpath, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> binds)</h4>
-                                <p> クロージャマップに大域変数をバインドします。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException 指定されたclmap宣言の名前に相当するclmapスクリプトがありません。</DD></DL><DL><DT><B>throws:</B></DT><DD>IllegalArgumentException 指定されたクロージャパスに相当するクロージャがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  clmap宣言の名前</DD><DD><code>clpath</code> -  クロージャパス（null指定時は宣言に設定）</DD><DD><code>binds</code> -  バインド変数のマップ</DD></DL></p>
+                                <h4>void <strong>clmapProp</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> name, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clpathLater, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> varName, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> varVal)</h4>
+                                <p> clmap宣言あるいはクロージャマップに大域変数をバインドします。<br/>
+ clmap宣言に設定するときは、clpathLaterには nullを指定してください。
+ clmap宣言に設定するときのクロージャパスは "/${name}"です。
+ クロージャマップに設定するときのクロージャパスは "/${name}/${clpathLater}"です。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException 指定されたクロージャパスに相当するClmap/ClmapMapがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  clmap宣言の名前</DD><DD><code>clpathLater</code> -  クロージャパスの宣言より後ろ（先頭にスラッシュは不要）</DD><DD><code>varName</code> -  大域変数の変数名</DD><DD><code>varVal</code> -  大域変数の値</DD></DL></p>
                             </li>
                         </ul>
                     
@@ -371,7 +374,8 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4>void <strong>format</strong>(<a href='../../../../io/github/longfish801/yakumo/ConvertScript.html'>ConvertScript</a> script, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> bltxtMap)</h4>
-                                <p> 変換結果毎に並列処理でclmapのクロージャを呼び、テンプレートを適用して出力します。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException clmap宣言の名前に相当するclmapスクリプトがありません。</DD></DL><DL><DT><B>throws:</B></DT><DD>IllegalArgumentException クロージャパスに相当するクロージャがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>script</code> -  変換スクリプト</DD><DD><code>bltxtMap</code> -  変換対象キーとBLtxtインスタンスとのマップ</DD></DL></p>
+                                <p> 変換結果毎に並列処理でclmapのクロージャを呼び、テンプレートを適用して出力します。<br/>
+ 並列処理の前に、すべてのclmapスクリプトに大域変数として足跡fprintを設定します。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException clmap宣言の名前に相当するclmapスクリプトがありません。</DD></DL><DL><DT><B>throws:</B></DT><DD>IllegalArgumentException クロージャパスに相当するクロージャがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>script</code> -  変換スクリプト</DD><DD><code>bltxtMap</code> -  変換対象キーとBLtxtインスタンスとのマップ</DD></DL></p>
                             </li>
                         </ul>
                     
