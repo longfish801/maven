@@ -375,7 +375,14 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                             <li class="blockList">
                                 <h4>void <strong>format</strong>(<a href='../../../../io/github/longfish801/yakumo/ConvertScript.html'>ConvertScript</a> script, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> bltxtMap)</h4>
                                 <p> 変換結果毎に並列処理でclmapのクロージャを呼び、テンプレートを適用して出力します。<br/>
- 並列処理の前に、すべてのclmapスクリプトに大域変数として足跡fprintを設定します。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException clmap宣言の名前に相当するclmapスクリプトがありません。</DD></DL><DL><DT><B>throws:</B></DT><DD>IllegalArgumentException クロージャパスに相当するクロージャがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>script</code> -  変換スクリプト</DD><DD><code>bltxtMap</code> -  変換対象キーとBLtxtインスタンスとのマップ</DD></DL></p>
+ 並列処理の前に、すべてのclmapスクリプトに大域変数として足跡fprintを設定します。<br/>
+ 変換結果毎に以下の並列処理を実行します。</p>
+ <ul>
+ <li>clmapスクリプトのクローンを取得し、大域変数として変換結果キーを設定します。</li>
+ <li>事前準備のためのクロージャを実行し、戻り値を補足情報とします。</li>
+ <li>バインド変数を取得するためのクロージャを実行します。</li>
+ </ul>
+ <p>事前準備のためのクロージャが存在しない場合は実行しません。<DL><DT><B>throws:</B></DT><DD>IllegalArgumentException clmap宣言の名前に相当するclmapスクリプトがありません。</DD></DL><DL><DT><B>throws:</B></DT><DD>IllegalArgumentException クロージャパスに相当するクロージャがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>script</code> -  変換スクリプト</DD><DD><code>bltxtMap</code> -  変換対象キーとBLtxtインスタンスとのマップ</DD></DL></p>
                             </li>
                         </ul>
                     
