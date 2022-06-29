@@ -321,60 +321,66 @@ implements <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable
                         
                         <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></code></td>
+                            <td class="colLast"><code><strong><a href="#referAsString(java.lang.String)">referAsString</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> path)</code><br>パスに対応するハンドルあるいはマップの値を文字列に変換して返します。</td>
+                        </tr>
+                        
+                        <tr class="altColor">
+                            <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaHandle.html'>TeaHandle</a></code></td>
                             <td class="colLast"><code><strong><a href="#scan(groovy.lang.Closure)">scan</a></strong>(<a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/Closure.html' title='Closure'>Closure</a> clos)</code><br>自身と下位のハンドルをすべて走査します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaHandle.html'>TeaHandle</a></code></td>
                             <td class="colLast"><code><strong><a href="#setAt(java.lang.String, java.lang.Object)">setAt</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> val)</code><br>マップにキーとそれに対応する値を格納します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaHandle.html'>TeaHandle</a></code></td>
                             <td class="colLast"><code><strong><a href="#solve(java.lang.String)">solve</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> path)</code><br>パスに対応するハンドルを返します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></code></td>
                             <td class="colLast"><code><strong><a href="#toString()">toString</a></strong>()</code><br>このハンドルの文字列表現を返します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#validate()">validate</a></strong>()</code><br>このハンドルの妥当性を検証します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#validateKeys(java.util.Map)">validateKeys</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> conds)</code><br>キーの妥当性を検証します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaHandle.html'>TeaHandle</a></code></td>
                             <td class="colLast"><code><strong><a href="#validateRecursive()">validateRecursive</a></strong>()</code><br>このハンドルならびに下位ハンドルの妥当性を検証します。
  </td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#visit()">visit</a></strong>()</code><br>このハンドルに特有の処理をします。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='../../../../../io/github/longfish801/tpac/tea/TeaHandle.html'>TeaHandle</a></code></td>
                             <td class="colLast"><code><strong><a href="#visitRecursive()">visitRecursive</a></strong>()</code><br>このハンドルならびに下位ハンドルに特有の処理をします。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#write(java.io.Writer)">write</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html' title='Writer'>Writer</a> writer)</code><br>文字列表現を出力します。</td>
@@ -686,6 +692,14 @@ implements <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable
  アンカーを除いたパスが空文字列でなければ<a href='#solve(java.lang.String)'>solve(String)</a>でハンドルを参照します。
  アンカーが空文字列のときはデフォルトキーとみなします。
  ハンドルのマップからキーと紐づく値を返します。 <DL><DT><B>Parameters:</B></DT><DD><code>path</code> -  パス</DD></DL><DL><DT><B>Returns:</B></DT><DD>パスに対応するハンドルあるいはマップの値（該当するハンドルがなければnull）</DD></DL></p>
+                            </li>
+                        </ul>
+                    
+                        <a name="referAsString(java.lang.String)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>referAsString</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> path)</h4>
+                                <p> パスに対応するハンドルあるいはマップの値を文字列に変換して返します。 <DL><DT><B>Parameters:</B></DT><DD><code>path</code> -  パス</DD></DL><DL><DT><B>Returns:</B></DT><DD>パスに対応するハンドルあるいはマップの値を変換した文字列</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#refer(java.lang.String)'>refer(String)</a></DD><DD><a href='#asString(java.lang.String)'>asString(String)</a></DD></DL></p>
                             </li>
                         </ul>
                     
