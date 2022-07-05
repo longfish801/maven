@@ -43,11 +43,11 @@
         {
           "name": "clmap-1.2.00.jar",
           "url": "clmap-1.2.00.jar",
-          "size": 79906,
-          "sha512": "5ce15b1ee1aa99d4b4f285526018b9ecf071846d55f463a36ee92e79939583a02f463752af281fadde64b35144db7178157bc1092f37f6582138bc46f839670c",
-          "sha256": "b53030fa9d31333a558c69b1dd5ee2bd7b1a620513b2e36f074dcaf6a5ed9257",
-          "sha1": "53e73a1dbe3f1806f78c2bd85ba86f3395a7d121",
-          "md5": "017637f619e8dd4406387ef860277e87"
+          "size": 79914,
+          "sha512": "23ee4742d880164911ec36f0125d4d741d45bcb15efd039c4f4305a97fb0cf5bfdde8d7482e516fee662d135f14022d1d3271ca4e95e603eb1fbaf44fd186026",
+          "sha256": "11479d511c3ef5c27696b806ae890b9efa600942a348b82e9553e362177c151c",
+          "sha1": "f14721a1f2414303a342ebf24b76c0a2141cfd2e",
+          "md5": "678ca76dce2b9dc5c91eea1ba695fe6c"
         }
       ]
     },
@@ -101,11 +101,11 @@
         {
           "name": "clmap-1.2.00.jar",
           "url": "clmap-1.2.00.jar",
-          "size": 79906,
-          "sha512": "5ce15b1ee1aa99d4b4f285526018b9ecf071846d55f463a36ee92e79939583a02f463752af281fadde64b35144db7178157bc1092f37f6582138bc46f839670c",
-          "sha256": "b53030fa9d31333a558c69b1dd5ee2bd7b1a620513b2e36f074dcaf6a5ed9257",
-          "sha1": "53e73a1dbe3f1806f78c2bd85ba86f3395a7d121",
-          "md5": "017637f619e8dd4406387ef860277e87"
+          "size": 79914,
+          "sha512": "23ee4742d880164911ec36f0125d4d741d45bcb15efd039c4f4305a97fb0cf5bfdde8d7482e516fee662d135f14022d1d3271ca4e95e603eb1fbaf44fd186026",
+          "sha256": "11479d511c3ef5c27696b806ae890b9efa600942a348b82e9553e362177c151c",
+          "sha1": "f14721a1f2414303a342ebf24b76c0a2141cfd2e",
+          "md5": "678ca76dce2b9dc5c91eea1ba695fe6c"
         }
       ]
     }
