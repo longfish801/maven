@@ -50,11 +50,11 @@
         {
           "name": "switem-1.2.00.jar",
           "url": "switem-1.2.00.jar",
-          "size": 103995,
-          "sha512": "d9c2df8fdf34ec88bde87a813f5cb47057b3dd36f6ee2dc3ae384e57a1b523ec60844daeab776e7f60cbd1b8e5e3fabc6c445e8d9b8557fae04151840c955eea",
-          "sha256": "5fac26acb53963cc30b637207dfcba820b0f6ce791f6de0f28ec940046ae6244",
-          "sha1": "6673cfc210490b208be97b0750417fef13cfb3cb",
-          "md5": "46ac9679a4798fec0074518b6ab77cde"
+          "size": 103997,
+          "sha512": "57d3f79747c6137f8595c70a064f950e4776f9e584601463c6223b0e6b512551e3d074b708876d207290ae466b8eea4781e5f069d46119bde120b05cd55c964c",
+          "sha256": "ee23f6092dd8a0e49d857d03820fcde498ff11f9518adcacd7cf04a502471bc1",
+          "sha1": "59e3953f3dc56df7898d8c411ca096c24013bbc9",
+          "md5": "85d75386ed6d6a0cecdf291875d32039"
         }
       ]
     },
@@ -115,11 +115,11 @@
         {
           "name": "switem-1.2.00.jar",
           "url": "switem-1.2.00.jar",
-          "size": 103995,
-          "sha512": "d9c2df8fdf34ec88bde87a813f5cb47057b3dd36f6ee2dc3ae384e57a1b523ec60844daeab776e7f60cbd1b8e5e3fabc6c445e8d9b8557fae04151840c955eea",
-          "sha256": "5fac26acb53963cc30b637207dfcba820b0f6ce791f6de0f28ec940046ae6244",
-          "sha1": "6673cfc210490b208be97b0750417fef13cfb3cb",
-          "md5": "46ac9679a4798fec0074518b6ab77cde"
+          "size": 103997,
+          "sha512": "57d3f79747c6137f8595c70a064f950e4776f9e584601463c6223b0e6b512551e3d074b708876d207290ae466b8eea4781e5f069d46119bde120b05cd55c964c",
+          "sha256": "ee23f6092dd8a0e49d857d03820fcde498ff11f9518adcacd7cf04a502471bc1",
+          "sha1": "59e3953f3dc56df7898d8c411ca096c24013bbc9",
+          "md5": "85d75386ed6d6a0cecdf291875d32039"
         }
       ]
     }
