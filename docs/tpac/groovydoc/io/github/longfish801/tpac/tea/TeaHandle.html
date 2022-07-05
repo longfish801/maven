@@ -507,8 +507,8 @@ implements <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>asString</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key)</h4>
                                 <p> マップからキーに対応する値を文字列に変換して返します。<br/>
- 値がListのときは <a href='#formatText(LIst)'>formatText(LIst)</a>で変換します。<br/>
- それ以外のときは <a href='#formatScalar(def)'>formatScalar(def)</a>で変換します。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  キー</DD></DL><DL><DT><B>Returns:</B></DT><DD>キーに対応する値を文字列に変換した結果</DD></DL></p>
+ 値がListのときは各要素を改行コードで連結します。<br/>
+ それ以外のときは toStringメソッドを用います。 <DL><DT><B>Parameters:</B></DT><DD><code>key</code> -  キー</DD></DL><DL><DT><B>Returns:</B></DT><DD>キーに対応する値を文字列に変換した結果</DD></DL></p>
                             </li>
                         </ul>
                     
@@ -699,7 +699,9 @@ implements <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>referAsString</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> path)</h4>
-                                <p> パスに対応するハンドルあるいはマップの値を文字列に変換して返します。 <DL><DT><B>Parameters:</B></DT><DD><code>path</code> -  パス</DD></DL><DL><DT><B>Returns:</B></DT><DD>パスに対応するハンドルあるいはマップの値を変換した文字列</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#refer(java.lang.String)'>refer(String)</a></DD><DD><a href='#asString(java.lang.String)'>asString(String)</a></DD></DL></p>
+                                <p> パスに対応するハンドルあるいはマップの値を文字列に変換して返します。<br/>
+ 値がListのときは各要素を改行コードで連結します。<br/>
+ それ以外のときは toStringメソッドを用います。 <DL><DT><B>Parameters:</B></DT><DD><code>path</code> -  パス</DD></DL><DL><DT><B>Returns:</B></DT><DD>パスに対応するハンドルあるいはマップの値を変換した文字列</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#refer(java.lang.String)'>refer(String)</a></DD></DL></p>
                             </li>
                         </ul>
                     
