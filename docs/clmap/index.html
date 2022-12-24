@@ -37,7 +37,7 @@ clmap記法は <a href="/maven/tpac/">tpac</a>を利用したDSLです。</li>
 <p>　以下に clmap文書のサンプルを示します（src/test/resources/sample.tpac）。</p>
 <pre><code>#! clmap
 #&gt; map:const
-#&gt;&gt; args
+#-args
 	String time
 	String name
 #&gt;&gt; closure
@@ -55,17 +55,16 @@ greeting {
 	night = 'Good night'
 }
 #&gt; map
-#&gt;&gt; args
+#-args
 	String name
-#&gt;&gt; return
+#-return
 	String message
-#&gt;&gt; suffix
-#-noon
-	message = message.toUpperCase()
 #&gt;&gt; closure:morning
 	message = clmap.cl('/dflt/const#dflt').call('morning', name)
 #&gt;&gt; closure:noon
 	message = clmap.cl('/dflt/const#dflt').call('noon', name)
+#-suffix
+	message = message.toUpperCase()
 #&gt;&gt; closure:night
 	message = clmap.cl('/dflt/const#dflt').call('night', name)
 </code></pre>
@@ -139,6 +138,9 @@ dependencies {
 <dd>GroovyShellはClmapMapではなくClmapで保持するよう修正しました。</dd>
 <dt>1.1.03</dt>
 <dd>TeaHandle#asStringを利用するよう処理を見直しました。</dd>
+<dt>2.0.00</dt>
+<dd>args, return, decs, prefix, suffixはハンドルではなくキーで指定するよう修正しました。</dd>
+<dd>宣言やclosureハンドルにargs, return, decs, prefix, suffixを指定できるようにしました。</dd>
 </dl>
 </main>
 

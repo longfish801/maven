@@ -13,54 +13,68 @@
 <h1><a href="#clmap記法" id="clmap記法"></a>clmap記法</h1>
 <ul>
 <li><a href="#概要">概要</a></li>
+<li><a href="#ハンドル">ハンドル</a>
+<ul>
 <li><a href="#宣言">宣言</a></li>
 <li><a href="#mapハンドル">mapハンドル</a></li>
 <li><a href="#closureハンドル">closureハンドル</a></li>
-<li><a href="#argsハンドル">argsハンドル</a></li>
-<li><a href="#returnハンドル">returnハンドル</a></li>
-<li><a href="#decハンドル">decハンドル</a></li>
-<li><a href="#prefixハンドル">prefixハンドル</a></li>
-<li><a href="#suffixハンドル">suffixハンドル</a></li>
 <li><a href="#dataハンドル">dataハンドル</a></li>
 <li><a href="#configハンドル">configハンドル</a></li>
+</ul>
+</li>
 <li><a href="#クロージャパス">クロージャパス</a></li>
 <li><a href="#大域変数">大域変数</a></li>
-<li><a href="#生成されるコード">生成されるコード</a></li>
+<li><a href="#クロージャの生成">クロージャの生成</a></li>
 </ul>
 <h2><a href="#概要" id="概要"></a>概要</h2>
 <p>　clmap記法は複数のクロージャをまとめて定義するための記法です。<br />
 　インタフェースが同じクロージャをまとめて定義できます。</p>
 <p>　clmap記法は tpacライブラリを利用したDSLです。tpacライブラリの詳細は <a href="/maven/tpac/">tpac</a>を参照してください。<br />
 　以下、tpac記法と重複する説明は省いています。</p>
-<h2><a href="#宣言" id="宣言"></a>宣言</h2>
+<h2><a href="#ハンドル" id="ハンドル"></a>ハンドル</h2>
+<h3><a href="#宣言" id="宣言"></a>宣言</h3>
 <p>　宣言のタグ名は「clmap」です。<br />
-　可能な子要素は map, dec, prefix, suffixハンドルです。</p>
+　指定できる子要素は map, closure, data, configハンドルです。<br />
+　いずれも省略あるいは複数個の指定が可能です。</p>
 <pre><code>#! clmap:sample
 </code></pre>
-<h2><a href="#mapハンドル" id="mapハンドル"></a>mapハンドル</h2>
+<p>　指定できるキーは<a href="#mapハンドル">mapハンドル</a>を参照してください。</p>
+<h3><a href="#mapハンドル" id="mapハンドル"></a>mapハンドル</h3>
 <p>　mapハンドルは複数のクロージャをまとめます。<br />
-　可能な子要素は map, closure, args, return, dec, prefix, suffix, data, configハンドルです。<br />
-　子要素のうち、map, closure, data, configハンドルは複数記述できます。省略も可能です。<br />
-　args, return, dec, prefix, suffixは最大ひとつ、名前を指定できません。省略も可能です。</p>
-<h2><a href="#closureハンドル" id="closureハンドル"></a>closureハンドル</h2>
-<p>　closureハンドルはひとつのクロージャに相当します。<br />
-　デフォルトキーにテキストとしてソースコードを記述します。<br />
-　可能な子要素はありません。</p>
-<h2><a href="#argsハンドル" id="argsハンドル"></a>argsハンドル</h2>
-<p>　argsハンドルには引数を定義します。<br />
-　同じ mapハンドルに属す closureハンドルに定義されたクロージャすべてに共通する引数を定義します。<br />
-　引数が無い場合は省略できます。<br />
-　可能な子要素はありません。<br />
-　各キーにテキストで指定します。各行は半角カンマ(,)で連結します。<br />
-　デフォルトキー以外は、クロージャの名前と一致するときのみ連結します。</p>
-<h2><a href="#returnハンドル" id="returnハンドル"></a>returnハンドル</h2>
-<p>　returnハンドルには戻り値を記述します。<br />
-　同じmapハンドルに属す closureハンドルに定義されたクロージャすべてに共通する戻り値を定義します。<br />
-　省略できます。closureハンドルに直接return文を記述しても構いません。<br />
-　可能な子要素はありません。<br />
-　デフォルトキーにテキストで指定します。Groovyのクロージャは戻り値をひとつしか返さないため、二行目以降は無視します。<br />
-　デフォルトキー以外のキーを指定できません。</p>
-<p>　戻り値の指定の仕方は以下の二種類があります。</p>
+　指定できる子要素は map, closure, data, configハンドルです。<br />
+　いずれも省略あるいは複数個の指定が可能です。</p>
+<p>　以下のキーを指定できます。すべて省略可です。</p>
+<ul>
+<li>dec
+<ul>
+<li>クロージャの開始前の内容を記述します。<br />
+たとえば import文の記述に利用してください。<br />
+テキストで指定します。各行は改行コードで連結します。</li>
+</ul>
+</li>
+<li>prefix
+<ul>
+<li>クロージャの引数定義後、処理開始前の内容を記述します。<br />
+テキストで指定します。各行は改行コードで連結します。</li>
+</ul>
+</li>
+<li>suffix
+<ul>
+<li>クロージャの処理終了後、return文の前の内容を記述します。<br />
+テキストで指定します。各行は改行コードで連結します。</li>
+</ul>
+</li>
+<li>args
+<ul>
+<li>引数を定義します。<br />
+テキストで指定します。各行は半角カンマ(,)で連結します。</li>
+</ul>
+</li>
+<li>return
+<ul>
+<li>戻り値を記述します。<br />
+テキストで指定します。Groovyのクロージャは戻り値をひとつしか返さないため、二行目以降は無視します。<br />
+指定の仕方は以下の二種類があります。
 <ul>
 <li>変数の型と変数名を半角スペースで連結して記述します。<br />
 この場合、変数の宣言とreturn文をクロージャのソースコードに反映します。</li>
@@ -68,76 +82,87 @@
 これは引数を戻り値に使用する場合を想定しています。<br />
 この場合、return文のみをクロージャのソースコードに反映します。</li>
 </ul>
-<h2><a href="#decハンドル" id="decハンドル"></a>decハンドル</h2>
-<p>　decハンドルには、クロージャの開始前の内容を記述します。<br />
-　たとえば import文の記述に利用してください。<br />
-　同じ mapハンドルに属す closureハンドル、および下位の階層にあるすべての closureハンドルに定義されたクロージャすべてに有効です。<br />
-　decハンドルが複数ある場合、階層が上位のものから順番に連結します。<br />
-　可能な子要素はありません。<br />
-　各キーにテキストで指定します。各行は改行コードで連結します。<br />
-　デフォルトキー以外は、クロージャの名前と一致するときのみ連結します。</p>
-<h2><a href="#prefixハンドル" id="prefixハンドル"></a>prefixハンドル</h2>
-<p>　prefixハンドルには、クロージャの引数定義後、処理開始前の内容を記述します。<br />
-　同じ mapハンドルに属す closureハンドル、および下位の階層にあるすべての closureハンドルに定義されたクロージャすべてに有効です。<br />
-　prefixハンドルが複数ある場合、階層が上位のものから順番に連結します。<br />
-　可能な子要素はありません。<br />
-　各キーにテキストで指定します。各行は改行コードで連結します。<br />
-　デフォルトキー以外は、クロージャの名前と一致するときのみ連結します。</p>
-<h2><a href="#suffixハンドル" id="suffixハンドル"></a>suffixハンドル</h2>
-<p>　suffixハンドルには、クロージャの処理終了後の内容を記述します。<br />
-　同じ mapハンドルに属す closureハンドル、および下位の階層にあるすべての closureハンドルに定義されたクロージャすべてに有効です。<br />
-　suffixハンドルが複数ある場合、階層が上位のものから順番に連結します。<br />
-　可能な子要素はありません。<br />
-　各キーにテキストで指定します。各行は改行コードで連結します。<br />
-　デフォルトキー以外は、クロージャの名前と一致するときのみ連結します。</p>
-<h2><a href="#dataハンドル" id="dataハンドル"></a>dataハンドル</h2>
-<p>　dataハンドルには、静的データを記述します。<br />
-　可能な子要素はありません。<br />
+</li>
+</ul>
+</li>
+</ul>
+<h3><a href="#closureハンドル" id="closureハンドル"></a>closureハンドル</h3>
+<p>　closureハンドルはひとつのクロージャに相当します。<br />
+　デフォルトキーにテキストとしてソースコードを記述します。<br />
+　指定できる子要素はありません。</p>
+<p>　指定できるキーは<a href="#mapハンドル">mapハンドル</a>を参照してください。</p>
+<h3><a href="#dataハンドル" id="dataハンドル"></a>dataハンドル</h3>
+<p>　dataハンドルには、静的データをtpacの形式で記述します。<br />
+　指定できる子要素はありません。<br />
 　通常のハンドルと同じくテキスト、マップ、スカラー値などのデータを記述できます。</p>
-<h2><a href="#configハンドル" id="configハンドル"></a>configハンドル</h2>
-<p>　configハンドルには、静的データを記述します。<br />
-　可能な子要素はありません。<br />
-　各キーにテキストとして記述します。<br />
-　GroovyのConfigSlurperで解析可能な形式でデータを記述してください。</p>
+<h3><a href="#configハンドル" id="configハンドル"></a>configハンドル</h3>
+<p>　configハンドルには、静的データをConfigSlurperの形式で記述します。<br />
+　指定できる子要素はありません。<br />
+　テキストとして記述します。<br />
+　GroovyのConfigSlurperで解析可能な形式で記述してください。</p>
 <h2><a href="#クロージャパス" id="クロージャパス"></a>クロージャパス</h2>
 <p>　tpac文書ではハンドルを参照するとき、タグと名前を連結した文字列をパスに使います。<br />
-　clmap記法ではタグを省略したパスを使えます。便宜上、これをクロージャパスと呼びます。<br />
-　clmap宣言および mapハンドルの名前は半角スラッシュ(/)を、末尾の closureハンドルは半角シャープ(#)を区切り文字としてください。<br />
-　ひとつ上位を参照するときは半角ドット二つ(..)を使用してください。名前を省略したハンドルを指すには文字列&quot;dflt&quot;を使用してください。<br />
-　n個のマップが階層を構成し、その下位にある closureハンドルを参照したい場合、絶対クロージャパスのフォーマットは以下となります。<br />
-　clmap宣言およびmapハンドルの名前に対応するハンドルが存在しないときはnullを返します。<br />
-　clousureハンドルの名前に対応するハンドルが存在しないときは、デフォルトキーで参照します。デフォルトキーに対応するハンドルも無いときはnullを返します。</p>
-<pre><code>/${clmap宣言の名前}/${mapハンドルの名前1}/ ... /${mapハンドルの名前n}#${closureハンドルの名前}
+　clmap記法ではタグを省略したパスを使えます。便宜上、これをクロージャパスと呼びます。</p>
+<p>　n個のマップが階層を構成し、その下位にある closureハンドルを参照したい場合、絶対クロージャパスのフォーマットは以下となります。</p>
+<pre><code>/${宣言の名前}/${mapハンドルの名前1}/ ... /${mapハンドルの名前n}#${closureハンドルの名前}
 </code></pre>
+<ul>
+<li>宣言および mapハンドルの名前は半角スラッシュ(/)を区切り文字としてください。<br />
+末尾の closureハンドルは半角シャープ(#)を区切り文字としてください。</li>
+<li>ひとつ上位を参照するときは半角ドット二つ(..)を使用してください。</li>
+<li>名前を省略したmapハンドルを指すには&quot;dflt&quot;を使用してください。</li>
+<li>名前を省略したclosureハンドルを指すには空文字を使用してください。
+<ul>
+<li>半角シャープは必要なことに注意してください。<br />
+半角シャープがなければmapハンドルを指すと解釈されます。</li>
+</ul>
+</li>
+<li>宣言およびmapハンドルの名前に対応するハンドルが存在しないときはnullを返します。<br />
+clousureハンドルの名前に対応するハンドルが存在しないときは、デフォルトキーで参照します。
+<ul>
+<li>デフォルトキーに対応するハンドルも無いときはnullを返します。</li>
+</ul>
+</li>
+</ul>
 <h2><a href="#大域変数" id="大域変数"></a>大域変数</h2>
-<p>　宣言（Clmapクラス）とmapハンドル（ClmapMapクラス）には大域変数を設定できます。<br />
+<p>　宣言（<a href="groovydoc/io/github/longfish801/clmap/Clmap.html">Clmap</a>クラス）とmapハンドル（<a href="groovydoc/io/github/longfish801/clmap/ClmapMap.html">ClmapMap</a>クラス）には大域変数を設定できます。<br />
 　メンバ変数であるpropertiesマップに格納したキーが大域変数名、値がその変数値となります。</p>
 <ul>
 <li>宣言に設定した大域変数は、その配下にあるすべてのクロージャで使用できます。</li>
 <li>mapハンドルに設定した大域変数は、その mapハンドル配下のクロージャで使用できます。<br />
-デフォルトの大域変数として &quot;clmap&quot;が格納されます。値はmapハンドルに相当するClmapMapインスタンスです。<br />
+デフォルトの大域変数として &quot;clmap&quot;が格納されます。<br />
+値はmapハンドルに相当する<a href="groovydoc/io/github/longfish801/clmap/ClmapMap.html">ClmapMap</a>インスタンスです。<br />
 大域変数名が同じならば、より下位のmapハンドルで設定されたものが優先されます。</li>
 </ul>
-<h2><a href="#生成されるコード" id="生成されるコード"></a>生成されるコード</h2>
+<h2><a href="#クロージャの生成" id="クロージャの生成"></a>クロージャの生成</h2>
+<p>　引数、戻り値は以下の順番で探し <strong>初めにみつかったもの</strong> が使用されます。<br />
+　たとえば mapハンドルに argsキーを指定し、下位の closureハンドルはすべて argsキーを省略すると、生成されるクロージャはすべて同じ引数になります。</p>
+<ol>
+<li>closureハンドルに指定された args, returnキー</li>
+<li>closureハンドルが所属する mapハンドルあるいは宣言の args, returnキー</li>
+<li>さらに上位の mapハンドルあるいは宣言の args, returnキー</li>
+</ol>
+<p>　dec, prefix, suffixキーについては階層が上位のものから順番に連結します。<br />
+　たとえば宣言に prefixハンドルで処理を記述すると、この clmap文書で生成されるすべてのクロージャの先頭でその処理が実行されます。</p>
 <p>　clmap文書のサンプルを以下に示します。</p>
 <pre><code>#! clmap:sample
-#&gt; dec
+#-dec
 	import org.apache.commons.lang3.StringUtils
-#&gt; prefix
+#-prefix
 	println 'BGN HERE'
-#&gt; suffix
+#-suffix
 	println 'END HERE'
 
 #&gt; map:map1
-#&gt;&gt; args
+#-args
 	String yourName
-#&gt;&gt; return
+#-return
 	String result
-#&gt;&gt; dec
+#-dec
 	String cmnString = 'This is'
-#&gt;&gt; prefix
+#-prefix
 	result = ''
-#&gt;&gt; suffix
+#-suffix
 	result += '!'
 #&gt;&gt; closure:key1
 	result = StringUtils.trim(&quot;   ${cmnString} ${yourName}.   &quot;)
