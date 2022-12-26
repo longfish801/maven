@@ -28,7 +28,7 @@
           "group": "io.github.longfish801",
           "module": "clmap",
           "version": {
-            "requires": "1.2.00"
+            "requires": "2.0.00"
           }
         },
         {
@@ -50,11 +50,11 @@
         {
           "name": "switem-1.2.00.jar",
           "url": "switem-1.2.00.jar",
-          "size": 104170,
-          "sha512": "0892bef83a71263f52c3f8e17066ce603ffe108a42b50ffe4e346ec9ab815293b631296095bcdcaf339dcc7d700c796526f2877a874f7723e2807690a0346be6",
-          "sha256": "309f2348aab19b8a6b4cd8c5310b7ed3de1157c0627c0d5763f499e7d6e6c94e",
-          "sha1": "aba9136d7e4afff9cf4b4a2cc9fa7f5b039f57eb",
-          "md5": "e9eef5b463e49b5b8df312e084c34031"
+          "size": 104172,
+          "sha512": "a86dd73766362394f49811eb5f16cd244924494683809a175474d487b7488553028c98f79a7a9c2d02e4a196321a11e8ff34c0894b7af538a57d62845d436779",
+          "sha256": "e34507777d8e1484c55c842e6a30956684e932bdb4152b765752ed122e71cbeb",
+          "sha1": "be2e7528e7ab8024a6ee85a03e6df7e64cc1e704",
+          "md5": "fd58c373415b192ebd5d4e377e19dda4"
         }
       ]
     },
@@ -93,7 +93,7 @@
           "group": "io.github.longfish801",
           "module": "clmap",
           "version": {
-            "requires": "1.2.00"
+            "requires": "2.0.00"
           }
         },
         {
@@ -115,11 +115,11 @@
         {
           "name": "switem-1.2.00.jar",
           "url": "switem-1.2.00.jar",
-          "size": 104170,
-          "sha512": "0892bef83a71263f52c3f8e17066ce603ffe108a42b50ffe4e346ec9ab815293b631296095bcdcaf339dcc7d700c796526f2877a874f7723e2807690a0346be6",
-          "sha256": "309f2348aab19b8a6b4cd8c5310b7ed3de1157c0627c0d5763f499e7d6e6c94e",
-          "sha1": "aba9136d7e4afff9cf4b4a2cc9fa7f5b039f57eb",
-          "md5": "e9eef5b463e49b5b8df312e084c34031"
+          "size": 104172,
+          "sha512": "a86dd73766362394f49811eb5f16cd244924494683809a175474d487b7488553028c98f79a7a9c2d02e4a196321a11e8ff34c0894b7af538a57d62845d436779",
+          "sha256": "e34507777d8e1484c55c842e6a30956684e932bdb4152b765752ed122e71cbeb",
+          "sha1": "be2e7528e7ab8024a6ee85a03e6df7e64cc1e704",
+          "md5": "fd58c373415b192ebd5d4e377e19dda4"
         }
       ]
     }
