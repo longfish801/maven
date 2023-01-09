@@ -1,0 +1,113 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "clmap",
+    "version": "2.1.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "tpac",
+          "version": {
+            "requires": "1.2.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "clmap-2.1.00.jar",
+          "url": "clmap-2.1.00.jar",
+          "size": 78005,
+          "sha512": "232575e5d82b88d0f073732fb35fc69551e358e949cb4be916011d75bf19634b7bab03897d12d517cb1338c329f310c320b59cffd674832adbc1a8fb55244c43",
+          "sha256": "1a407d808e273f151bd75947c7b0dd799f150e43c99d04f501749386df3b485d",
+          "sha1": "73802b91577f34feead966807cd22f3bf7a8ba9e",
+          "md5": "740aa619aac1234ae5b3fc7b45734049"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.12.0"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "3.0.9"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.36"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "tpac",
+          "version": {
+            "requires": "1.2.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "clmap-2.1.00.jar",
+          "url": "clmap-2.1.00.jar",
+          "size": 78005,
+          "sha512": "232575e5d82b88d0f073732fb35fc69551e358e949cb4be916011d75bf19634b7bab03897d12d517cb1338c329f310c320b59cffd674832adbc1a8fb55244c43",
+          "sha256": "1a407d808e273f151bd75947c7b0dd799f150e43c99d04f501749386df3b485d",
+          "sha1": "73802b91577f34feead966807cd22f3bf7a8ba9e",
+          "md5": "740aa619aac1234ae5b3fc7b45734049"
+        }
+      ]
+    }
+  ]
+}
