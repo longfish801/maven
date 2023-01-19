@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/maven/asset/style.css">
+<title> yakumo記法</title>
+</head>
+<body class="container">
+
+<div class="row justify-content-center">
+<main class="col-lg-8">
+<h1><a href="#yakumo記法" id="yakumo記法"></a>yakumo記法</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#糖衣構文">糖衣構文</a>
+<ul>
+<li><a href="#見出し">見出し</a></li>
+<li><a href="#箇条書き">箇条書き</a></li>
+<li><a href="#引用引用元">引用、引用元</a></li>
+<li><a href="#コード">コード</a></li>
+<li><a href="#マスキング">マスキング</a></li>
+<li><a href="#文範囲終了タグの省略">文範囲終了タグの省略</a></li>
+</ul>
+</li>
+</ul>
+<h2><a href="#概要" id="概要"></a>概要</h2>
+<p>　サンプルとして、独自の糖衣構文（yakumo記法）を bltxt文書に変換する変換資材 thtmlが用意されています。<br />
+　変換処理は、変換資材 fyakumo内の fyakumo.tpacに記述しています。</p>
+<h2><a href="#糖衣構文" id="糖衣構文"></a>糖衣構文</h2>
+<h3><a href="#見出し" id="見出し"></a>見出し</h3>
+<p>　行頭に「■」「□」「▼」があれば、見出しとみなします。</p>
+<pre><code>■おいしいカレーの作り方
+□材料の準備
+▼牛の飼い方
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【＝見出し】おいしいカレーの作り方
+【＝見出し：2】材料の準備
+【＝見出し：3】牛の飼い方
+</code></pre>
+<h3><a href="#箇条書き" id="箇条書き"></a>箇条書き</h3>
+<p>　一文字目に中黒（・）があれば、箇条書きとみなします。<br />
+　半角空白でインデントすることで、複数行を記述できます。<br />
+　項目の間に空行があっても無視します。<br />
+　箇条書きを終了するには、空行の後に中黒始まりではない行を記述してください。</p>
+<pre><code>・じゃがいも
+・ニンジンを、
+  二本。
+
+・玉ねぎ
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－箇条書き】
+【－項目】
+じゃがいも
+【項目－】
+【－項目】
+ニンジンを、
+二本。
+【項目－】
+【－項目】
+玉ねぎ
+【項目－】
+【箇条書き－】
+</code></pre>
+<p>　入れ子にすることもできます。<br />
+　インデントとして半角スペース２個が必要です。</p>
+<pre><code>・じゃがいも
+・ニンジン
+・玉ねぎ
+  ・刻むときは注意。
+    涙がでます。
+・カレー粉
+  ・ジャワカレー
+  ・バーモンドカレー
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－箇条書き】
+【－項目】
+じゃがいも
+【項目－】
+【－項目】
+ニンジン
+【項目－】
+【－項目】
+玉ねぎ
+【－箇条書き】
+【－項目】
+刻むときは注意。
+涙がでます。
+【項目－】
+【箇条書き－】
+【項目－】
+【－項目】
+カレー粉
+【－箇条書き】
+【－項目】
+ジャワカレー
+【項目－】
+【－項目】
+バーモンドカレー
+【項目－】
+【箇条書き－】
+【項目－】
+【箇条書き－】
+</code></pre>
+<h3><a href="#引用引用元" id="引用引用元"></a>引用、引用元</h3>
+<p>　半角イコール５つを区切り行として、引用を表現できます。<br />
+　必要であれば引用元を行タグで記述します。</p>
+<pre><code>=====
+　山路を登りながら、こう考えた。
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。
+【＝引用元】夏目漱石『草枕』
+=====
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－引用】
+　山路を登りながら、こう考えた。
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。
+【＝引用元】夏目漱石『草枕』
+【引用－】
+</code></pre>
+<h3><a href="#コード" id="コード"></a>コード</h3>
+<p>　半角イコール５つを区切り行として、コードを表現できます。</p>
+<pre><code>-----
+println &quot;Hello, World!&quot;;
+println &quot;This is sample code of how to hello to all of the world, which is executed &quot; + Date().format(&quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&quot;);
+-----
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【－コード】
+println &quot;Hello, World!&quot;;
+println &quot;This is sample code of how to hello to all of the world, which is executed &quot; + Date().format(&quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&quot;);
+【コード－】
+</code></pre>
+<h3><a href="#マスキング" id="マスキング"></a>マスキング</h3>
+<p>　yakumo記法の糖衣構文で、switemスクリプトによる整形の対象外としたい文章を表現できます。</p>
+<pre><code>【－マスキング】
+・帰りに綿棒を買ってくること。
+【マスキング－】
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。<br />
+　本来なら箇条書きとして整形されるはずですが、マスキングしているため処理の対象外となっています。<br />
+　行範囲タグは削除されることにご注意ください。</p>
+<pre><code>・帰りに綿棒を買ってくること。
+</code></pre>
+<h3><a href="#文範囲終了タグの省略" id="文範囲終了タグの省略"></a>文範囲終了タグの省略</h3>
+<p>　以下は本来ならば文範囲タグを用いて記述すべきですが、文範囲終了タグを省略して文中タグのように記述することができます。</p>
+<ul>
+<li>リンク</li>
+<li>重要</li>
+<li>補足</li>
+<li>訂正</li>
+<li>縦中横</li>
+<li>傍点</li>
+<li>ルビ</li>
+</ul>
+<p>　リンクの場合は以下のとおりです。<br />
+　一番目の属性にリンクとして表示する文字列を、二番目の属性にリンク先アドレスを指定してください。<br />
+　一番目の属性のみ指定した場合は、表示する文字列とリンク先アドレスを同じ値とみなします。</p>
+<pre><code>　詳しくは【リンク：ネット検索：https://www.google.com/】してください。
+　【リンク：https://www.google.com/】でネット検索できます。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　詳しくは【｜リンク：https://www.google.com/】ネット検索【リンク｜】してください。
+　【｜リンク：https://www.google.com/】https://www.google.com/【リンク｜】でネット検索できます。
+</code></pre>
+<p>　特例として、URLのみが記述された行もリンクとみなして文範囲タグに変換します。</p>
+<pre><code>https://www.google.com/
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>【｜リンク：https://www.google.com/】https://www.google.com/【リンク｜】
+</code></pre>
+<p>　重要の場合は以下のとおりです。<br />
+　補足、訂正、縦中横、傍点も同様です。</p>
+<pre><code>　間違えて【重要：自爆スイッチ】を押さないでください。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　間違えて【｜重要】自爆スイッチ【重要｜】を押さないでください。
+</code></pre>
+<p>　ルビの場合は以下のとおりです。<br />
+　一番目の属性にルビをふる対象を、二番目の属性にルビを指定します。</p>
+<pre><code>　【ルビ：出納：すいとう】係は言った。
+</code></pre>
+<p>　上記を以下のbltxt文書に変換します。</p>
+<pre><code>　【｜ルビ：すいとう】出納【ルビ｜】係は言った。
+</code></pre>
+</main>
+
+</div><!-- end of row -->
+
+<footer class="row justify-content-center p-3">
+<nav class="col-lg-8 text-end">
+<button type="button" class="btn btn-primary" onclick="backPage();">戻る</button>
+</nav>
+</footer><!-- end of row -->
+
+<script src="/maven/asset/script.js" charset="uft-8"></script>
+</body>
+</html>

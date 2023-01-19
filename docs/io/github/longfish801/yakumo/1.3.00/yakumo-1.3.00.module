@@ -1,0 +1,162 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "yakumo",
+    "version": "1.3.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "bltxt",
+          "version": {
+            "requires": "1.2.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "clmap",
+          "version": {
+            "requires": "2.1.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "switem",
+          "version": {
+            "requires": "1.3.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yakumo-1.3.00.jar",
+          "url": "yakumo-1.3.00.jar",
+          "size": 90171,
+          "sha512": "cbf7785382c1244f9593c9687404ea7686156477c0a48377a0578c8582c330809f3efd15e735e8e8a3dc7dc48766d1e025a3f767eabd567a412fcb5bcc4ceb46",
+          "sha256": "9a22e5a257c7ea5db69305ffe5521d1dfa9a3d47a302854e41a79919595e14e4",
+          "sha1": "c5255238b36a570926f20226ebf9f35b51390d6b",
+          "md5": "bee974eb3b6ccdf04fb4424c4d3ea372"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.12.0"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.9"
+          }
+        },
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "3.0.9"
+          }
+        },
+        {
+          "group": "org.codehaus.gpars",
+          "module": "gpars",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.36"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "bltxt",
+          "version": {
+            "requires": "1.2.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "clmap",
+          "version": {
+            "requires": "2.1.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "switem",
+          "version": {
+            "requires": "1.3.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yakumo-1.3.00.jar",
+          "url": "yakumo-1.3.00.jar",
+          "size": 90171,
+          "sha512": "cbf7785382c1244f9593c9687404ea7686156477c0a48377a0578c8582c330809f3efd15e735e8e8a3dc7dc48766d1e025a3f767eabd567a412fcb5bcc4ceb46",
+          "sha256": "9a22e5a257c7ea5db69305ffe5521d1dfa9a3d47a302854e41a79919595e14e4",
+          "sha1": "c5255238b36a570926f20226ebf9f35b51390d6b",
+          "md5": "bee974eb3b6ccdf04fb4424c4d3ea372"
+        }
+      ]
+    }
+  ]
+}

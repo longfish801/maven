@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/maven/asset/style.css">
+<title> HTML化</title>
+</head>
+<body class="container">
+
+<div class="row justify-content-center">
+<main class="col-lg-8">
+<h1><a href="#html化" id="html化"></a>HTML化</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#メタ要素">メタ要素</a>
+<ul>
+<li><a href="#タイトル">タイトル</a></li>
+<li><a href="#付帯情報">付帯情報</a></li>
+<li><a href="#目次">目次</a></li>
+<li><a href="#註記">註記</a></li>
+<li><a href="#ナビゲーションリンク">ナビゲーションリンク</a></li>
+</ul>
+</li>
+<li><a href="#平文">平文</a></li>
+<li><a href="#段落">段落</a></li>
+<li><a href="#ブロック要素">ブロック要素</a>
+<ul>
+<li><a href="#見出し">見出し</a></li>
+<li><a href="#箇条書き">箇条書き</a></li>
+<li><a href="#用語説明">用語説明</a></li>
+<li><a href="#画像">画像</a></li>
+<li><a href="#コラム">コラム</a></li>
+<li><a href="#注意">注意</a></li>
+<li><a href="#引用引用元">引用、引用元</a></li>
+<li><a href="#コード">コード</a></li>
+<li><a href="#変換済">変換済</a></li>
+<li><a href="#註註記">註、註記</a></li>
+</ul>
+</li>
+<li><a href="#インライン要素">インライン要素</a>
+<ul>
+<li><a href="#リンク">リンク</a></li>
+<li><a href="#重要">重要</a></li>
+<li><a href="#補足">補足</a></li>
+<li><a href="#訂正">訂正</a></li>
+<li><a href="#縦中横">縦中横</a></li>
+<li><a href="#傍点">傍点</a></li>
+<li><a href="#ルビ">ルビ</a></li>
+</ul>
+</li>
+</ul>
+<h2><a href="#概要" id="概要"></a>概要</h2>
+<p>　yakumo記法から bltxt文書へ変換された後、HTML5へ変換するサンプルとして変換資材 thtmlが用意されています。<br />
+　各処理と変換資材との対応は以下のとおりです。</p>
+<dl>
+<dt>メタ要素（bltxt文書のmetaタグ）をHTMLに変換</dt>
+<dd>変換資材thtml内のthtml.tpac上のクロージャパス /thtml/bind, /thtml/navi</dd>
+<dt>平文（bltxt文書のtextタグ）をHTMLに変換</dt>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#text</dd>
+<dt>段落（bltxt文書のparaタグ）をHTMLに変換</dt>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#para</dd>
+<dt>ブロック要素（bltxt文書のparaタグ）をHTMLに変換</dt>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#block</dd>
+<dt>インライン要素（bltxt文書のparaタグ）をHTMLに変換</dt>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#inline</dd>
+</dl>
+<h2><a href="#メタ要素" id="メタ要素"></a>メタ要素</h2>
+<h3><a href="#タイトル" id="タイトル"></a>タイトル</h3>
+<p>　タイトル、サブタイトルは、含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃タイトル】円周率について
+【＃サブタイトル】著名な語呂合わせ
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　タイトルの指定がないときはデフォルトで「（無題）」とします。</p>
+<pre><code>&lt;h1&gt;円周率について&lt;/h1&gt;
+&lt;div id=&quot;subtitle&quot;&gt;著名な語呂合わせ&lt;/div&gt;
+</code></pre>
+<h3><a href="#付帯情報" id="付帯情報"></a>付帯情報</h3>
+<p>　付帯情報として公開日、著者名を含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃公開日】2022.02.03
+【＃著者名】山田太郎
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;li&gt;公開日 2022.02.03&lt;/li&gt;
+&lt;li&gt;山田太郎&lt;/li&gt;
+</code></pre>
+<h3><a href="#目次" id="目次"></a>目次</h3>
+<p>　見出しから目次を生成します。<br />
+　以下のbltxt文書があったとします。</p>
+<pre><code>【＝見出し】おいしいカレーの作り方
+【＝見出し：2】材料の準備
+【＝見出し：3】牛の飼い方
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;li class=&quot;nav-item toc_h2&quot;&gt;&lt;a href=&quot;#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc_h3&quot;&gt;&lt;a href=&quot;#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc_h4&quot;&gt;&lt;a href=&quot;#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h3><a href="#註記" id="註記"></a>註記</h3>
+<p>　註は文中タグで、註記は含意範囲タグで記述します。<br />
+　一番目の属性に、紐付けのため共通する文字列を指定してください。<br />
+　以下のbltxt文書があったとします。</p>
+<pre><code>　XML【註：XML】をHTML【註：HTML】に変換します。
+
+【＊註記：XML】
+　eXtensible Markup Languageの略です。
+【註記＊】
+【＊註記：HTML】
+　Hyper Text Markup Languageの略です。
+【註記＊】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;dt&gt;&lt;a name=&quot;t1&quot; href=&quot;#f1&quot;&gt;[*1]&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;　eXtensible Markup Languageの略です。&lt;/dd&gt;
+&lt;dt&gt;&lt;a name=&quot;t2&quot; href=&quot;#f2&quot;&gt;[*2]&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;　Hyper Text Markup Languageの略です。&lt;/dd&gt;
+</code></pre>
+<h3><a href="#ナビゲーションリンク" id="ナビゲーションリンク"></a>ナビゲーションリンク</h3>
+<p>　他のページへのナビゲーションリンクを生成します。</p>
+<p>　補足情報になにも指定しない場合、以下のリンクを生成します。</p>
+<ul>
+<li>変換結果キーの値が &quot;index&quot;の場合
+<ul>
+<li>&quot;..&quot;へのリンクを生成します。</li>
+</ul>
+</li>
+<li>変換結果キーの値が &quot;index&quot;以外の場合
+<ul>
+<li>&quot;index.html&quot;へのリンクを生成します。</li>
+</ul>
+</li>
+</ul>
+<p>　補足情報にキー orderで変換結果の HTMLファイル名（変換結果キー.html）のリストが指定されている場合、以下のリンクを生成します。</p>
+<ul>
+<li>変換結果キーの値が &quot;index&quot;の場合
+<ul>
+<li>&quot;..&quot;へのリンクを生成します。</li>
+</ul>
+</li>
+<li>変換結果キーの値が &quot;index&quot;以外の場合
+<ul>
+<li>前のページ、次のページ、そして&quot;index.html&quot;へのリンクを生成します。</li>
+</ul>
+</li>
+</ul>
+<p>　たとえばキー orderに [ &quot;some1.html&quot;, &quot;some2.html&quot;, &quot;some3.html&quot; ]が指定されており、変換結果キーが &quot;some2&quot;のときには以下のリンクを出力します。</p>
+<pre><code>&lt;a href=&quot;some1.html&quot;&gt;&lt;i class=&quot;bi bi-arrow-left-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;index.html#toc&quot;&gt;&lt;i class=&quot;bi bi-arrow-up-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;some3.html&quot;&gt;&lt;i class=&quot;bi bi-arrow-right-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+</code></pre>
+<h2><a href="#平文" id="平文"></a>平文</h2>
+<p>　HTML文法上の特殊文字をそのまま使うことができます。<br />
+　以下のbltxt文書があったとします。</p>
+<pre><code>　もし、あのとき&quot;あれ&quot;があったなら。
+　極上の&lt;カレー&gt;になっていたかもしれない。
+</code></pre>
+<p>　以下のHTMLに変換します。特殊文字を実体参照に置き換えます。</p>
+<pre><code>&lt;p&gt;　もし、あのとき&amp;quot;あれ&amp;quot;があったなら。&lt;br/&gt;
+　極上の&amp;lt;カレー&amp;gt;になっていたかもしれない。&lt;/p&gt;
+</code></pre>
+<h2><a href="#段落" id="段落"></a>段落</h2>
+<p>　bltxt文書の性質上、連続する行をひとつの段落とみなします。<br />
+　空行が段落区切りとなります。空行が複数あってもひとつの空行と同じ扱いになります。<br />
+　以下のbltxt文書があったとします。</p>
+<pre><code>　おいしいカレーを作るには隠し味が大切です。
+　隠し味にもいろいろなものがあります。
+
+
+　一般家庭で良く使われる隠し味を試してみましょう。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　改行は brタグを挿入します。段落は pタグで囲みます。</p>
+<pre><code>&lt;p&gt;　おいしいカレーを作るには隠し味が大切です。&lt;br/&gt;
+　隠し味にもいろいろなものがあります。&lt;/p&gt;
+
+&lt;p&gt;　一般家庭で良く使われる隠し味を試してみましょう。&lt;/p&gt;
+</code></pre>
+<p>　以下の行範囲タグ内では brタグのみ挿入（pタグなし）します。</p>
+<ul>
+<li>見出し</li>
+<li>（箇条書きの）項目</li>
+<li>（用語説明の）用語</li>
+<li>（用語説明の）説明</li>
+<li>画像</li>
+<li>（引用の）引用元</li>
+</ul>
+<p>　以下の行範囲タグ内では改行コードのみ（brタグ、pタグなし）です。</p>
+<ul>
+<li>コード</li>
+<li>変換済</li>
+</ul>
+<p>　上記以外では brタグ、pタグを挿入します。</p>
+<h2><a href="#ブロック要素" id="ブロック要素"></a>ブロック要素</h2>
+<h3><a href="#見出し" id="見出し"></a>見出し</h3>
+<p>　行タグで見出しを表現できます。</p>
+<pre><code>【＝見出し】おいしいカレーの作り方
+【＝見出し：2】材料の準備
+【＝見出し：3】牛の飼い方
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　タイトルを h1とする関係上、レベル1が h2、レベル2が h3……となります。<br />
+　目次からページ内リンクで移動できるよう、aタグを挿入します。<br />
+　name属性は、bltxt文書を XML化したときの snum属性を利用します。</p>
+<pre><code>&lt;h2&gt;&lt;a name=&quot;1&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;a name=&quot;2&quot;&gt;材料の準備&lt;/a&gt;&lt;/h3&gt;
+&lt;h4&gt;&lt;a name=&quot;3&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/h4&gt;
+</code></pre>
+<h3><a href="#箇条書き" id="箇条書き"></a>箇条書き</h3>
+<p>　行範囲タグで箇条書きを表現できます。</p>
+<pre><code>【－箇条書き】
+【－項目】
+じゃがいも
+【項目－】
+【－項目】
+ニンジン
+【項目－】
+【－項目】
+玉ねぎ
+【－箇条書き】
+【－項目】
+刻むときは注意。
+涙がでます。
+【項目－】
+【箇条書き－】
+【項目－】
+【－項目】
+カレー粉
+【－箇条書き】
+【－項目】
+ジャワカレー
+【項目－】
+【－項目】
+バーモンドカレー
+【項目－】
+【箇条書き－】
+【項目－】
+【箇条書き－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;じゃがいも&lt;/li&gt;
+&lt;li&gt;ニンジン&lt;/li&gt;
+&lt;li&gt;玉ねぎ
+	&lt;ul&gt;
+	&lt;li&gt;刻むときは注意。&lt;br/&gt;
+	涙がでます。&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;カレー粉
+	&lt;ul&gt;
+	&lt;li&gt;ジャワカレー&lt;/li&gt;
+	&lt;li&gt;バーモンドカレー&lt;/li&gt;
+	&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3><a href="#用語説明" id="用語説明"></a>用語説明</h3>
+<p>　行範囲タグ、行タグで用語説明を表現できます。</p>
+<pre><code>【－用語説明】
+【＝用語】甘口
+【＝説明】いちばん辛みが穏やか。子供向け。
+【＝用語】中辛
+【＝説明】中くらいの辛さ。一般的。
+【＝用語】大辛
+【＝説明】とても辛い。マニアック。
+【用語説明－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;dl&gt;
+&lt;dt&gt;甘口&lt;/dt&gt;
+&lt;dd&gt;いちばん辛みが穏やか。子供向け。&lt;/dd&gt;
+&lt;dt&gt;中辛&lt;/dt&gt;
+&lt;dd&gt;中くらいの辛さ。一般的。&lt;/dd&gt;
+&lt;dt&gt;大辛&lt;/dt&gt;
+&lt;dd&gt;とても辛い。マニアック。&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h3><a href="#画像" id="画像"></a>画像</h3>
+<p>　行タグで画像を表現できます。<br />
+　属性に画像の説明、画像ファイルへのパスを指定してください。</p>
+<pre><code>【＝画像：猫ちゃん：cutecat.png】
+</code></pre>
+<p>　画像にキャプションを付与することもできます。</p>
+<pre><code>【＝画像：猫ちゃん：cutecat.png】猫ちゃん、可愛い～
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;figure class=&quot;text-center&quot;&gt;
+&lt;img src=&quot;cutecat.png&quot; class=&quot;img-fluid&quot; alt=&quot;猫ちゃん&quot;&gt;
+&lt;figcaption&gt;猫ちゃん、可愛い～&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+<h3><a href="#コラム" id="コラム"></a>コラム</h3>
+<p>　行範囲タグでコラムを表現できます。</p>
+<pre><code>【－コラム】
+　日本人の四割は血液型がＯ型です。
+【コラム－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　asideタグ（class属性値は&quot;column&quot;）を生成します。</p>
+<pre><code>&lt;aside class=&quot;panel panel-primary&quot;&gt;
+&lt;p&gt;　日本人の四割は血液型がＯ型です。&lt;/p&gt;
+&lt;/aside&gt;
+</code></pre>
+<p>　第一属性に小見出しを指定することもできます。</p>
+<pre><code>【－コラム：８月３１日はなんの日？】
+　８月３１日は野菜の日です。
+　野菜を食べましょう。
+【コラム－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;aside class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;
+&lt;header class=&quot;alert-heading&quot;&gt;&lt;i class=&quot;bi bi-info-circle-fill&quot;&gt;&lt;/i&gt; ８月３１日はなんの日？&lt;/header&gt;
+&lt;p&gt;　８月３１日は野菜の日です。&lt;br/&gt;
+　野菜を食べましょう。&lt;/p&gt;
+&lt;/aside&gt;
+</code></pre>
+<h3><a href="#注意" id="注意"></a>注意</h3>
+<p>　行範囲タグで注意喚起のためのコラムを表現できます。<br />
+　第一属性に小見出しを指定することもできます。</p>
+<pre><code>【－注意：中火とは】
+　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。
+【注意－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　asideタグ（class属性値は&quot;attention&quot;）を生成します。</p>
+<pre><code>&lt;aside class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;
+&lt;header class=&quot;alert-heading&quot;&gt;&lt;i class=&quot;bi bi-exclamation-triangle-fill&quot;&gt;&lt;/i&gt; 中火とは&lt;/header&gt;
+&lt;p&gt;　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。&lt;/p&gt;
+&lt;/aside&gt;
+</code></pre>
+<h3><a href="#引用引用元" id="引用引用元"></a>引用、引用元</h3>
+<p>　行範囲タグで引用を表現できます。<br />
+　必要に応じて行タグで引用元を記述できます。</p>
+<pre><code>【－引用】
+　山路を登りながら、こう考えた。
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。
+【＝引用元】夏目漱石『草枕』
+【引用－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;blockquote&gt;
+&lt;p&gt;　山路を登りながら、こう考えた。&lt;br/&gt;
+　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。&lt;/p&gt;
+&lt;footer&gt;&lt;cite&gt;夏目漱石『草枕』&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+</code></pre>
+<h3><a href="#コード" id="コード"></a>コード</h3>
+<p>　行範囲タグでコードを表現できます。</p>
+<pre><code>【－コード】
+println &quot;Hello, World!&quot;;
+println &quot;This is sample code of how to hello to all of the world, which is executed &quot; + Date().format(&quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&quot;);
+【コード－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　preタグを生成します。</p>
+<pre><code>&lt;pre&gt;
+println &amp;quot;Hello, World!&amp;quot;;
+println &amp;quot;This is sample code of how to hello to all of the world, which is executed &amp;quot; + Date().format(&amp;quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&amp;quot;);
+&lt;/pre&gt;
+</code></pre>
+<h3><a href="#変換済" id="変換済"></a>変換済</h3>
+<p>　yakumo記法が対応していない変換対象について、変換後の内容を記述します。<br />
+　属性には形式名を記述してください。HTMLならば &quot;html&quot;です。</p>
+<pre><code>【－変換済：html】
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;好きなおかず&lt;/th&gt;&lt;th&gt;好きなごはん&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;カレー&lt;/td&gt;&lt;td&gt;ライス&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+【変換済－】
+</code></pre>
+<p>　以下のように、なにも加工せずにそのまま出力します。<br />
+　なお、形式が一致しない場合はなにも出力しません。</p>
+<pre><code>&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;好きなおかず&lt;/th&gt;&lt;th&gt;好きなごはん&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;カレー&lt;/td&gt;&lt;td&gt;ライス&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h3><a href="#註註記" id="註註記"></a>註、註記</h3>
+<p>　註は文中タグで記述してください。<br />
+　一番目の属性に、紐付けのため共通する文字列を指定してください。</p>
+<pre><code>　XML【註：XML】をHTML【註：HTML】に変換します。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　XML&lt;sup&gt;&lt;a id=&quot;f1&quot; href=&quot;#t1&quot;&gt;*1&lt;/a&gt;&lt;/sup&gt;をHTML&lt;sup&gt;&lt;a id=&quot;f2&quot; href=&quot;#t2&quot;&gt;*2&lt;/a&gt;&lt;/sup&gt;に変換します。&lt;/p&gt;
+</code></pre>
+<h2><a href="#インライン要素" id="インライン要素"></a>インライン要素</h2>
+<h3><a href="#リンク" id="リンク"></a>リンク</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　詳しくは【｜リンク：https://www.google.com/】ネット検索【リンク｜】してください。
+　【｜リンク：https://www.google.com/】https://www.google.com/【リンク｜】でネット検索できます。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　詳しくは&lt;a href=&quot;https://www.google.com/&quot;&gt;ネット検索&lt;/a&gt;してください。&lt;br/&gt;
+　&lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;でネット検索できます。&lt;/p&gt;
+</code></pre>
+<h3><a href="#重要" id="重要"></a>重要</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　間違えて【｜重要】自爆スイッチ【重要｜】を押さないでください。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　間違えて&lt;strong&gt;自爆スイッチ&lt;/strong&gt;を押さないでください。&lt;/p&gt;
+</code></pre>
+<h3><a href="#補足" id="補足"></a>補足</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　もちろん本当【｜補足】かもしれない【補足｜】ですよ。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　もちろん本当&lt;small&gt;かもしれない&lt;/small&gt;ですよ。&lt;/p&gt;
+</code></pre>
+<h3><a href="#訂正" id="訂正"></a>訂正</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　富士山の標高は【｜訂正】３７７７メートル【訂正｜】３７７６メートルです。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　富士山の標高は&lt;s&gt;３７７７メートル&lt;/s&gt;３７７６メートルです。&lt;/p&gt;
+</code></pre>
+<h3><a href="#縦中横" id="縦中横"></a>縦中横</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　シェイクスピア全集の第【｜縦中横】10【縦中横｜】巻に記述されています。
+</code></pre>
+<p>　HTML5は縦書きや縦中横には対応していないため、HTMLタグへの変換はしません。</p>
+<pre><code>&lt;p&gt;　シェイクスピア全集の第10巻に記述されています。&lt;/p&gt;
+</code></pre>
+<h3><a href="#傍点" id="傍点"></a>傍点</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　まだ【｜傍点】午前三時【傍点｜】じゃないか。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　傍点のためのHTMLタグは無いため、spanタグを利用しています。</p>
+<pre><code>&lt;p&gt;　まだ&lt;span class=&quot;dot&quot;&gt;午前三時&lt;/span&gt;じゃないか。&lt;/p&gt;
+</code></pre>
+<h3><a href="#ルビ" id="ルビ"></a>ルビ</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　【｜ルビ：すいとう】出納【ルビ｜】係は言った。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;p&gt;　&lt;ruby&gt;出納&lt;rp&gt;［&lt;/rp&gt;&lt;rt&gt;すいとう&lt;/rt&gt;&lt;rp&gt;］&lt;/rp&gt;&lt;/ruby&gt;係は言った。&lt;/p&gt;
+</code></pre>
+</main>
+
+</div><!-- end of row -->
+
+<footer class="row justify-content-center p-3">
+<nav class="col-lg-8 text-end">
+<button type="button" class="btn btn-primary" onclick="backPage();">戻る</button>
+</nav>
+</footer><!-- end of row -->
+
+<script src="/maven/asset/script.js" charset="uft-8"></script>
+</body>
+</html>
