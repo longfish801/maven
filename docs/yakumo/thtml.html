@@ -35,11 +35,12 @@
 <li><a href="#引用引用元">引用、引用元</a></li>
 <li><a href="#コード">コード</a></li>
 <li><a href="#変換済">変換済</a></li>
-<li><a href="#註註記">註、註記</a></li>
+<li><a href="#行範囲">行範囲</a></li>
 </ul>
 </li>
 <li><a href="#インライン要素">インライン要素</a>
 <ul>
+<li><a href="#註">註</a></li>
 <li><a href="#リンク">リンク</a></li>
 <li><a href="#重要">重要</a></li>
 <li><a href="#補足">補足</a></li>
@@ -47,6 +48,7 @@
 <li><a href="#縦中横">縦中横</a></li>
 <li><a href="#傍点">傍点</a></li>
 <li><a href="#ルビ">ルビ</a></li>
+<li><a href="#範囲">範囲</a></li>
 </ul>
 </li>
 </ul>
@@ -376,15 +378,30 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 &lt;tr&gt;&lt;td&gt;カレー&lt;/td&gt;&lt;td&gt;ライス&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
-<h3><a href="#註註記" id="註註記"></a>註、註記</h3>
+<h3><a href="#行範囲" id="行範囲"></a>行範囲</h3>
+<p>　特殊な表示をしたい行の範囲を表します。<br />
+　属性には範囲の種類を指定してください。</p>
+<pre><code>【－行範囲：big】
+　宵越しのカレーは美味しい。
+【行範囲－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　スタイルシートと組み合わせることで期待する表示ができます。<br />
+　class属性の値には属性に指定した値が使われます。</p>
+<pre><code>&lt;div class=&quot;big&quot;&gt;
+&lt;p&gt;　宵越しのカレーは美味しい。&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<h2><a href="#インライン要素" id="インライン要素"></a>インライン要素</h2>
+<h3><a href="#註" id="註"></a>註</h3>
 <p>　註は文中タグで記述してください。<br />
-　一番目の属性に、紐付けのため共通する文字列を指定してください。</p>
+　一番目の属性に、紐付けのため共通する文字列を指定してください。<br />
+　註に対する註記の書き方については <a href="#註記">註記</a> を参照してください。</p>
 <pre><code>　XML【註：XML】をHTML【註：HTML】に変換します。
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
 <pre><code>&lt;p&gt;　XML&lt;sup&gt;&lt;a id=&quot;f1&quot; href=&quot;#t1&quot;&gt;*1&lt;/a&gt;&lt;/sup&gt;をHTML&lt;sup&gt;&lt;a id=&quot;f2&quot; href=&quot;#t2&quot;&gt;*2&lt;/a&gt;&lt;/sup&gt;に変換します。&lt;/p&gt;
 </code></pre>
-<h2><a href="#インライン要素" id="インライン要素"></a>インライン要素</h2>
 <h3><a href="#リンク" id="リンク"></a>リンク</h3>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>　詳しくは【｜リンク：https://www.google.com/】ネット検索【リンク｜】してください。
@@ -436,6 +453,16 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
 <pre><code>&lt;p&gt;　&lt;ruby&gt;出納&lt;rp&gt;［&lt;/rp&gt;&lt;rt&gt;すいとう&lt;/rt&gt;&lt;rp&gt;］&lt;/rp&gt;&lt;/ruby&gt;係は言った。&lt;/p&gt;
+</code></pre>
+<h3><a href="#範囲" id="範囲"></a>範囲</h3>
+<p>　行内で特殊な表示をしたい範囲を表します。<br />
+　属性には範囲の種類を指定してください。</p>
+<pre><code>　今夜は【｜範囲：small】チキンカレー【範囲｜】よ。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　スタイルシートと組み合わせることで期待する表示ができます。<br />
+　class属性の値には属性に指定した値が使われます。</p>
+<pre><code>&lt;p&gt;　今夜は&lt;span class=&quot;small&quot;&gt;チキンカレー&lt;/span&gt;よ。&lt;/p&gt;
 </code></pre>
 </main>
 
