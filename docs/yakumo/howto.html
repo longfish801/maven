@@ -127,9 +127,10 @@ clmapスクリプトについては <a href="/maven/clmap/">clmap</a> を参照�
 <h3><a href="#バインド変数" id="バインド変数"></a>バインド変数</h3>
 <p>　資材スクリプトでは以下のバインド変数を利用できます。</p>
 <dl>
-<dt>${convName}Dir</dt>
+<dt>convName</dt>
+<dd>変換資材名。変換資材がリソースの場合のみ。</dd>
+<dt>convDir</dt>
 <dd>資材スクリプト格納フォルダ（java.io.File）。変換資材がフォルダの場合のみ。</dd>
-<dd>${convName}は変換資材名に置き換えること。</dd>
 </dl>
 <h3><a href="#loadメソッド" id="loadメソッド"></a>loadメソッド</h3>
 <p>　Yakumo#loadメソッドに渡すクロージャで、必要な他の変換資材を読みこみます。<br />
@@ -173,10 +174,11 @@ clmapスクリプトについては <a href="/maven/clmap/">clmap</a> を参照�
 <dd>関連ファイルのコピーに関する設定をします。</dd>
 </dl>
 <h3><a href="#バインド変数" id="バインド変数"></a>バインド変数</h3>
-<p>　変換スクリプトでは以下のバインド変数を利用できます。</p>
+<p>　変換スクリプトでは以下のバインド変数を利用できます。<br />
+　<a href="groovydoc/io/github/longfish801/yakumo/Yakumo.html#run(java.io.File,%20java.util.Map)">Yakumo#runメソッド</a> に引数 varsで渡した変数名、変数値もバインドされます。</p>
 <dl>
-<dt>script</dt>
-<dd>変換スクリプト（java.io.File）</dd>
+<dt>scriptFile</dt>
+<dd>変換スクリプトファイル（java.io.File）</dd>
 </dl>
 <h3><a href="#scriptメソッド" id="scriptメソッド"></a>scriptメソッド</h3>
 <p>　Yakumo#scriptメソッドに渡すクロージャで、変換スクリプトを設定します。<br />
