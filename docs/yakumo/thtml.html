@@ -16,6 +16,7 @@
 <li><a href="#メタ要素">メタ要素</a>
 <ul>
 <li><a href="#タイトル">タイトル</a></li>
+<li><a href="#サブタイトル">サブタイトル</a></li>
 <li><a href="#付帯情報">付帯情報</a></li>
 <li><a href="#目次">目次</a></li>
 <li><a href="#註記">註記</a></li>
@@ -42,9 +43,13 @@
 <ul>
 <li><a href="#註">註</a></li>
 <li><a href="#リンク">リンク</a></li>
+<li><a href="#注目">注目</a></li>
 <li><a href="#重要">重要</a></li>
 <li><a href="#補足">補足</a></li>
+<li><a href="#特記">特記</a></li>
 <li><a href="#訂正">訂正</a></li>
+<li><a href="#上付き">上付き</a></li>
+<li><a href="#下付き">下付き</a></li>
 <li><a href="#縦中横">縦中横</a></li>
 <li><a href="#傍点">傍点</a></li>
 <li><a href="#ルビ">ルビ</a></li>
@@ -57,27 +62,33 @@
 　各処理と変換資材との対応は以下のとおりです。</p>
 <dl>
 <dt>メタ要素（bltxt文書のmetaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のthtml.tpac上のクロージャパス /thtml/bind, /thtml/navi</dd>
+<dd>変換資材thtml内のthtml.tpac上のクロージャパス /thtml.meta</dd>
 <dt>平文（bltxt文書のtextタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#text</dd>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#text</dd>
 <dt>段落（bltxt文書のparaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#para</dd>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#para</dd>
 <dt>ブロック要素（bltxt文書のparaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#block</dd>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#block</dd>
 <dt>インライン要素（bltxt文書のparaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /htmlize/node#inline</dd>
+<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#inline</dd>
 </dl>
 <h2><a href="#メタ要素" id="メタ要素"></a>メタ要素</h2>
 <h3><a href="#タイトル" id="タイトル"></a>タイトル</h3>
-<p>　タイトル、サブタイトルは、含意タグで指定します。<br />
+<p>　タイトルは、含意タグで指定します。<br />
 　省略可能です。</p>
 <pre><code>【＃タイトル】円周率について
-【＃サブタイトル】著名な語呂合わせ
 </code></pre>
 <p>　以下のHTMLに変換します。<br />
 　タイトルの指定がないときはデフォルトで「（無題）」とします。</p>
 <pre><code>&lt;h1&gt;円周率について&lt;/h1&gt;
-&lt;div id=&quot;subtitle&quot;&gt;著名な語呂合わせ&lt;/div&gt;
+</code></pre>
+<h3><a href="#サブタイトル" id="サブタイトル"></a>サブタイトル</h3>
+<p>　サブタイトルは、含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃サブタイトル】著名な語呂合わせ
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;li&gt;著名な語呂合わせ&lt;/li&gt;
 </code></pre>
 <h3><a href="#付帯情報" id="付帯情報"></a>付帯情報</h3>
 <p>　付帯情報として公開日、著者名を含意タグで指定します。<br />
@@ -97,9 +108,9 @@
 【＝見出し：3】牛の飼い方
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
-<pre><code>&lt;li class=&quot;nav-item toc_h2&quot;&gt;&lt;a href=&quot;#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&quot;nav-item toc_h3&quot;&gt;&lt;a href=&quot;#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&quot;nav-item toc_h4&quot;&gt;&lt;a href=&quot;#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
+<pre><code>&lt;li class=&quot;nav-item ps-0&quot;&gt;&lt;a href=&quot;#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item ps-1&quot;&gt;&lt;a href=&quot;#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item ps-2&quot;&gt;&lt;a href=&quot;#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
 </code></pre>
 <h3><a href="#註記" id="註記"></a>註記</h3>
 <p>　註は文中タグで、註記は含意範囲タグで記述します。<br />
@@ -205,10 +216,11 @@
 <p>　以下のHTMLに変換します。<br />
 　タイトルを h1とする関係上、レベル1が h2、レベル2が h3……となります。<br />
 　目次からページ内リンクで移動できるよう、aタグを挿入します。<br />
-　name属性は、bltxt文書を XML化したときの snum属性を利用します。</p>
-<pre><code>&lt;h2&gt;&lt;a name=&quot;1&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/h2&gt;
-&lt;h3&gt;&lt;a name=&quot;2&quot;&gt;材料の準備&lt;/a&gt;&lt;/h3&gt;
-&lt;h4&gt;&lt;a name=&quot;3&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/h4&gt;
+　name属性は、bltxt文書を XML化したときの snum属性を利用します。<br />
+　また行末に、ヘッダ(#header)へ戻るためのリンクを付与します。</p>
+<pre><code>&lt;h2&gt;&lt;a name=&quot;id2_1&quot;&gt;&lt;/a&gt;おいしいカレーの作り方 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;a name=&quot;id3_2&quot;&gt;&lt;/a&gt;材料の準備 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h3&gt;
+&lt;h4&gt;&lt;a name=&quot;id4_3&quot;&gt;&lt;/a&gt;牛の飼い方 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h4&gt;
 </code></pre>
 <h3><a href="#箇条書き" id="箇条書き"></a>箇条書き</h3>
 <p>　行範囲タグで箇条書きを表現できます。</p>
@@ -288,7 +300,7 @@
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
 <pre><code>&lt;figure class=&quot;text-center&quot;&gt;
-&lt;img src=&quot;cutecat.png&quot; class=&quot;img-fluid&quot; alt=&quot;猫ちゃん&quot;&gt;
+&lt;a href=&quot;cutecat.png&quot;&gt;&lt;img src=&quot;cutecat.png&quot; class=&quot;img-fluid&quot; alt=&quot;猫ちゃん&quot;&gt;&lt;/a&gt;
 &lt;figcaption&gt;猫ちゃん、可愛い～&lt;/figcaption&gt;
 &lt;/figure&gt;
 </code></pre>
@@ -312,7 +324,7 @@
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
 <pre><code>&lt;aside class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;
-&lt;header class=&quot;alert-heading&quot;&gt;&lt;i class=&quot;bi bi-info-circle-fill&quot;&gt;&lt;/i&gt; ８月３１日はなんの日？&lt;/header&gt;
+&lt;header class=&quot;alert-heading text-center&quot;&gt;&lt;i class=&quot;bi bi-info-circle-fill&quot;&gt;&lt;/i&gt; ８月３１日はなんの日？&lt;/header&gt;
 &lt;p&gt;　８月３１日は野菜の日です。&lt;br/&gt;
 　野菜を食べましょう。&lt;/p&gt;
 &lt;/aside&gt;
@@ -327,7 +339,7 @@
 <p>　以下のHTMLに変換します。<br />
 　asideタグ（class属性値は&quot;attention&quot;）を生成します。</p>
 <pre><code>&lt;aside class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;
-&lt;header class=&quot;alert-heading&quot;&gt;&lt;i class=&quot;bi bi-exclamation-triangle-fill&quot;&gt;&lt;/i&gt; 中火とは&lt;/header&gt;
+&lt;header class=&quot;alert-heading text-center&quot;&gt;&lt;i class=&quot;bi bi-exclamation-triangle-fill&quot;&gt;&lt;/i&gt; 中火とは&lt;/header&gt;
 &lt;p&gt;　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。&lt;/p&gt;
 &lt;/aside&gt;
 </code></pre>
@@ -341,11 +353,15 @@
 【引用－】
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
-<pre><code>&lt;blockquote&gt;
+<pre><code>&lt;figure&gt;
+&lt;blockquote class=&quot;blockquote p-3&quot;&gt;
 &lt;p&gt;　山路を登りながら、こう考えた。&lt;br/&gt;
 　智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。&lt;/p&gt;
-&lt;footer&gt;&lt;cite&gt;夏目漱石『草枕』&lt;/cite&gt;&lt;/footer&gt;
 &lt;/blockquote&gt;
+&lt;figcaption class=&quot;blockquote-footer text-end&quot;&gt;
+&lt;cite&gt;夏目漱石『草枕』&lt;/cite&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 </code></pre>
 <h3><a href="#コード" id="コード"></a>コード</h3>
 <p>　行範囲タグでコードを表現できます。</p>
@@ -356,10 +372,8 @@ println &quot;This is sample code of how to hello to all of the world, which is 
 </code></pre>
 <p>　以下のHTMLに変換します。<br />
 　preタグを生成します。</p>
-<pre><code>&lt;pre&gt;
-println &amp;quot;Hello, World!&amp;quot;;
-println &amp;quot;This is sample code of how to hello to all of the world, which is executed &amp;quot; + Date().format(&amp;quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&amp;quot;);
-&lt;/pre&gt;
+<pre><code>&lt;pre class=&quot;code px-3&quot;&gt;&lt;code&gt;println &amp;quot;Hello, World!&amp;quot;;
+println &amp;quot;This is sample code of how to hello to all of the world, which is executed &amp;quot; + Date().format(&amp;quot;yyyy-MM-dd'T'HH:mm:ss.SSSZ&amp;quot;);&lt;/code&gt;&lt;/pre&gt;
 </code></pre>
 <h3><a href="#変換済" id="変換済"></a>変換済</h3>
 <p>　yakumo記法が対応していない変換対象について、変換後の内容を記述します。<br />
@@ -411,26 +425,61 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 <pre><code>&lt;p&gt;　詳しくは&lt;a href=&quot;https://www.google.com/&quot;&gt;ネット検索&lt;/a&gt;してください。&lt;br/&gt;
 　&lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;でネット検索できます。&lt;/p&gt;
 </code></pre>
+<h3><a href="#注目" id="注目"></a>注目</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　危ない！ それは【｜注目】自爆スイッチ【注目｜】だ！
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　ブラウザでの表示は .attentionセレクタの定義に依存します。</p>
+<pre><code>&lt;p&gt;　危ない！ それは&lt;span class=&quot;attention&quot;&gt;自爆スイッチ&lt;/span&gt;だ！&lt;/p&gt;
+</code></pre>
 <h3><a href="#重要" id="重要"></a>重要</h3>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>　間違えて【｜重要】自爆スイッチ【重要｜】を押さないでください。
 </code></pre>
-<p>　以下のHTMLに変換します。</p>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザでは太字で表示されます。</p>
 <pre><code>&lt;p&gt;　間違えて&lt;strong&gt;自爆スイッチ&lt;/strong&gt;を押さないでください。&lt;/p&gt;
 </code></pre>
 <h3><a href="#補足" id="補足"></a>補足</h3>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>　もちろん本当【｜補足】かもしれない【補足｜】ですよ。
 </code></pre>
-<p>　以下のHTMLに変換します。</p>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザでは小さめの文字で表示されます。</p>
 <pre><code>&lt;p&gt;　もちろん本当&lt;small&gt;かもしれない&lt;/small&gt;ですよ。&lt;/p&gt;
+</code></pre>
+<h3><a href="#特記" id="特記"></a>特記</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　まあ、真実は【｜特記】in the bush【特記｜】ですが。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザでは斜体で表示されます。</p>
+<pre><code>&lt;p&gt;　まあ、真実は&lt;i&gt;in the bush&lt;/i&gt;ですが。&lt;/p&gt;
 </code></pre>
 <h3><a href="#訂正" id="訂正"></a>訂正</h3>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>　富士山の標高は【｜訂正】３７７７メートル【訂正｜】３７７６メートルです。
 </code></pre>
-<p>　以下のHTMLに変換します。</p>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザでは打消し線で表示されます。</p>
 <pre><code>&lt;p&gt;　富士山の標高は&lt;s&gt;３７７７メートル&lt;/s&gt;３７７６メートルです。&lt;/p&gt;
+</code></pre>
+<h3><a href="#上付き" id="上付き"></a>上付き</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　まあね、大人【｜上付き】2【上付き｜】があるんですよ。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザでは上付き文字で表示されます。</p>
+<pre><code>&lt;p&gt;　まあね、大人&lt;sup&gt;2&lt;/sup&gt;があるんですよ。&lt;/p&gt;
+</code></pre>
+<h3><a href="#下付き" id="下付き"></a>下付き</h3>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>　人生にはH【｜下付き】2【下付き｜】Oが不可欠だ。
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザでは下付き文字で表示されます。</p>
+<pre><code>&lt;p&gt;　人生にはH&lt;sub&gt;2&lt;/sub&gt;Oが不可欠だ。&lt;/p&gt;
 </code></pre>
 <h3><a href="#縦中横" id="縦中横"></a>縦中横</h3>
 <p>　以下のbltxt文書があったとします。</p>
@@ -444,14 +493,15 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 <pre><code>　まだ【｜傍点】午前三時【傍点｜】じゃないか。
 </code></pre>
 <p>　以下のHTMLに変換します。<br />
-　傍点のためのHTMLタグは無いため、spanタグを利用しています。</p>
+　ブラウザでの表示は .dotセレクタの定義に依存します。</p>
 <pre><code>&lt;p&gt;　まだ&lt;span class=&quot;dot&quot;&gt;午前三時&lt;/span&gt;じゃないか。&lt;/p&gt;
 </code></pre>
 <h3><a href="#ルビ" id="ルビ"></a>ルビ</h3>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>　【｜ルビ：すいとう】出納【ルビ｜】係は言った。
 </code></pre>
-<p>　以下のHTMLに変換します。</p>
+<p>　以下のHTMLに変換します。<br />
+　一般的なブラウザではルビとして表示されます。</p>
 <pre><code>&lt;p&gt;　&lt;ruby&gt;出納&lt;rp&gt;［&lt;/rp&gt;&lt;rt&gt;すいとう&lt;/rt&gt;&lt;rp&gt;］&lt;/rp&gt;&lt;/ruby&gt;係は言った。&lt;/p&gt;
 </code></pre>
 <h3><a href="#範囲" id="範囲"></a>範囲</h3>
@@ -461,7 +511,7 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 </code></pre>
 <p>　以下のHTMLに変換します。<br />
 　スタイルシートと組み合わせることで期待する表示ができます。<br />
-　class属性の値には属性に指定した値が使われます。</p>
+　属性に指定した値は class属性に使われます。</p>
 <pre><code>&lt;p&gt;　今夜は&lt;span class=&quot;small&quot;&gt;チキンカレー&lt;/span&gt;よ。&lt;/p&gt;
 </code></pre>
 </main>

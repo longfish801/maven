@@ -26,7 +26,8 @@
 </ul>
 <h2><a href="#概要" id="概要"></a>概要</h2>
 <p>　サンプルとして、独自の糖衣構文（yakumo記法）を bltxt文書に変換する変換資材 thtmlが用意されています。<br />
-　変換処理は、変換資材 fyakumo内の fyakumo.tpacに記述しています。</p>
+　変換処理は、変換資材 fyakumo内の fyakumo.tpacに記述しています。<br />
+　bltxt記法上の特殊文字のエスケープには対応していません。特殊文字を用いるときには直接 bltxt記法で記述してください。</p>
 <h2><a href="#糖衣構文" id="糖衣構文"></a>糖衣構文</h2>
 <h3><a href="#見出し" id="見出し"></a>見出し</h3>
 <p>　行頭に「■」「□」「▼」があれば、見出しとみなします。</p>
@@ -149,9 +150,13 @@ println &quot;This is sample code of how to hello to all of the world, which is 
 <p>　以下は本来ならば文範囲タグを用いて記述すべきですが、文範囲終了タグを省略して文中タグのように記述することができます。</p>
 <ul>
 <li>リンク</li>
+<li>注目</li>
 <li>重要</li>
 <li>補足</li>
+<li>特記</li>
 <li>訂正</li>
+<li>上付き</li>
+<li>下付き</li>
 <li>縦中横</li>
 <li>傍点</li>
 <li>ルビ</li>
@@ -172,12 +177,11 @@ println &quot;This is sample code of how to hello to all of the world, which is 
 <p>　上記を以下のbltxt文書に変換します。</p>
 <pre><code>【｜リンク：https://www.google.com/】https://www.google.com/【リンク｜】
 </code></pre>
-<p>　重要の場合は以下のとおりです。<br />
-　補足、訂正、縦中横、傍点も同様です。</p>
-<pre><code>　間違えて【重要：自爆スイッチ】を押さないでください。
+<p>　注目の場合は以下のとおりです。</p>
+<pre><code>　危ない！ それは【注目：自爆スイッチ】だ！
 </code></pre>
 <p>　上記を以下のbltxt文書に変換します。</p>
-<pre><code>　間違えて【｜重要】自爆スイッチ【重要｜】を押さないでください。
+<pre><code>　危ない！ それは【｜注目】自爆スイッチ【注目｜】だ！
 </code></pre>
 <p>　ルビの場合は以下のとおりです。<br />
 　一番目の属性にルビをふる対象を、二番目の属性にルビを指定します。</p>
