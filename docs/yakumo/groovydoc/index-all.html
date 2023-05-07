@@ -138,9 +138,9 @@ if (location.href.indexOf('is-external=true') == -1) {
 <h2 class="title">B</h2>
 <dl>
 
-<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertResults.html#baseClmapName" title="Property in ConvertResults">baseClmapName</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertResults.html">ConvertResults</a>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#baseClmapName" title="Property in ConvertMaterial">baseClmapName</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
 </dt><dd> <div class="block">clmap宣言の名前の基底値</div></dd>
-<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertTargets.html#baseSwitemName" title="Property in ConvertTargets">baseSwitemName</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertTargets.html">ConvertTargets</a>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#baseSwitemName" title="Property in ConvertMaterial">baseSwitemName</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
 </dt><dd> <div class="block">switem宣言の名前の基底値</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertTargets.Target.html#bltxt" title="Property in ConvertTargets.Target">bltxt</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertTargets.Target.html">ConvertTargets.Target</a>
 </dt><dd> <div class="block">bltxt文書（解析後に設定）</div></dd>
@@ -171,6 +171,8 @@ if (location.href.indexOf('is-external=true') == -1) {
 </dt><dd> <div class="block">clmap宣言あるいはクロージャマップに大域変数をバインドします。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#clmapServer" title="Property in ConvertMaterial">clmapServer</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
 </dt><dd> <div class="block">ClmapServer</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/Yakumo.html#convert()" title="Method in Yakumo">convert()</a></span> - Method in <a href="io/github/longfish801/yakumo/Yakumo.html">Yakumo</a>
+</dt><dd> <div class="block">変換を実行します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html" title="Class in io.github.longfish801.yakumo">ConvertMaterial</a></span> - Class in <a href="./io/github/longfish801/yakumo/package-summary.html">io.github.longfish801.yakumo</a>
 </dt><dd><div class="block">変換資材です。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#ConvertMaterial()" title="Constructor in ConvertMaterial">ConvertMaterial()</a></span> - Constructor in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
@@ -263,8 +265,12 @@ if (location.href.indexOf('is-external=true') == -1) {
 </dt><dd> <div class="block">変換対象キーに対応する変換対象を参照します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/Footprints.html#getLogs(int[])" title="Method in Footprints">getLogs(int[])</a></span> - Method in <a href="io/github/longfish801/yakumo/Footprints.html">Footprints</a>
 </dt><dd> <div class="block">指定したレベルについてログ文字列のリストを取得します。</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertTargets.Target.html#getReader()" title="Method in ConvertTargets.Target">getReader()</a></span> - Method in <a href="io/github/longfish801/yakumo/ConvertTargets.Target.html">ConvertTargets.Target</a>
+</dt><dd> <div class="block">入力元となる Readerインスタンスを返します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/Footprints.html#getWarns()" title="Method in Footprints">getWarns()</a></span> - Method in <a href="io/github/longfish801/yakumo/Footprints.html">Footprints</a>
 </dt><dd> <div class="block">警告レベルのログ文字列のリストを取得します。</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertResults.Result.html#getWriter()" title="Method in ConvertResults.Result">getWriter()</a></span> - Method in <a href="io/github/longfish801/yakumo/ConvertResults.Result.html">ConvertResults.Result</a>
+</dt><dd> <div class="block">出力先となる Writerインスタンスを返します。</div></dd>
 </dl>
 
     
@@ -376,6 +382,10 @@ if (location.href.indexOf('is-external=true') == -1) {
 
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#parse(io.github.longfish801.yakumo.ConvertScript)" title="Method in ConvertMaterial">parse(io.github.longfish801.yakumo.ConvertScript)</a></span> - Method in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
 </dt><dd> <div class="block">複数の変換対象から並列処理で BLtxtインスタンスを生成して返します。</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#prepare(java.lang.String, java.lang.String)" title="Method in ConvertMaterial">prepare(java.lang.String, java.lang.String)</a></span> - Method in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
+</dt><dd> <div class="block">事前準備として実行するクロージャのパスを設定します。</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#prepareMap" title="Property in ConvertMaterial">prepareMap</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
+</dt><dd> <div class="block">clmap宣言の名前と事前準備のクロージャのパスとのマップ</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/Footprints.html#print(int, java.lang.String)" title="Method in Footprints">print(int, java.lang.String)</a></span> - Method in <a href="io/github/longfish801/yakumo/Footprints.html">Footprints</a>
 </dt><dd> <div class="block">足跡を残します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/Footprints.html#prints" title="Property in Footprints">prints</a></span> - Property in <a href="io/github/longfish801/yakumo/Footprints.html">Footprints</a>
@@ -398,8 +408,6 @@ if (location.href.indexOf('is-external=true') == -1) {
 <h2 class="title">R</h2>
 <dl>
 
-<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertTargets.Target.html#reader" title="Property in ConvertTargets.Target">reader</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertTargets.Target.html">ConvertTargets.Target</a>
-</dt><dd> <div class="block">入力子</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/Yakumo.html#related(groovy.lang.Closure)" title="Method in Yakumo">related(groovy.lang.Closure)</a></span> - Method in <a href="io/github/longfish801/yakumo/Yakumo.html">Yakumo</a>
 </dt><dd> <div class="block">関連ファイルを設定します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/RelatedSources.html#relateds" title="Property in RelatedSources">relateds</a></span> - Property in <a href="io/github/longfish801/yakumo/RelatedSources.html">RelatedSources</a>
@@ -435,6 +443,10 @@ if (location.href.indexOf('is-external=true') == -1) {
 </dt><dd> <div class="block">テンプレートを設定します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/MaterialLoader.html#shell" title="Property in MaterialLoader">shell</a></span> - Property in <a href="io/github/longfish801/yakumo/MaterialLoader.html">MaterialLoader</a>
 </dt><dd> <div class="block">GroovyShell</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertResults.Result.html#source" title="Property in ConvertResults.Result">source</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertResults.Result.html">ConvertResults.Result</a>
+</dt><dd> <div class="block">出力先</div></dd>
+<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertTargets.Target.html#source" title="Property in ConvertTargets.Target">source</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertTargets.Target.html">ConvertTargets.Target</a>
+</dt><dd> <div class="block">入力子</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/RelatedSources.html#source(java.lang.String, java.lang.String, java.io.File)" title="Method in RelatedSources">source(java.lang.String, java.lang.String, java.io.File)</a></span> - Method in <a href="io/github/longfish801/yakumo/RelatedSources.html">RelatedSources</a>
 </dt><dd> <div class="block">関連ファイルを設定します。</div></dd>
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertMaterial.html#switem(java.lang.Object)" title="Method in ConvertMaterial">switem(java.lang.Object)</a></span> - Method in <a href="io/github/longfish801/yakumo/ConvertMaterial.html">ConvertMaterial</a>
@@ -497,8 +509,6 @@ if (location.href.indexOf('is-external=true') == -1) {
 
 <dt><span class="strong"><a href="io/github/longfish801/yakumo/Footprints.html#warn(java.lang.String)" title="Method in Footprints">warn(java.lang.String)</a></span> - Method in <a href="io/github/longfish801/yakumo/Footprints.html">Footprints</a>
 </dt><dd> <div class="block">警告レベルの足跡を残します。</div></dd>
-<dt><span class="strong"><a href="io/github/longfish801/yakumo/ConvertResults.Result.html#writer" title="Property in ConvertResults.Result">writer</a></span> - Property in <a href="io/github/longfish801/yakumo/ConvertResults.Result.html">ConvertResults.Result</a>
-</dt><dd> <div class="block">出力子</div></dd>
 </dl>
 
     

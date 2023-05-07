@@ -137,16 +137,31 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         </tr>
                         
                         <tr class="altColor">
+                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></strong></code>&nbsp;</td>
+                            <td class="colLast"><code><a href="#baseClmapName">baseClmapName</a></code><br>clmap宣言の名前の基底値</td>
+                        </tr>
+                        
+                        <tr class="rowColor">
+                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></strong></code>&nbsp;</td>
+                            <td class="colLast"><code><a href="#baseSwitemName">baseSwitemName</a></code><br>switem宣言の名前の基底値</td>
+                        </tr>
+                        
+                        <tr class="altColor">
                             <td class="colFirst"><code><strong>io.github.longfish801.clmap.ClmapServer</strong></code>&nbsp;</td>
                             <td class="colLast"><code><a href="#clmapServer">clmapServer</a></code><br>ClmapServer</td>
                         </tr>
                         
                         <tr class="rowColor">
+                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a></strong></code>&nbsp;</td>
+                            <td class="colLast"><code><a href="#prepareMap">prepareMap</a></code><br>clmap宣言の名前と事前準備のクロージャのパスとのマップ</td>
+                        </tr>
+                        
+                        <tr class="altColor">
                             <td class="colFirst"><code><strong>io.github.longfish801.switem.SwitemServer</strong></code>&nbsp;</td>
                             <td class="colLast"><code><a href="#switemServer">switemServer</a></code><br>SwitemServer</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code><strong><a href='../../../../io/github/longfish801/yakumo/TemplateHandler.html'>TemplateHandler</a></strong></code>&nbsp;</td>
                             <td class="colLast"><code><a href="#templateHandler">templateHandler</a></code><br>テンプレート操作</td>
                         </tr>
@@ -202,6 +217,18 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
+                            <td class="colLast"><code><strong><a href="#baseClmapName(java.lang.String)">baseClmapName</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clmapName)</code><br>clmap宣言の名前の基底値を設定します。</td>
+                        </tr>
+                        
+                        <tr class="rowColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code>void</code></td>
+                            <td class="colLast"><code><strong><a href="#baseSwitemName(java.lang.String)">baseSwitemName</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</code><br>switem宣言の名前の基底値を設定します。</td>
+                        </tr>
+                        
+                        <tr class="altColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#clmap(java.lang.Object)">clmap</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> script)</code><br>clmapスクリプトを設定します。</td>
                         </tr>
                         
@@ -226,10 +253,16 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#switem(java.lang.Object)">switem</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> script)</code><br>switemスクリプトを設定します。</td>
+                            <td class="colLast"><code><strong><a href="#prepare(java.lang.String, java.lang.String)">prepare</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clmapName, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clpath)</code><br>事前準備として実行するクロージャのパスを設定します。</td>
                         </tr>
                         
                         <tr class="rowColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code>void</code></td>
+                            <td class="colLast"><code><strong><a href="#switem(java.lang.Object)">switem</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> script)</code><br>switemスクリプトを設定します。</td>
+                        </tr>
+                        
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#template(java.lang.String, java.lang.Object)">template</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> key, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> source)</code><br>テンプレートを設定します。</td>
@@ -278,11 +311,35 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                 </a>
                     <h3>Property Detail</h3>
                     
+                        <a name="baseClmapName"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>baseClmapName</strong></h4>
+                                <p>clmap宣言の名前の基底値</p>
+                            </li>
+                        </ul>
+                    
+                        <a name="baseSwitemName"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>baseSwitemName</strong></h4>
+                                <p>switem宣言の名前の基底値</p>
+                            </li>
+                        </ul>
+                    
                         <a name="clmapServer"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4>io.github.longfish801.clmap.ClmapServer <strong>clmapServer</strong></h4>
                                 <p>ClmapServer</p>
+                            </li>
+                        </ul>
+                    
+                        <a name="prepareMap"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> <strong>prepareMap</strong></h4>
+                                <p>clmap宣言の名前と事前準備のクロージャのパスとのマップ</p>
                             </li>
                         </ul>
                     
@@ -337,6 +394,23 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                 </a>
                     <h3>Method Detail</h3>
                     
+                        <a name="baseClmapName(java.lang.String)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4>void <strong>baseClmapName</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clmapName)</h4>
+                                <p> clmap宣言の名前の基底値を設定します。 <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  clmap宣言の名前の基底値</DD></DL></p>
+                            </li>
+                        </ul>
+                    
+                        <a name="baseSwitemName(java.lang.String)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4>void <strong>baseSwitemName</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> switemName)</h4>
+                                <p> switem宣言の名前の基底値を設定します。<br/>
+ 設定しない場合は "fyakumo"です。 <DL><DT><B>Parameters:</B></DT><DD><code>name</code> -  switem宣言の名前の基底値</DD></DL></p>
+                            </li>
+                        </ul>
+                    
                         <a name="clmap(java.lang.Object)"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
@@ -374,6 +448,14 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> <strong>parse</strong>(<a href='../../../../io/github/longfish801/yakumo/ConvertScript.html'>ConvertScript</a> script)</h4>
                                 <p> 複数の変換対象から並列処理で BLtxtインスタンスを生成して返します。<DL><DT><B>throws:</B></DT><DD>YmoConvertException switem宣言の名前に相当するswitemスクリプトがありません。</DD></DL> <DL><DT><B>Parameters:</B></DT><DD><code>script</code> -  変換スクリプト</DD></DL><DL><DT><B>Returns:</B></DT><DD>変換対象キーとBLtxtインスタンスとのマップ</DD></DL></p>
+                            </li>
+                        </ul>
+                    
+                        <a name="prepare(java.lang.String, java.lang.String)"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4>void <strong>prepare</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clmapName, <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> clpath)</h4>
+                                <p> 事前準備として実行するクロージャのパスを設定します。 <DL><DT><B>Parameters:</B></DT><DD><code>clmapName</code> -  clmap宣言の名前</DD><DD><code>clpath</code> -  事前準備のクロージャのパス</DD></DL></p>
                             </li>
                         </ul>
                     

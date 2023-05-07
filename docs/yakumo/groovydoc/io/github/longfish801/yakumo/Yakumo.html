@@ -218,28 +218,34 @@ implements io.github.longfish801.gonfig.GropedResource</pre>
                         <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
-                            <td class="colLast"><code><strong><a href="#load(groovy.lang.Closure)">load</a></strong>(<a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/Closure.html' title='Closure'>Closure</a> closure)</code><br>依存する変換資材を読みこみます。</td>
+                            <td class="colLast"><code><strong><a href="#convert()">convert</a></strong>()</code><br>変換を実行します。</td>
                         </tr>
                         
                         <tr class="rowColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code>void</code></td>
+                            <td class="colLast"><code><strong><a href="#load(groovy.lang.Closure)">load</a></strong>(<a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/Closure.html' title='Closure'>Closure</a> closure)</code><br>依存する変換資材を読みこみます。</td>
+                        </tr>
+                        
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#material(groovy.lang.Closure)">material</a></strong>(<a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/Closure.html' title='Closure'>Closure</a> closure)</code><br>変換資材を設定します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#related(groovy.lang.Closure)">related</a></strong>(<a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/Closure.html' title='Closure'>Closure</a> closure)</code><br>関連ファイルを設定します。</td>
                         </tr>
                         
-                        <tr class="rowColor">
+                        <tr class="altColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a></code></td>
                             <td class="colLast"><code><strong><a href="#run(java.io.File, java.util.Map)">run</a></strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/io/File.html' title='File'>File</a> file, <a href='http://docs.oracle.com/javase/8/docs/api/java/util/Map.html' title='Map'>Map</a> vars)</code><br>変換スクリプトを実行します。</td>
                         </tr>
                         
-                        <tr class="altColor">
+                        <tr class="rowColor">
                             <td class="colFirst"><code></code></td>
                             <td class="colLast"><code>void</code></td>
                             <td class="colLast"><code><strong><a href="#script(groovy.lang.Closure)">script</a></strong>(<a href='https://docs.groovy-lang.org/3.0.9/html/gapi/groovy/lang/Closure.html' title='Closure'>Closure</a> closure)</code><br>変換スクリプトを実行します。</td>
@@ -362,6 +368,16 @@ implements io.github.longfish801.gonfig.GropedResource</pre>
                     <!--   -->
                 </a>
                     <h3>Method Detail</h3>
+                    
+                        <a name="convert()"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4>void <strong>convert</strong>()</h4>
+                                <p> 変換を実行します。<br/>
+ 資材スクリプトや変換スクリプトを実行し、各種設定が済んでいることを
+ 前提に変換を実行します。</p>
+                            </li>
+                        </ul>
                     
                         <a name="load(groovy.lang.Closure)"><!-- --></a>
                         <ul class="blockListLast">

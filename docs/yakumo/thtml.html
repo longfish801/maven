@@ -13,6 +13,14 @@
 <h1><a href="#html化" id="html化"></a>HTML化</h1>
 <ul>
 <li><a href="#概要">概要</a></li>
+<li><a href="#平文">平文</a></li>
+<li><a href="#段落">段落</a></li>
+<li><a href="#横断的要素">横断的要素</a>
+<ul>
+<li><a href="#ナビゲーションリンク">ナビゲーションリンク</a></li>
+<li><a href="#総目次">総目次</a></li>
+</ul>
+</li>
 <li><a href="#メタ要素">メタ要素</a>
 <ul>
 <li><a href="#タイトル">タイトル</a></li>
@@ -20,11 +28,8 @@
 <li><a href="#付帯情報">付帯情報</a></li>
 <li><a href="#目次">目次</a></li>
 <li><a href="#註記">註記</a></li>
-<li><a href="#ナビゲーションリンク">ナビゲーションリンク</a></li>
 </ul>
 </li>
-<li><a href="#平文">平文</a></li>
-<li><a href="#段落">段落</a></li>
 <li><a href="#ブロック要素">ブロック要素</a>
 <ul>
 <li><a href="#見出し">見出し</a></li>
@@ -43,6 +48,7 @@
 <ul>
 <li><a href="#註">註</a></li>
 <li><a href="#リンク">リンク</a></li>
+<li><a href="#参照">参照</a></li>
 <li><a href="#注目">注目</a></li>
 <li><a href="#重要">重要</a></li>
 <li><a href="#補足">補足</a></li>
@@ -59,111 +65,8 @@
 </ul>
 <h2><a href="#概要" id="概要"></a>概要</h2>
 <p>　yakumo記法から bltxt文書へ変換された後、HTML5へ変換するサンプルとして変換資材 thtmlが用意されています。<br />
-　各処理と変換資材との対応は以下のとおりです。</p>
-<dl>
-<dt>メタ要素（bltxt文書のmetaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のthtml.tpac上のクロージャパス /thtml.meta</dd>
-<dt>平文（bltxt文書のtextタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#text</dd>
-<dt>段落（bltxt文書のparaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#para</dd>
-<dt>ブロック要素（bltxt文書のparaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#block</dd>
-<dt>インライン要素（bltxt文書のparaタグ）をHTMLに変換</dt>
-<dd>変換資材thtml内のhtmlize.tpac上のクロージャパス /thtml.htmlize/node#inline</dd>
-</dl>
-<h2><a href="#メタ要素" id="メタ要素"></a>メタ要素</h2>
-<h3><a href="#タイトル" id="タイトル"></a>タイトル</h3>
-<p>　タイトルは、含意タグで指定します。<br />
-　省略可能です。</p>
-<pre><code>【＃タイトル】円周率について
-</code></pre>
-<p>　以下のHTMLに変換します。<br />
-　タイトルの指定がないときはデフォルトで「（無題）」とします。</p>
-<pre><code>&lt;h1&gt;円周率について&lt;/h1&gt;
-</code></pre>
-<h3><a href="#サブタイトル" id="サブタイトル"></a>サブタイトル</h3>
-<p>　サブタイトルは、含意タグで指定します。<br />
-　省略可能です。</p>
-<pre><code>【＃サブタイトル】著名な語呂合わせ
-</code></pre>
-<p>　以下のHTMLに変換します。</p>
-<pre><code>&lt;li&gt;著名な語呂合わせ&lt;/li&gt;
-</code></pre>
-<h3><a href="#付帯情報" id="付帯情報"></a>付帯情報</h3>
-<p>　付帯情報として公開日、著者名を含意タグで指定します。<br />
-　省略可能です。</p>
-<pre><code>【＃公開日】2022.02.03
-【＃著者名】山田太郎
-</code></pre>
-<p>　以下のHTMLに変換します。</p>
-<pre><code>&lt;li&gt;公開日 2022.02.03&lt;/li&gt;
-&lt;li&gt;山田太郎&lt;/li&gt;
-</code></pre>
-<h3><a href="#目次" id="目次"></a>目次</h3>
-<p>　見出しから目次を生成します。<br />
-　以下のbltxt文書があったとします。</p>
-<pre><code>【＝見出し】おいしいカレーの作り方
-【＝見出し：2】材料の準備
-【＝見出し：3】牛の飼い方
-</code></pre>
-<p>　以下のHTMLに変換します。</p>
-<pre><code>&lt;li class=&quot;nav-item ps-0&quot;&gt;&lt;a href=&quot;#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&quot;nav-item ps-1&quot;&gt;&lt;a href=&quot;#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
-&lt;li class=&quot;nav-item ps-2&quot;&gt;&lt;a href=&quot;#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
-</code></pre>
-<h3><a href="#註記" id="註記"></a>註記</h3>
-<p>　註は文中タグで、註記は含意範囲タグで記述します。<br />
-　一番目の属性に、紐付けのため共通する文字列を指定してください。<br />
-　以下のbltxt文書があったとします。</p>
-<pre><code>　XML【註：XML】をHTML【註：HTML】に変換します。
-
-【＊註記：XML】
-　eXtensible Markup Languageの略です。
-【註記＊】
-【＊註記：HTML】
-　Hyper Text Markup Languageの略です。
-【註記＊】
-</code></pre>
-<p>　以下のHTMLに変換します。</p>
-<pre><code>&lt;dt&gt;&lt;a name=&quot;t1&quot; href=&quot;#f1&quot;&gt;[*1]&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;　eXtensible Markup Languageの略です。&lt;/dd&gt;
-&lt;dt&gt;&lt;a name=&quot;t2&quot; href=&quot;#f2&quot;&gt;[*2]&lt;/a&gt;&lt;/dt&gt;
-&lt;dd&gt;　Hyper Text Markup Languageの略です。&lt;/dd&gt;
-</code></pre>
-<h3><a href="#ナビゲーションリンク" id="ナビゲーションリンク"></a>ナビゲーションリンク</h3>
-<p>　他のページへのナビゲーションリンクを生成します。</p>
-<p>　補足情報になにも指定しない場合、以下のリンクを生成します。</p>
-<ul>
-<li>変換結果キーの値が &quot;index&quot;の場合
-<ul>
-<li>&quot;..&quot;へのリンクを生成します。</li>
-</ul>
-</li>
-<li>変換結果キーの値が &quot;index&quot;以外の場合
-<ul>
-<li>&quot;index.html&quot;へのリンクを生成します。</li>
-</ul>
-</li>
-</ul>
-<p>　補足情報にキー orderで変換結果の HTMLファイル名（変換結果キー.html）のリストが指定されている場合、以下のリンクを生成します。</p>
-<ul>
-<li>変換結果キーの値が &quot;index&quot;の場合
-<ul>
-<li>&quot;..&quot;へのリンクを生成します。</li>
-</ul>
-</li>
-<li>変換結果キーの値が &quot;index&quot;以外の場合
-<ul>
-<li>前のページ、次のページ、そして&quot;index.html&quot;へのリンクを生成します。</li>
-</ul>
-</li>
-</ul>
-<p>　たとえばキー orderに [ &quot;some1.html&quot;, &quot;some2.html&quot;, &quot;some3.html&quot; ]が指定されており、変換結果キーが &quot;some2&quot;のときには以下のリンクを出力します。</p>
-<pre><code>&lt;a href=&quot;some1.html&quot;&gt;&lt;i class=&quot;bi bi-arrow-left-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;a href=&quot;index.html#toc&quot;&gt;&lt;i class=&quot;bi bi-arrow-up-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;a href=&quot;some3.html&quot;&gt;&lt;i class=&quot;bi bi-arrow-right-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-</code></pre>
+　詳細は <a href="https://github.com/longfish801/yakumo/tree/main/src/main/resources/io/github/longfish801/yakumo/thtml">resources/io/github/longfish801/yakumo</a> 配下にある変換資材の各ファイルのコメントなどを参照してください。</p>
+<p>　デフォルトのテンプレート default.htmlは変換対象と変換結果が一対一であることを前提としています。一対一にしない場合はテンプレートの記述を見直してください。</p>
 <h2><a href="#平文" id="平文"></a>平文</h2>
 <p>　HTML文法上の特殊文字をそのまま使うことができます。<br />
 　以下のbltxt文書があったとします。</p>
@@ -206,10 +109,110 @@
 <li>変換済</li>
 </ul>
 <p>　上記以外では brタグ、pタグを挿入します。</p>
+<h2><a href="#横断的要素" id="横断的要素"></a>横断的要素</h2>
+<p>　複数の変換対象から横断的に生成する要素です。</p>
+<h3><a href="#ナビゲーションリンク" id="ナビゲーションリンク"></a>ナビゲーションリンク</h3>
+<p>　他のページへのナビゲーションリンクを生成します。<br />
+　ページの順番は、変換スクリプトで変換結果キーを設定した順番です。</p>
+<ul>
+<li>変換結果キーが &quot;index&quot;のとき
+<ul>
+<li>上位コンテンツへのリンク</li>
+<li>次のページ（先頭ページ）へのリンク</li>
+<li>前のページ（最終ページ）へのリンク</li>
+</ul>
+</li>
+<li>変換結果キーが &quot;index&quot;以外のとき
+<ul>
+<li>目次ページ(index.html)へのリンク</li>
+<li>次のページへのリンク</li>
+<li>前のページへのリンク</li>
+</ul>
+</li>
+</ul>
+<p>　たとえば変換結果キーの順番が [ &quot;some1&quot;, &quot;some2&quot;, &quot;some3&quot; ]で、現在の変換結果キーが &quot;some2&quot;のときには以下のリンクを出力します。</p>
+<pre><code>&lt;a href=&quot;some1.html&quot;&gt;&lt;i class=&quot;bi bi-arrow-left-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;index.html#tocAll&quot;&gt;&lt;i class=&quot;bi bi-arrow-up-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;some3.html&quot;&gt;&lt;i class=&quot;bi bi-arrow-right-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+</code></pre>
+<h3><a href="#総目次" id="総目次"></a>総目次</h3>
+<p>　たとえば目次ページ（index.html）に各ページおよび各ページ内の見出しへのリンクを生成したいときに使用します。</p>
+<p>　変換対象キー &quot;some&quot;に以下のタイトル、見出しが記述されていたとします。</p>
+<pre><code>【＃タイトル】カレーを食べよう
+【＝見出し：1】おいしいカレーの作り方
+【＝見出し：2】材料の準備
+【＝見出し：3】牛の飼い方
+</code></pre>
+<p>　以下の HTMLを生成します。</p>
+<pre><code>&lt;li class=&quot;nav-item toc-h1&quot;&gt;&lt;a href=&quot;some.html&quot; class=&quot;nav-link&quot;&gt;カレーを食べよう&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc-h2&quot;&gt;&lt;a href=&quot;some.html#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc-h3&quot;&gt;&lt;a href=&quot;some.html#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item toc-h4&quot;&gt;&lt;a href=&quot;some.html#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h2><a href="#メタ要素" id="メタ要素"></a>メタ要素</h2>
+<h3><a href="#タイトル" id="タイトル"></a>タイトル</h3>
+<p>　タイトルは、含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃タイトル】円周率について
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　タイトルの指定がないときはデフォルトで「（無題）」とします。</p>
+<pre><code>&lt;h1&gt;円周率について&lt;/h1&gt;
+</code></pre>
+<h3><a href="#サブタイトル" id="サブタイトル"></a>サブタイトル</h3>
+<p>　サブタイトルは、含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃サブタイトル】著名な語呂合わせ
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;li&gt;著名な語呂合わせ&lt;/li&gt;
+</code></pre>
+<h3><a href="#付帯情報" id="付帯情報"></a>付帯情報</h3>
+<p>　付帯情報として公開日、著者名を含意タグで指定します。<br />
+　省略可能です。</p>
+<pre><code>【＃公開日】2022.02.03
+【＃著者名】山田太郎
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;li&gt;公開日 2022.02.03&lt;/li&gt;
+&lt;li&gt;山田太郎&lt;/li&gt;
+</code></pre>
+<h3><a href="#目次" id="目次"></a>目次</h3>
+<p>　見出しから目次を生成します。<br />
+　以下のbltxt文書があったとします。</p>
+<pre><code>【＝見出し：1】おいしいカレーの作り方
+【＝見出し：2】材料の準備
+【＝見出し：3】牛の飼い方
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;li class=&quot;nav-item ps-0&quot;&gt;&lt;a href=&quot;#id2_1&quot; class=&quot;nav-link&quot;&gt;おいしいカレーの作り方&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item ps-1&quot;&gt;&lt;a href=&quot;#id3_2&quot; class=&quot;nav-link&quot;&gt;材料の準備&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;nav-item ps-2&quot;&gt;&lt;a href=&quot;#id4_3&quot; class=&quot;nav-link&quot;&gt;牛の飼い方&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h3><a href="#註記" id="註記"></a>註記</h3>
+<p>　註は文中タグで、註記は含意範囲タグで記述します。<br />
+　一番目の属性に、紐付けのため共通する文字列を指定してください。<br />
+　以下のbltxt文書があったとします。</p>
+<pre><code>　XML【註：XML】をHTML【註：HTML】に変換します。
+
+【＊註記：XML】
+　eXtensible Markup Languageの略です。
+【註記＊】
+【＊註記：HTML】
+　Hyper Text Markup Languageの略です。
+【註記＊】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;dt&gt;&lt;a name=&quot;t1&quot; href=&quot;#f1&quot;&gt;[*1]&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;　eXtensible Markup Languageの略です。&lt;/dd&gt;
+&lt;dt&gt;&lt;a name=&quot;t2&quot; href=&quot;#f2&quot;&gt;[*2]&lt;/a&gt;&lt;/dt&gt;
+&lt;dd&gt;　Hyper Text Markup Languageの略です。&lt;/dd&gt;
+</code></pre>
 <h2><a href="#ブロック要素" id="ブロック要素"></a>ブロック要素</h2>
 <h3><a href="#見出し" id="見出し"></a>見出し</h3>
-<p>　行タグで見出しを表現できます。</p>
-<pre><code>【＝見出し】おいしいカレーの作り方
+<p>　行タグで見出しを表現できます。<br />
+　属性にレベルを半角数字 1～5で指定してください。</p>
+<pre><code>【＝見出し：1】おいしいカレーの作り方
 【＝見出し：2】材料の準備
 【＝見出し：3】牛の飼い方
 </code></pre>
@@ -221,6 +224,11 @@
 <pre><code>&lt;h2&gt;&lt;a name=&quot;id2_1&quot;&gt;&lt;/a&gt;おいしいカレーの作り方 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h2&gt;
 &lt;h3&gt;&lt;a name=&quot;id3_2&quot;&gt;&lt;/a&gt;材料の準備 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h3&gt;
 &lt;h4&gt;&lt;a name=&quot;id4_3&quot;&gt;&lt;/a&gt;牛の飼い方 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h4&gt;
+</code></pre>
+<p>　二番目の属性に見出しの別名を指定することができます。省略可です。<br />
+　これはページ内リンクに用います。<br />
+　詳細は <a href="#参照">参照</a> を参照してください。</p>
+<pre><code>【＝見出し：1：ごちさま】ごちそうさまでした
 </code></pre>
 <h3><a href="#箇条書き" id="箇条書き"></a>箇条書き</h3>
 <p>　行範囲タグで箇条書きを表現できます。</p>
@@ -425,6 +433,36 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 <pre><code>&lt;p&gt;　詳しくは&lt;a href=&quot;https://www.google.com/&quot;&gt;ネット検索&lt;/a&gt;してください。&lt;br/&gt;
 　&lt;a href=&quot;https://www.google.com/&quot;&gt;https://www.google.com/&lt;/a&gt;でネット検索できます。&lt;/p&gt;
 </code></pre>
+<h3><a href="#参照" id="参照"></a>参照</h3>
+<p>　見出しへのリンクを作成できます。</p>
+<p>　タグ内にリンク先としたい見出しの文字列を記述してください。<br />
+　この場合は属性は不要です。</p>
+<p>　もしくは一番目の属性にリンク先を指定します。<br />
+　以下の三種類を指定できます。</p>
+<p>・全角シャープ（＃）＋見出し文字列あるいは別名<br />
+・同じ変換対象上の見出しにリンクします。<br />
+・変換対象キー<br />
+・他の変換対象にリンクします。<br />
+・変換対象キー＋全角シャープ（＃）＋見出し文字列あるいは別名<br />
+・他の変換対象上の見出しにリンクします。</p>
+<p>　以下のbltxt文書があったとします。</p>
+<pre><code>【＝見出し：1】おいしいカレーの作り方
+　もう満腹ですか？ それでは【｜参照：＃ごちさま】さようなら【参照｜】。
+
+【＝見出し：1：ごちさま】ごちそうさまでした
+　詳細は【｜参照】おいしいカレーの作り方【参照｜】を参照してください。
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;h2&gt;&lt;a name=&quot;id2_1&quot;&gt;&lt;/a&gt;おいしいカレーの作り方 &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h2&gt;
+
+&lt;p&gt;　もう満腹ですか？ それでは&lt;a href=&quot;#id2_2&quot;&gt;さようなら&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2&gt;&lt;a name=&quot;id2_2&quot;&gt;&lt;/a&gt;ごちそうさまでした &lt;div class=&quot;float-end fs-6&quot;&gt;&lt;a href=&quot;#header&quot;&gt;&lt;i class=&quot;bi bi-chevron-double-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/h2&gt;
+
+&lt;p&gt;　詳細は&lt;a href=&quot;#id2_1&quot;&gt;おいしいカレーの作り方&lt;/a&gt;を参照してください。&lt;/p&gt;
+</code></pre>
+<p>　変換対象キーは変換資材 thmlの clmapでファイル名などに置き換えます。デフォルトでは変換対象キーの後ろに拡張子htmlを付与した文字列となります。<br />
+　変換対象と変換結果が一対一ではない場合はクロージャパス /thtml.crosscut#filename上のクロージャを上書きしてください。</p>
 <h3><a href="#注目" id="注目"></a>注目</h3>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>　危ない！ それは【｜注目】自爆スイッチ【注目｜】だ！

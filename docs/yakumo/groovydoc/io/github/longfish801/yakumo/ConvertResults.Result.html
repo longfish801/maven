@@ -70,11 +70,11 @@ if (location.href.indexOf('is-external=true') == -1) {
     <div>
         <ul class="subNavList">
             <li>Summary:&nbsp;</li>
-            Nested&nbsp;&nbsp;&nbsp;Field&nbsp;&nbsp;&nbsp;<li><a href="#property_summary">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_summary">Constructor</a></li>&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;
+            Nested&nbsp;&nbsp;&nbsp;Field&nbsp;&nbsp;&nbsp;<li><a href="#property_summary">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_summary">Constructor</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#method_summary">Method</a></li>&nbsp;&nbsp;&nbsp;
         </ul>
         <ul class="subNavList">
             <li>&nbsp;|&nbsp;Detail:&nbsp;</li>
-            Field&nbsp;&nbsp;&nbsp;<li><a href="#prop_detail">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_detail">Constructor</a></li>&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;
+            Field&nbsp;&nbsp;&nbsp;<li><a href="#prop_detail">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_detail">Constructor</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#method_detail">Method</a></li>&nbsp;&nbsp;&nbsp;
         </ul>
     </div>
     <a name="skip-navbar_top">
@@ -156,13 +156,13 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                         </tr>
                         
                         <tr class="altColor">
-                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></strong></code>&nbsp;</td>
-                            <td class="colLast"><code><a href="#templateKey">templateKey</a></code><br>テンプレートキー</td>
+                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a></strong></code>&nbsp;</td>
+                            <td class="colLast"><code><a href="#source">source</a></code><br>出力先</td>
                         </tr>
                         
                         <tr class="rowColor">
-                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html' title='Writer'>Writer</a></strong></code>&nbsp;</td>
-                            <td class="colLast"><code><a href="#writer">writer</a></code><br>出力子</td>
+                            <td class="colFirst"><code><strong><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a></strong></code>&nbsp;</td>
+                            <td class="colLast"><code><a href="#templateKey">templateKey</a></code><br>テンプレートキー</td>
                         </tr>
                         
                     </table>
@@ -201,6 +201,27 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
         
         <!-- ========== METHOD SUMMARY =========== -->
         <ul class="blockList">
+            
+            <li class="blockList"><a name="method_summary"><!--   --></a>
+                    <h3>Methods Summary</h3>
+                    <ul class="blockList">
+                    <table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Methods Summary table">
+                        <caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+                        <tr>
+                            <th class="colFirst" scope="col">Type Params</th>
+                            <th class="colLast" scope="col">Return Type</th>
+                            <th class="colLast" scope="col">Name and description</th>
+                        </tr>
+                        
+                        <tr class="altColor">
+                            <td class="colFirst"><code></code></td>
+                            <td class="colLast"><code><a href='http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html' title='Writer'>Writer</a></code></td>
+                            <td class="colLast"><code><strong><a href="#getWriter()">getWriter</a></strong>()</code><br>出力先となる Writerインスタンスを返します。</td>
+                        </tr>
+                        
+                    </table>
+                   </ul>
+              </li>
             
             <li class="blockList"><a name="method_summary"><!--   --></a>
                     <h3>Inherited Methods Summary</h3>
@@ -273,19 +294,19 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
                             </li>
                         </ul>
                     
+                        <a name="source"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html' title='Object'>Object</a> <strong>source</strong></h4>
+                                <p>出力先</p>
+                            </li>
+                        </ul>
+                    
                         <a name="templateKey"><!-- --></a>
                         <ul class="blockListLast">
                             <li class="blockList">
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>templateKey</strong></h4>
                                 <p>テンプレートキー</p>
-                            </li>
-                        </ul>
-                    
-                        <a name="writer"><!-- --></a>
-                        <ul class="blockListLast">
-                            <li class="blockList">
-                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html' title='Writer'>Writer</a> <strong>writer</strong></h4>
-                                <p>出力子</p>
                             </li>
                         </ul>
                     
@@ -316,6 +337,24 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
             
 
 
+            
+            <!-- =========== METHOD DETAIL =========== -->
+            <ul class="blockList">
+                <li class="blockList"><a name="method_detail">
+                    <!--   -->
+                </a>
+                    <h3>Method Detail</h3>
+                    
+                        <a name="getWriter()"><!-- --></a>
+                        <ul class="blockListLast">
+                            <li class="blockList">
+                                <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html' title='Writer'>Writer</a> <strong>getWriter</strong>()</h4>
+                                <p> 出力先となる Writerインスタンスを返します。<br/> <DL><DT><B>Returns:</B></DT><DD>Writer</DD></DL></p>
+                            </li>
+                        </ul>
+                    
+                </li>
+            </ul>
             
         </li>
     </ul>
@@ -348,11 +387,11 @@ extends <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html'
     <div>
         <ul class="subNavList">
             <li>Summary:&nbsp;</li>
-            Nested&nbsp;&nbsp;&nbsp;Field&nbsp;&nbsp;&nbsp;<li><a href="#property_summary">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_summary">Constructor</a></li>&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;
+            Nested&nbsp;&nbsp;&nbsp;Field&nbsp;&nbsp;&nbsp;<li><a href="#property_summary">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_summary">Constructor</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#method_summary">Method</a></li>&nbsp;&nbsp;&nbsp;
         </ul>
         <ul class="subNavList">
             <li>&nbsp;|&nbsp;Detail:&nbsp;</li>
-            Field&nbsp;&nbsp;&nbsp;<li><a href="#prop_detail">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_detail">Constructor</a></li>&nbsp;&nbsp;&nbsp;Method&nbsp;&nbsp;&nbsp;
+            Field&nbsp;&nbsp;&nbsp;<li><a href="#prop_detail">Property</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#constructor_detail">Constructor</a></li>&nbsp;&nbsp;&nbsp;<li><a href="#method_detail">Method</a></li>&nbsp;&nbsp;&nbsp;
         </ul>
     </div>
     <p>Groovy Documentation</p>

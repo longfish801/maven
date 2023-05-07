@@ -38,36 +38,76 @@
 <pre><code>import io.github.longfish801.yakumo.Yakumo
 
 try {
-	def yakumo = new Yakumo()
-	String converted = yakumo.run(new File('src/test/resources/convert.groovy'), null)
-	assert converted.normalize() == new File('src/test/resources/result.html').text
-	assert yakumo.script.fprint.warns.size() == 0
+	new Yakumo().run(new File('src/test/resources/sample/convert.groovy'), null)
 } catch (exc){
 	println &quot;Failed to convert: message=${exc.message}&quot;
 	throw exc
 }
+
+File outDir = new File('build/sample')
+File expectDir = new File('src/test/resources/sample/expected')
+assert new File(outDir, 'index.html').text == new File(expectDir, 'index.html').text
+assert new File(outDir, 'curry.html').text == new File(expectDir, 'curry.html').text
+assert new File(outDir, 'img/curry.png').exists() == true
 </code></pre>
-<p>　上記で実行している変換スクリプトは以下です（src/test/resources/convert.groovy）。</p>
-<pre><code>load {
+<p>　上記で実行している変換スクリプトは以下です（src/test/resources/sample/convert.groovy）。</p>
+<pre><code>File inputDir = new File(scriptFile.parentFile, 'target')
+File outputDir = new File('build/sample')
+File relateDir = new File(scriptFile.parentFile, 'related')
+
+load {
 	material 'fyakumo', 'thtml'
 }
 
-def writer = new StringWriter()
 script {
+	doFirst {
+		if (!inputDir.exists()){
+			throw new IOException(&quot;No input directory. path=${inputDir.absolutePath}&quot;)
+		}
+		if (!outputDir.exists() &amp;&amp; !outputDir.mkdirs()){
+			throw new IOException(&quot;Failed to create output directory. path=${outputDir.absolutePath}&quot;)
+		}
+	}
+	
+	def scanner = new AntBuilder().fileScanner {
+		fileset(dir: inputDir.path) { include(name: '*.txt') }
+	}
+	List keys = []
+	for (File file in scanner){
+		keys &lt;&lt; file.name.take(file.name.lastIndexOf('.'))
+	}
+	
 	targets {
-		target 'target', new File('src/test/resources/target.txt')
+		keys.each { String key -&gt;
+			target key, new File(inputDir, &quot;${key}.txt&quot;)
+		}
 	}
+	
 	results {
-		result 'target', writer
+		keys.each { String key -&gt;
+			result key, new File(outputDir, &quot;${key}.html&quot;)
+		}
+		templateKey 'index', 'index'
 	}
+	
 	doLast {
 		fprint.logs.each { println it }
+		assert fprint.warns.size() == 0
 	}
 }
-return writer.toString()
+
+related {
+	outDir outputDir
+	def scanner = new AntBuilder().fileScanner {
+		fileset(dir: relateDir.path) { include(name: '**/*') }
+	}
+	for (File file in scanner){
+		source 'sample', file.absolutePath.substring(relateDir.absolutePath.length() + 1), file
+	}
+}
 </code></pre>
-<p>　変換対象は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/target.txt">target.txt</a> です。<br />
-　変換結果は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/result.html">result.html</a> です。</p>
+<p>　変換対象は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/sample/target/index.txt">index.txt</a>, <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/sample/target/curry.txt">curry.txt</a> です。<br />
+　変換結果は <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/sample/expected/index.html">index.html</a>, <a href="https://github.com/longfish801/yakumo/tree/master/src/test/resources/sample/expected/curry.html">curry.html</a> です。</p>
 <p>　このサンプルコードは build.gradle内の execSamplesタスクで実行しています。</p>
 <h2><a href="#ドキュメント" id="ドキュメント"></a>ドキュメント</h2>
 <ul>
@@ -129,6 +169,10 @@ dependencies {
 <dt>1.2.07</dt>
 <dd>カスタマイズ性と Bootstrapの活用を考慮して HTMLテンプレートを修正しました。</dd>
 <dd>併せてサブタイトル、見出し、目次、コラム、注意、引用、コードの HTMLを見直しました。</dd>
+<dt>1.2.08</dt>
+<dd>カクヨム記法、ページ内リンク、見出しの別名、総目次に対応しました。</dd>
+<dd>ナビゲーションリンクの作成内容を見直しました。</dd>
+<dd>サンプルについて index.htmlも作成するよう対応しました。</dd>
 </dl>
 </main>
 
