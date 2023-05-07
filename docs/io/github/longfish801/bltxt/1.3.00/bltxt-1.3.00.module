@@ -1,0 +1,92 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.longfish801",
+    "module": "bltxt",
+    "version": "1.3.00",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bltxt-1.3.00.jar",
+          "url": "bltxt-1.3.00.jar",
+          "size": 107879,
+          "sha512": "3587daaceede8115ae93fc9e5df035886861524dfea70281fb1617c2cd40565e61b3cddcb6f63d2fae2b045f4f0635c2c03e72ff2e5556cb7eca00621ac288bf",
+          "sha256": "fb162653a798882132fd5f3598eba886ff324d3cdf4ee422696beb34fbce3ce5",
+          "sha1": "574b1c33f0bfcdda36691be45522503077575804",
+          "md5": "8c28efd2b25f6b259d6bc9c758df1a7a"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.codehaus.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "3.0.9"
+          }
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.36"
+          }
+        },
+        {
+          "group": "io.github.longfish801",
+          "module": "gonfig",
+          "version": {
+            "requires": "1.1.00"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "bltxt-1.3.00.jar",
+          "url": "bltxt-1.3.00.jar",
+          "size": 107879,
+          "sha512": "3587daaceede8115ae93fc9e5df035886861524dfea70281fb1617c2cd40565e61b3cddcb6f63d2fae2b045f4f0635c2c03e72ff2e5556cb7eca00621ac288bf",
+          "sha256": "fb162653a798882132fd5f3598eba886ff324d3cdf4ee422696beb34fbce3ce5",
+          "sha1": "574b1c33f0bfcdda36691be45522503077575804",
+          "md5": "8c28efd2b25f6b259d6bc9c758df1a7a"
+        }
+      ]
+    }
+  ]
+}
