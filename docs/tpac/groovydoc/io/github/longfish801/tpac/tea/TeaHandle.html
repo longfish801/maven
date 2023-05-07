@@ -701,7 +701,8 @@ implements <a href='http://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable
                                 <h4><a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> <strong>referAsString</strong>(<a href='http://docs.oracle.com/javase/8/docs/api/java/lang/String.html' title='String'>String</a> path)</h4>
                                 <p> パスに対応するハンドルあるいはマップの値を文字列に変換して返します。<br/>
  値がListのときは各要素を改行コードで連結します。<br/>
- それ以外のときは toStringメソッドを用います。 <DL><DT><B>Parameters:</B></DT><DD><code>path</code> -  パス</DD></DL><DL><DT><B>Returns:</B></DT><DD>パスに対応するハンドルあるいはマップの値を変換した文字列</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#refer(java.lang.String)'>refer(String)</a></DD></DL></p>
+ それ以外のときは toStringメソッドを用います。<br/>
+ パスに対応する値が無い、あるいは nullが設定されていたときは nullを返します。 <DL><DT><B>Parameters:</B></DT><DD><code>path</code> -  パス</DD></DL><DL><DT><B>Returns:</B></DT><DD>パスに対応するハンドルあるいはマップの値を変換した文字列</DD></DL><DL><DT><B>See Also:</B></DT><DD><a href='#refer(java.lang.String)'>refer(String)</a></DD></DL></p>
                             </li>
                         </ul>
                     
