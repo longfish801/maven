@@ -57,11 +57,11 @@
         {
           "name": "yakumo-1.4.00.jar",
           "url": "yakumo-1.4.00.jar",
-          "size": 100978,
-          "sha512": "0c896798baede79339b3fd6408dc29bac917613a856e7454e926dbcd60921fabdbdfaaf063dc72f8259504dee9ffd59ed0ec92f9321f72e24dd3d0374e8088c0",
-          "sha256": "12ad7cb8ccc8535545a36855e8e02f3594ef6e70a25ecdbb0f6909a989fd7075",
-          "sha1": "f740d8dfc964e5153cc670065aa33aedeaeed9d8",
-          "md5": "d1921dff24fcdfebff7053e1926d50cd"
+          "size": 100980,
+          "sha512": "fe04553f17c837a892568824d4b197ee416e8586321f24ad4e15c85661382ca3aa177c82cab48f8c616a3d9d08dd3aff6768537cd6e97b73bc74fcc7faec1db4",
+          "sha256": "413a8466d5115e75524aaa5bdcf59fa02b4c0e87986b3112a6af865c9e92071d",
+          "sha1": "c0d794a43928bdce0d0105836ccb1f27fdfd3502",
+          "md5": "756301b2b25af4a83053d7e274bbeb81"
         }
       ]
     },
@@ -150,11 +150,11 @@
         {
           "name": "yakumo-1.4.00.jar",
           "url": "yakumo-1.4.00.jar",
-          "size": 100978,
-          "sha512": "0c896798baede79339b3fd6408dc29bac917613a856e7454e926dbcd60921fabdbdfaaf063dc72f8259504dee9ffd59ed0ec92f9321f72e24dd3d0374e8088c0",
-          "sha256": "12ad7cb8ccc8535545a36855e8e02f3594ef6e70a25ecdbb0f6909a989fd7075",
-          "sha1": "f740d8dfc964e5153cc670065aa33aedeaeed9d8",
-          "md5": "d1921dff24fcdfebff7053e1926d50cd"
+          "size": 100980,
+          "sha512": "fe04553f17c837a892568824d4b197ee416e8586321f24ad4e15c85661382ca3aa177c82cab48f8c616a3d9d08dd3aff6768537cd6e97b73bc74fcc7faec1db4",
+          "sha256": "413a8466d5115e75524aaa5bdcf59fa02b4c0e87986b3112a6af865c9e92071d",
+          "sha1": "c0d794a43928bdce0d0105836ccb1f27fdfd3502",
+          "md5": "756301b2b25af4a83053d7e274bbeb81"
         }
       ]
     }
