@@ -34,10 +34,12 @@
 <ul>
 <li><a href="#見出し">見出し</a></li>
 <li><a href="#箇条書き">箇条書き</a></li>
+<li><a href="#手順">手順</a></li>
 <li><a href="#用語説明">用語説明</a></li>
 <li><a href="#画像">画像</a></li>
-<li><a href="#コラム">コラム</a></li>
+<li><a href="#案内">案内</a></li>
 <li><a href="#注意">注意</a></li>
+<li><a href="#コラム">コラム</a></li>
 <li><a href="#引用引用元">引用、引用元</a></li>
 <li><a href="#コード">コード</a></li>
 <li><a href="#変換済">変換済</a></li>
@@ -277,6 +279,25 @@
 	&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
+<h3><a href="#手順" id="手順"></a>手順</h3>
+<p>　行範囲タグで手順を表現できます。</p>
+<pre><code>【－手順】
+【＝項目】まずマスクをつけます。
+【－項目】
+手をよく洗ってください。
+指と指の間や爪の隙間もね。
+【項目－】
+【＝項目】それでは、いただきます！
+【手順－】
+</code></pre>
+<p>　以下のHTMLに変換します。</p>
+<pre><code>&lt;ol&gt;
+&lt;li&gt;まずマスクをつけます。&lt;/li&gt;
+&lt;li&gt;手をよく洗ってください。&lt;br/&gt;
+指と指の間や爪の隙間もね。&lt;/li&gt;
+&lt;li&gt;それでは、いただきます！&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
 <h3><a href="#用語説明" id="用語説明"></a>用語説明</h3>
 <p>　行範囲タグ、行タグで用語説明を表現できます。</p>
 <pre><code>【－用語説明】
@@ -312,23 +333,23 @@
 &lt;figcaption&gt;猫ちゃん、可愛い～&lt;/figcaption&gt;
 &lt;/figure&gt;
 </code></pre>
-<h3><a href="#コラム" id="コラム"></a>コラム</h3>
-<p>　行範囲タグでコラムを表現できます。</p>
-<pre><code>【－コラム】
+<h3><a href="#案内" id="案内"></a>案内</h3>
+<p>　行範囲タグで案内を表現できます。</p>
+<pre><code>【－案内】
 　日本人の四割は血液型がＯ型です。
-【コラム－】
+【案内－】
 </code></pre>
 <p>　以下のHTMLに変換します。<br />
-　asideタグ（class属性値は&quot;column&quot;）を生成します。</p>
+　asideタグを生成します。</p>
 <pre><code>&lt;aside class=&quot;panel panel-primary&quot;&gt;
 &lt;p&gt;　日本人の四割は血液型がＯ型です。&lt;/p&gt;
 &lt;/aside&gt;
 </code></pre>
 <p>　第一属性に小見出しを指定することもできます。</p>
-<pre><code>【－コラム：８月３１日はなんの日？】
+<pre><code>【－案内：８月３１日はなんの日？】
 　８月３１日は野菜の日です。
 　野菜を食べましょう。
-【コラム－】
+【案内－】
 </code></pre>
 <p>　以下のHTMLに変換します。</p>
 <pre><code>&lt;aside class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;
@@ -338,7 +359,7 @@
 &lt;/aside&gt;
 </code></pre>
 <h3><a href="#注意" id="注意"></a>注意</h3>
-<p>　行範囲タグで注意喚起のためのコラムを表現できます。<br />
+<p>　行範囲タグで注意喚起のための案内を表現できます。<br />
 　第一属性に小見出しを指定することもできます。</p>
 <pre><code>【－注意：中火とは】
 　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。
@@ -350,6 +371,20 @@
 &lt;header class=&quot;alert-heading text-center&quot;&gt;&lt;i class=&quot;bi bi-exclamation-triangle-fill&quot;&gt;&lt;/i&gt; 中火とは&lt;/header&gt;
 &lt;p&gt;　中火とは、フライパンの底に炎の先端がちょうど届くくらいの状態を指します。&lt;/p&gt;
 &lt;/aside&gt;
+</code></pre>
+<h3><a href="#コラム" id="コラム"></a>コラム</h3>
+<p>　行範囲タグでコードを表現できます。</p>
+<pre><code>【－コラム】
+　飲むヨーグルトは美味しい。
+　飲まないヨーグルトは味がしない。
+【コラム－】
+</code></pre>
+<p>　以下のHTMLに変換します。<br />
+　スタイルシートと組み合わせることで期待する表示ができます。</p>
+<pre><code>&lt;div class=&quot;column&quot;&gt;
+&lt;p&gt;　飲むヨーグルトは美味しい。&lt;br/&gt;
+　飲まないヨーグルトは味がしない。&lt;/p&gt;
+&lt;/div&gt;
 </code></pre>
 <h3><a href="#引用引用元" id="引用引用元"></a>引用、引用元</h3>
 <p>　行範囲タグで引用を表現できます。<br />
@@ -439,12 +474,23 @@ println &amp;quot;This is sample code of how to hello to all of the world, which
 　この場合は属性は不要です。</p>
 <p>　もしくは一番目の属性にリンク先を指定します。<br />
 　以下の三種類を指定できます。</p>
-<p>・全角シャープ（＃）＋見出し文字列あるいは別名<br />
-・同じ変換対象上の見出しにリンクします。<br />
-・変換対象キー<br />
-・他の変換対象にリンクします。<br />
-・変換対象キー＋全角シャープ（＃）＋見出し文字列あるいは別名<br />
-・他の変換対象上の見出しにリンクします。</p>
+<ul>
+<li>全角シャープ（＃）＋見出し文字列あるいは別名
+<ul>
+<li>同じ変換対象上の見出しにリンクします。</li>
+</ul>
+</li>
+<li>変換結果キー
+<ul>
+<li>他の変換結果にリンクします。</li>
+</ul>
+</li>
+<li>変換結果キー＋全角シャープ（＃）＋見出し文字列あるいは別名
+<ul>
+<li>他の変換結果上の見出しにリンクします。</li>
+</ul>
+</li>
+</ul>
 <p>　以下のbltxt文書があったとします。</p>
 <pre><code>【＝見出し：1】おいしいカレーの作り方
 　もう満腹ですか？ それでは【｜参照：＃ごちさま】さようなら【参照｜】。
